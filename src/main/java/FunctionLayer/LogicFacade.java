@@ -18,12 +18,12 @@ public class LogicFacade {
         UserMapper.createUser( user );
         return user;
     }
-    // public static void createRequest(int roofid, int shedid, int width, int length, int shedWidth, int shedLength, int angle, String note, String email) throws LoginSampleException {
-    public static void createRequest(int width) throws LoginSampleException {
+    public static void createRequest(String roof, String shedClothing, int width, int length, int shedWidth, int shedLength, int angle, String note, String email) throws LoginSampleException {
 
 
-        //RequestMapper.createRequest(roofid,shedid,width,length,shedWidth,shedLength,angle,note,email);
-        RequestMapper.createRequest(width);
+
+             RequestMapper.createRequest(roof,shedClothing,width,length,shedWidth,shedLength,angle,note,email);
+
 
 
     }
