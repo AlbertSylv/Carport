@@ -7,8 +7,8 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="Carport" />
-        <module name="ProjektSkabelon-master" />
         <module name="prejektSkabelon" />
+        <module name="ProjektSkabelon-master" />
         <module name="Projektskabelon-master" />
         <module name="Projektskabelon" />
       </profile>
@@ -16,7 +16,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="Carport" options="-endorseddirs C:\Users\baske\OneDrive\Skrivebord\Carport\target/endorsed" />
+      <module name="Carport" options="-endorseddirs C:\Users\Bruger\Documents\GitHub\Carport\target/endorsed" />
       <module name="ProjektSkabelon-master" options="-endorseddirs &quot;$PROJECT_DIR$/target/endorsed&quot;" />
       <module name="Projektskabelon" options="-endorseddirs &quot;$PROJECT_DIR$/target/endorsed&quot;" />
       <module name="Projektskabelon-master" options="-endorseddirs $PROJECT_DIR$/target/endorsed" />
