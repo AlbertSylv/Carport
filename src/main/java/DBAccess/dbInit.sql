@@ -1,7 +1,5 @@
--- noinspection SqlDialectInspectionForFile
-
--- noinspection SqlNoDataSourceInspectionForFile
 CREATE DATABASE  IF NOT EXISTS `carport`;
+
 
 USE `carport`;
 
@@ -10,31 +8,8 @@ DROP TABLE IF EXISTS `accounts`;
 DROP TABLE IF EXISTS `stockToCategory`;
 DROP TABLE IF EXISTS `categories`;
 DROP TABLE IF EXISTS `stock`;
-DROP TABLE IF EXISTS `roof coating`;
-DROP TABLE IF EXISTS `shed clothing`;
-DROP TABLE IF EXISTS `users`;
-CREATE TABLE `users` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `email` varchar(90) NOT NULL,
-  `password` varchar(45) NOT NULL,
-  `role` varchar(20) NOT NULL DEFAULT 'customer',
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `email_UNIQUE` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
-
-LOCK TABLES `users` WRITE;
-INSERT INTO `users` VALUES 
-(1,'jens@somewhere.com','jensen','customer'),
-(2,'ken@somewhere.com','kensen','customer'),
-(3,'robin@somewhere.com','batman','employee');
-UNLOCK TABLES;
-
-
-
-
-
-
-
+DROP TABLE IF EXISTS `roofcoating`;
+DROP TABLE IF EXISTS `shedclothing`;
 
 
 CREATE TABLE `stock` (
@@ -47,18 +22,18 @@ CREATE TABLE `stock` (
   PRIMARY KEY (`ref`)
 );
 
-CREATE TABLE `roof coating` (
-  `roofid` INT NOT NULL AUTO_INCREMENT,
+CREATE TABLE `roofcoating` (
+  `roofID` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(100) NOT NULL,
   `price` INT NOT NULL,
-  PRIMARY KEY (`roofid`)
+  PRIMARY KEY (`roofID`)
 );
 
-CREATE TABLE `shed clothing` (
-  `shedid` INT NOT NULL AUTO_INCREMENT,
+CREATE TABLE `shedclothing` (
+  `shedID` INT not null AUTO_INCREMENT,
   `name` VARCHAR(100) NOT NULL,
   `price` INT NOT NULL,
-  PRIMARY KEY (`shedid`)
+  PRIMARY KEY (`shedID`)
 );
 
 CREATE TABLE `categories` (
@@ -97,14 +72,14 @@ CREATE TABLE `accounts` (
 
 CREATE TABLE `requests` (
 	`id` INT NOT NULL AUTO_INCREMENT,
-	`roofid` INT NOT NULL,
-	`shedid` INT default NULL,
+	`roofID` INT NOT NULL,
+    `shedID` INT default 1,
 	`width` INT NOT NULL,
 	`length` INT NOT NULL,
-	`shedWidth` INT NOT NULL,
-	`shedLength` INT NOT NULL,
-	`angle` INT NOT NULL,
-	`note` VARCHAR(500) NOT NULL,
+	`shedWidth` INT default NULL,
+	`shedLength` INT default NULL,
+	`angle` INT default NULL,
+	`note` VARCHAR(500) default NULL,
 	`email` VARCHAR(100) NOT NULL,
 	PRIMARY KEY(`id`),
 	INDEX `emailFK_idx` (`email` ASC) VISIBLE,
@@ -113,14 +88,28 @@ CREATE TABLE `requests` (
 		REFERENCES `accounts` (`email`)
 		ON DELETE CASCADE
 		ON UPDATE CASCADE,
-	CONSTRAINT `shedidFK`
-		FOREIGN KEY (`shedid`)
-		REFERENCES `shed clothing` (`shedid`)
+    CONSTRAINT `shedidFK`
+		FOREIGN KEY (`shedID`)
+		REFERENCES `shedclothing` (`shedID`)
 		ON DELETE NO ACTION
 		ON UPDATE NO ACTION,
 	CONSTRAINT `roofidFK`
-		FOREIGN KEY (`roofid`)
-		REFERENCES `roof coating` (`roofid`)
+		FOREIGN KEY (`roofID`)
+		REFERENCES `roofcoating` (`roofID`)
 		ON DELETE NO ACTION
 		ON UPDATE NO ACTION
 );
+
+INSERT INTO `accounts` VALUES
+('jegerenged@gmail.com','jegerenged','customer','otto','Lars Tyndskids Mark 69','42069', '12345678');
+
+
+INSERT INTO `shedclothing` VALUES
+(0,'Intet skur',0),
+(0,'21X85 MM BLOKHUSBRÆDDER FYR MED VEKSELFALS',269),
+(0,'29X142 MM SIBIRISK LÆRK KLINKBEKLÆDNING TP. AALBORG - RUSAVET',381);
+
+
+INSERT INTO `roofcoating` VALUES
+(0,'Plasttrapezplade', 34),
+(0,'RØDE VINGETAGSTEN GL. DANSK FORBRUG', 261);
