@@ -5,22 +5,16 @@ USE `carport`;
 
 DROP TABLE IF EXISTS `requests`;
 DROP TABLE IF EXISTS `accounts`;
-DROP TABLE IF EXISTS `stockToCategory`;
-DROP TABLE IF EXISTS `categories`;
-DROP TABLE IF EXISTS `stock`;
+DROP TABLE IF EXISTS `roof coating`;
+DROP TABLE IF EXISTS `shed clothing`;
+DROP TABLE IF EXISTS `wood`;
+DROP TABLE IF EXISTs `stocktocategory`;
+DROP TABLE IF EXISTs `categories`;
+DROP TABLE IF EXISTs `stock`;
 DROP TABLE IF EXISTS `roofcoating`;
 DROP TABLE IF EXISTS `shedclothing`;
 
 
-CREATE TABLE `stock` (
-  `ref` VARCHAR(100) NOT NULL,
-  `name` VARCHAR(45) NOT NULL,
-  `length` INT NOT NULL,
-  `amount` INT NOT NULL,
-  `unit` VARCHAR(45) NOT NULL,
-  `price` INT NOT NULL,
-  PRIMARY KEY (`ref`)
-);
 
 CREATE TABLE `roofcoating` (
   `roofID` INT NOT NULL AUTO_INCREMENT,
@@ -36,28 +30,7 @@ CREATE TABLE `shedclothing` (
   PRIMARY KEY (`shedID`)
 );
 
-CREATE TABLE `categories` (
-	`id` INT NOT NULL AUTO_INCREMENT,
-    `name` VARCHAR(100) NOT NULL,
-    PRIMARY KEY(`id`)
-);
 
-CREATE TABLE `stockToCategory` (
-  `stockRef` VARCHAR(100) NOT NULL,
-  `categoryId` INT NOT NULL,
-  PRIMARY KEY (`stockRef`, `categoryId`),
-  INDEX `categoryId_FK_idx` (`categoryId` ASC) VISIBLE,
-  CONSTRAINT `stockRef_FK`
-    FOREIGN KEY (`stockRef`)
-    REFERENCES `stock` (`ref`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `categoryId_FK`
-    FOREIGN KEY (`categoryId`)
-    REFERENCES `categories` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION
-);
 
 CREATE TABLE `accounts` (
 	`email` VARCHAR(100) NOT NULL,
@@ -113,3 +86,16 @@ INSERT INTO `shedclothing` VALUES
 INSERT INTO `roofcoating` VALUES
 (0,'Plasttrapezplade', 34),
 (0,'RØDE VINGETAGSTEN GL. DANSK FORBRUG', 261);
+
+
+CREATE TABLE `wood` (
+  `name` VARCHAR(100) NOT NULL,
+  `pricePrM` INT NOT NULL,
+  PRIMARY KEY (`name`)
+);
+
+INSERT INTO `wood` VALUES
+('97X97 MM FULDKANTET FYR IMPR. NTR/A TRYKIMPRÆGNERET',41.95),
+('47X200 MM SPÆRTRÆ C18 HØVLET TIL 45X195MM',46.95),
+('PASLODE HULBÅND TYPE 20-1 20X1 MM',21),
+('45X95 MM SIBIRISK LÆRK REGEL KVARTA, HØVLET 4 SIDER M/AFR. KANTER',59.95);
