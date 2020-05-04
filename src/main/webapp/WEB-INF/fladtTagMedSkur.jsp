@@ -1,21 +1,22 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: danie
-  Date: 04-05-2020
-  Time: 19:48
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<!DOCTYPE html>
 <html>
 <head>
-
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Customer home page</title>
+    <link rel="stylesheet" type="text/css" href="../includes/style.css" />
 </head>
 <body>
-
 <button type="submit"> <a href="FrontController?taget=fladtTagMedSkur">Fladt med skur</a></button>
 <button type="submit"> <a href="FrontController?taget=fladtTagUdenSkur">Fladt uden skur</a></button>
 <button type="submit"> <a href="FrontController?taget=Rejsning">Rejsning</a></button>
 <button type="submit"> <a href="FrontController?taget=RejsningSkur">Rejsning Skur</a></button>
+<h1>Hej ${sessionScope.email} </h1>
+
+
+
+
+
+Du er nu logget ind, din heldige kartoffel!
 
 <form action="FrontController" method="post" id="bestilling">
     <input type="hidden" name="taget" value="createRequest">
@@ -78,22 +79,6 @@
         </c:forEach>
     </select>
     </p>
-
-    <div id="myDIV2">
-        <p>
-        <h3>Taghældning</h3>
-        <select id = "myList4" name="angle">
-            <option value = "15">15 grader</option>
-            <option value = "20">20 grader</option>
-            <option value = "25">25 grader</option>
-            <option value = "30">30 grader</option>
-            <option value = "35">35 grader</option>
-            <option value = "40">40 grader</option>
-            <option value = "45">45 grader</option>
-
-        </select>
-        </p>
-
         <p>
         <h3>Redskabsrum bredde</h3>
         <select id = "myList5" name="shedWidth">
@@ -204,5 +189,5 @@
     </tr>
 </table>
 
-</body>
-</html>
+
+

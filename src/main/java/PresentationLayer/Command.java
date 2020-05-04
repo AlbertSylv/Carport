@@ -16,6 +16,11 @@ abstract class Command {
         commands.put( "createRequest", new CreateRequest() );
         commands.put( "employeepage", new Employeepage() );
         commands.put( "customerpage", new Customerpage() );
+        commands.put( "fladtTagMedSkur", new fladtTagMedSkur() );
+        commands.put( "fladtTagUdenSkur", new fladtTagUdenSkur());
+        commands.put( "Rejsning", new Rejsning());
+        commands.put( "RejsningSkur", new RejsningSkur());
+
     }
 
     static Command from( HttpServletRequest request ) {

@@ -11,6 +11,12 @@
 
 </head>
 <body>
+
+<button type="submit"> <a href="FrontController?taget=fladtTagMedSkur">Fladt med skur</a></button>
+<button type="submit"> <a href="FrontController?taget=fladtTagUdenSkur">Fladt uden skur</a></button>
+<button type="submit"> <a href="FrontController?taget=Rejsning">Rejsning</a></button>
+<button type="submit"> <a href="FrontController?taget=RejsningSkur">Rejsning Skur</a></button>
+
 <form action="FrontController" method="post" id="bestilling">
     <input type="hidden" name="taget" value="createRequest">
     <h3>Carport bredde</h3>

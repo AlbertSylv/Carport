@@ -5,9 +5,9 @@ import FunctionLayer.LoginSampleException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class Rejsning extends Command {
+public class fladtTagUdenSkur extends Command {
     @Override
     String execute(HttpServletRequest request, HttpServletResponse response) throws LoginSampleException {
-        return "Rejsning";
+        return "fladtTagUdenSkur";
     }
 }

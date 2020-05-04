@@ -1,14 +1,17 @@
 <%--
-  Created by IntelliJ IDEA.
-  User: danie
-  Date: 04-05-2020
-  Time: 19:48
-  To change this template use File | Settings | File Templates.
+    Document   : customerpage
+    Created on : Aug 22, 2017, 2:33:37 PM
+    Author     : kasper
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+
+<!DOCTYPE html>
 <html>
 <head>
-
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Customer home page</title>
+    <link rel="stylesheet" type="text/css" href="../includes/style.css" />
 </head>
 <body>
 
@@ -16,6 +19,14 @@
 <button type="submit"> <a href="FrontController?taget=fladtTagUdenSkur">Fladt uden skur</a></button>
 <button type="submit"> <a href="FrontController?taget=Rejsning">Rejsning</a></button>
 <button type="submit"> <a href="FrontController?taget=RejsningSkur">Rejsning Skur</a></button>
+
+<h1>Hej ${sessionScope.email} </h1>
+
+
+
+
+
+Du er nu logget ind, din heldige kartoffel!
 
 <form action="FrontController" method="post" id="bestilling">
     <input type="hidden" name="taget" value="createRequest">
@@ -79,7 +90,7 @@
     </select>
     </p>
 
-    <div id="myDIV2">
+
         <p>
         <h3>Taghældning</h3>
         <select id = "myList4" name="angle">
@@ -94,70 +105,7 @@
         </select>
         </p>
 
-        <p>
-        <h3>Redskabsrum bredde</h3>
-        <select id = "myList5" name="shedWidth">
-            <option value = "0">Ønsker ikke skur bruh</option>
-            <option value = "210">210 cm</option>
-            <option value = "240">240 cm</option>
-            <option value = "270">270 cm</option>
-            <option value = "300">300 cm</option>
-            <option value = "330">330 cm</option>
-            <option value = "360">360 cm</option>
-            <option value = "390">390 cm</option>
-            <option value = "420">420 cm</option>
-            <option value = "450">450 cm</option>
-            <option value = "480">480 cm</option>
-            <option value = "510">510 cm</option>
-            <option value = "540">540 cm</option>
-            <option value = "570">570 cm</option>
-            <option value = "600">600 cm</option>
-            <option value = "630">630 cm</option>
-            <option value = "660">660 cm</option>
-            <option value = "690">690 cm</option>
-            <option value = "720">720 cm</option>
-        </select>
-        </p>
 
-        <p>
-        <h3>Redskabsrum længde</h3>
-        <select id = "myList6" name="shedLength">
-            <option value = "0">Ønsker ikke skur bruh</option>
-            <option value = "150">150 cm</option>
-            <option value = "180">180 cm</option>
-            <option value = "210">210 cm</option>
-            <option value = "240">240 cm</option>
-            <option value = "270">270 cm</option>
-            <option value = "300">300 cm</option>
-            <option value = "330">330 cm</option>
-            <option value = "360">360 cm</option>
-            <option value = "390">390 cm</option>
-            <option value = "420">420 cm</option>
-            <option value = "450">450 cm</option>
-            <option value = "480">480 cm</option>
-            <option value = "510">510 cm</option>
-            <option value = "540">540 cm</option>
-            <option value = "570">570 cm</option>
-            <option value = "600">600 cm</option>
-            <option value = "630">630 cm</option>
-            <option value = "660">660 cm</option>
-            <option value = "690">690 cm</option>
-
-
-        </select>
-        </p>
-
-        <p>
-        <h3>Redskabsrum beklædning</h3>
-        <select id = "myList7" name="shedClothing">
-            <option value = "1">Ønsker ikke skur bruh</option>
-            <option value = "2">21X85 MM BLOKHUSBRÆDDER FYR MED VEKSELFALS</option>
-            <option value = "3">29X142 MM SIBIRISK LÆRK KLINKBEKLÆDNING TP. AALBORG - RUSAVET</option>
-
-
-
-        </select>
-        </p>
     </div>
     <p>Indtast email</p>
     <input type="text" name="email">
@@ -204,5 +152,4 @@
     </tr>
 </table>
 
-</body>
-</html>
+
