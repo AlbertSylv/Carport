@@ -14,6 +14,8 @@ abstract class Command {
         commands.put( "login", new Login() );
         commands.put( "register", new Register() );
         commands.put( "createRequest", new CreateRequest() );
+        commands.put( "employeepage", new Employeepage() );
+        commands.put( "customerpage", new Customerpage() );
     }
 
     static Command from( HttpServletRequest request ) {

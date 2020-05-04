@@ -12,6 +12,7 @@ DROP TABLE IF EXISTs `stocktocategory`;
 DROP TABLE IF EXISTs `categories`;
 DROP TABLE IF EXISTs `stock`;
 DROP TABLE IF EXISTS `roofcoating`;
+DROP TABLE IF EXISTS `tiltedroofcoating`;
 DROP TABLE IF EXISTS `shedclothing`;
 
 
@@ -21,6 +22,13 @@ CREATE TABLE `roofcoating` (
   `name` VARCHAR(100) NOT NULL,
   `price` INT NOT NULL,
   PRIMARY KEY (`roofID`)
+);
+
+CREATE TABLE `tiltedroofcoating` (
+  `tiltedroofID` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(100) NOT NULL,
+  `price` INT NOT NULL,
+  PRIMARY KEY (`tiltedroofID`)
 );
 
 CREATE TABLE `shedclothing` (
@@ -45,7 +53,8 @@ CREATE TABLE `accounts` (
 
 CREATE TABLE `requests` (
 	`id` INT NOT NULL AUTO_INCREMENT,
-	`roofID` INT NOT NULL,
+	`roofID` INT default 1,
+	`tiltedroofID` int default 1,
     `shedID` INT default 1,
 	`width` INT NOT NULL,
 	`length` INT NOT NULL,
@@ -70,6 +79,11 @@ CREATE TABLE `requests` (
 		FOREIGN KEY (`roofID`)
 		REFERENCES `roofcoating` (`roofID`)
 		ON DELETE NO ACTION
+		ON UPDATE NO ACTION,
+	CONSTRAINT `tiltedroofidFK`
+		FOREIGN KEY (`roofID`)
+		REFERENCES `tiltedroofcoating` (`tiltedroofID`)
+		ON DELETE NO ACTION
 		ON UPDATE NO ACTION
 );
 
@@ -84,9 +98,13 @@ INSERT INTO `shedclothing` VALUES
 
 
 INSERT INTO `roofcoating` VALUES
-(0,'Plasttrapezplade', 34),
-(0,'RØDE VINGETAGSTEN GL. DANSK FORBRUG', 261);
+(0,'Tag med rejsning', 0),
+(0,'Plasttrapezplade', 34);
 
+
+INSERT INTO `tiltedroofcoating` VALUES
+(0,'Fladt tag', 0),
+(0,'RØDE VINGETAGSTEN GL. DANSK FORBRUG', 261);
 
 CREATE TABLE `wood` (
   `name` VARCHAR(100) NOT NULL,
