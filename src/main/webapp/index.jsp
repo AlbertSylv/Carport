@@ -195,6 +195,16 @@
                 </td>
             </tr>
         </table>
+<table>
+<c:forEach items="${mat}" var="g" varStatus="vStatus">
+    <tr>
+    <td>${g.mat}</td>
+
+    <td><input type="text" id="${pStatus}" name="${pStatus}">
+    </td>
+    </tr>
+    </table>
+
 
 
 <%--        Bare lige se I har en ide om hvad vi forslå I ikke gør ! det hedder scpript lets --%>

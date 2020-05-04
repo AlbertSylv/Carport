@@ -15,8 +15,9 @@ public class MaterialMapper {
 
 
     public static ArrayList getMaterials(String name) throws LoginSampleException {
+        ArrayList mat = null;
         try {
-            ArrayList mat = new ArrayList();
+            mat = new ArrayList();
 
             Connection con = Connector.connection();
             String SQL = "SELECT * FROM carport.shedclothing where name=?";
@@ -30,16 +31,13 @@ public class MaterialMapper {
                 Material material = new Material(navn);
                 mat.add(material);
 
-                return mat;
             }
 
 
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
+        } catch (SQLException | ClassNotFoundException e) {
+
+
         }
-
+        return mat;
     }
-
 }
