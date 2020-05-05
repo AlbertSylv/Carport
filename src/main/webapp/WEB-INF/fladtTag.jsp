@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,17 +7,25 @@
     <link rel="stylesheet" type="text/css" href="../includes/style.css" />
 </head>
 <body>
-<button type="submit"> <a href="FrontController?taget=fladtTagMedSkur">Fladt med skur</a></button>
-<button type="submit"> <a href="FrontController?taget=fladtTagUdenSkur">Fladt uden skur</a></button>
-<button type="submit"> <a href="FrontController?taget=Rejsning">Rejsning</a></button>
-<button type="submit"> <a href="FrontController?taget=RejsningSkur">Rejsning Skur</a></button>
-<h1>Hej ${sessionScope.email} </h1>
+
+<button type="submit"><a href="FrontController?taget=fladtTag">Carport med fladt tag</a></button>
+<button type="submit"><a href="FrontController?taget=Rejsning">Carport med rejsning</a></button>
+<hr>
+<script>
+    function myFunction() {
 
 
+        var x = document.getElementById("myDIV2");
 
-
-
-Du er nu logget ind, din heldige kartoffel!
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+    }
+</script>
+Skal din Carport være med eller uden redskabsskur?
+<button onclick="myFunction()">Skur</button>
 
 <form action="FrontController" method="post" id="bestilling">
     <input type="hidden" name="taget" value="createRequest">
@@ -79,6 +88,8 @@ Du er nu logget ind, din heldige kartoffel!
         </c:forEach>
     </select>
     </p>
+
+    <div id="myDIV2">
         <p>
         <h3>Redskabsrum bredde</h3>
         <select id = "myList5" name="shedWidth">
@@ -134,13 +145,12 @@ Du er nu logget ind, din heldige kartoffel!
 
         <p>
         <h3>Redskabsrum beklædning</h3>
-        <select id = "myList7" name="shedClothing">
-            <option value = "1">Ønsker ikke skur bruh</option>
-            <option value = "2">21X85 MM BLOKHUSBRÆDDER FYR MED VEKSELFALS</option>
-            <option value = "3">29X142 MM SIBIRISK LÆRK KLINKBEKLÆDNING TP. AALBORG - RUSAVET</option>
 
+        <select id = "myList7" name="shedclothing" required="required">
+            <c:forEach items="${sessionScope.shedclothing}"  var="SC">
+                <option value = ${SC.shedID}>${SC.name}</option>
 
-
+            </c:forEach>
         </select>
         </p>
     </div>
@@ -154,40 +164,7 @@ Du er nu logget ind, din heldige kartoffel!
     <button type="submit">Bestil carport med valgte mål</button>
 
 </form>
-<h1>Welcome to Sem 2</h1>
 
-<table>
-    <tr><td>Login</td>
-        <td>
-            <form name="login" action="FrontController" method="POST">
-                <input type="hidden" name="taget" value="login">
-                Email:<br>
-                <input type="text" name="email" value="someone@nowhere.com">
-                <br>
-                Password:<br>
-                <input type="password" name="password" value="sesam">
-                <br>
-                <input type="submit" value="Submit">
-            </form>
-        </td>
-        <td>Or Register</td>
-        <td>
-            <form name="register" action="FrontController" method="POST">
-                <input type="hidden" name="taget" value="register">
-                Email:<br>
-                <input type="text" name="email" value="someone@nowhere.com">
-                <br>
-                Password:<br>
-                <input type="password" name="password1" value="sesam">
-                <br>
-                Retype Password:<br>
-                <input type="password" name="password2" value="sesam">
-                <br>
-                <input type="submit" value="Submit">
-            </form>
-        </td>
-    </tr>
-</table>
 
 
 

@@ -45,37 +45,13 @@ public class LogicFacade {
         return linjer;
 
     }
+    public static ArrayList<ShedClothing> getShedclothing() throws LoginSampleException {
+        ArrayList<ShedClothing> linjer = new ArrayList<ShedClothing>();
 
-    public static ArrayList<Rejsning> getRejsning() throws LoginSampleException {
-        ArrayList<Rejsning> linjer = new ArrayList<Rejsning>();
-
-        linjer = MaterialMapper.getRejsning();
-
-        return linjer;
-
-    }
-    public static ArrayList<RejsningSkur> getRejsningSkur() throws LoginSampleException {
-        ArrayList<RejsningSkur> linjer = new ArrayList<RejsningSkur>();
-
-        linjer = MaterialMapper.getRejsningSkur();
+        linjer = MaterialMapper.getShedClothing();
 
         return linjer;
-
     }
-    public static ArrayList<FladtTag> getFladtTag() throws LoginSampleException {
-        ArrayList<FladtTag> linjer = new ArrayList<FladtTag>();
 
-        linjer = MaterialMapper.getFladtTag();
 
-        return linjer;
-
-    }
-    public static ArrayList<FladtTagSkur> getFladtTagSkur() throws LoginSampleException {
-        ArrayList<FladtTagSkur> linjer = new ArrayList<FladtTagSkur>();
-
-        linjer = MaterialMapper.getFladtTagSkur();
-
-        return linjer;
-
-    }
 }

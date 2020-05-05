@@ -6,18 +6,23 @@ public class TiltedRoofCoating {
         String name;
         int price;
 
-        public TiltedRoofCoating(int roofID, String name, int price) {
-            this.tiltedroofID = roofID;
+        public TiltedRoofCoating(int tiltedroofID, String name, int price) {
+            this.tiltedroofID = tiltedroofID;
             this.name = name;
             this.price = price;
         }
 
-        public int getRoofID() {
+    public TiltedRoofCoating(int tiltedroofID, String name) {
+        this.tiltedroofID = tiltedroofID;
+        this.name = name;
+    }
+
+    public int getTiltedroofID() {
             return tiltedroofID;
         }
 
-        public void setRoofID(int roofID) {
-            this.tiltedroofID = roofID;
+        public void setTiltedroofID(int tiltedroofID) {
+            this.tiltedroofID = tiltedroofID;
         }
 
         public String getName() {

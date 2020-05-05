@@ -1,22 +1,27 @@
 package FunctionLayer;
 
-public class RejsningSkur {
-    int rejsningSkurID;
+public class ShedClothing {
+    int shedID;
     String name;
     int price;
 
-    public RejsningSkur(int rejsningSkurID, String name, int price) {
-        this.rejsningSkurID = rejsningSkurID;
+    public ShedClothing(int shedID, String name, int price) {
+        this.shedID = shedID;
         this.name = name;
         this.price = price;
     }
 
-    public int getRejsningSkurID() {
-        return rejsningSkurID;
+    public ShedClothing(int shedID, String name) {
+        this.shedID = shedID;
+        this.name = name;
     }
 
-    public void setRejsningSkurID(int rejsningSkurID) {
-        this.rejsningSkurID = rejsningSkurID;
+    public int getShedID() {
+        return shedID;
+    }
+
+    public void setShedID(int shedID) {
+        this.shedID = shedID;
     }
 
     public String getName() {

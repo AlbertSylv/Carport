@@ -4,6 +4,7 @@ public class Request {
 
         int id;
         int roofid;
+        int tiltedroofid;
         int shedid;
         int width;
         int length;
@@ -13,8 +14,9 @@ public class Request {
         String note;
         String email;
 
-    public Request(int roofid, int shedid, int width, int length, int shedWidth, int shedLength, int angle, String note, String email) {
+    public Request(int roofid, int tiltedroofid, int shedid, int width, int length, int shedWidth, int shedLength, int angle, String note, String email) {
         this.roofid = roofid;
+        this.tiltedroofid = tiltedroofid;
         this.shedid = shedid;
         this.width = width;
         this.length = length;
@@ -26,6 +28,13 @@ public class Request {
 
     }
 
+    public int getTiltedroofid() {
+        return tiltedroofid;
+    }
+
+    public void setTiltedroofid(int tiltedroofid) {
+        this.tiltedroofid = tiltedroofid;
+    }
 
     public int getId() {
         return id;
