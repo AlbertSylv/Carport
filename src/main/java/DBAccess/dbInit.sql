@@ -81,7 +81,7 @@ CREATE TABLE `requests` (
 		ON DELETE NO ACTION
 		ON UPDATE NO ACTION,
 	CONSTRAINT `tiltedroofidFK`
-		FOREIGN KEY (`roofID`)
+		FOREIGN KEY (`tiltedroofID`)
 		REFERENCES `tiltedroofcoating` (`tiltedroofID`)
 		ON DELETE NO ACTION
 		ON UPDATE NO ACTION

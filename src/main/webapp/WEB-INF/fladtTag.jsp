@@ -78,7 +78,8 @@ Skal din Carport være med eller uden redskabsskur?
 
     </select>
     </p>
-
+    <input type="hidden" name="tiltedroof" value="1">
+    <input type="hidden" name="angle" value="0">
     <p>
     <h3>Tag</h3>
     <select id = "myList3" name="roof" required="required">
@@ -93,7 +94,7 @@ Skal din Carport være med eller uden redskabsskur?
         <p>
         <h3>Redskabsrum bredde</h3>
         <select id = "myList5" name="shedWidth">
-            <option value = "0">Ønsker ikke skur bruh</option>
+            <option value = "0"> --- cm</option>
             <option value = "210">210 cm</option>
             <option value = "240">240 cm</option>
             <option value = "270">270 cm</option>
@@ -118,7 +119,7 @@ Skal din Carport være med eller uden redskabsskur?
         <p>
         <h3>Redskabsrum længde</h3>
         <select id = "myList6" name="shedLength">
-            <option value = "0">Ønsker ikke skur bruh</option>
+            <option value = "0"> --- cm</option>
             <option value = "150">150 cm</option>
             <option value = "180">180 cm</option>
             <option value = "210">210 cm</option>
@@ -147,7 +148,8 @@ Skal din Carport være med eller uden redskabsskur?
         <h3>Redskabsrum beklædning</h3>
 
         <select id = "myList7" name="shedclothing" required="required">
-            <c:forEach items="${sessionScope.shedclothing}"  var="SC">
+            <option value = "1"> --- </option>
+            <c:forEach items="${sessionScope.shedclothing}" var="SC">
                 <option value = ${SC.shedID}>${SC.name}</option>
 
             </c:forEach>
@@ -155,7 +157,7 @@ Skal din Carport være med eller uden redskabsskur?
         </p>
     </div>
     <p>Indtast email</p>
-    <input type="text" name="email">
+    <input type="text" name="email" required="required">
 
     <p>Indtast note</p>
     <input type="text" name="note">
