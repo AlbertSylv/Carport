@@ -13,6 +13,8 @@ DROP TABLE IF EXISTs `categories`;
 DROP TABLE IF EXISTs `stock`;
 DROP TABLE IF EXISTS `roofcoating`;
 DROP TABLE IF EXISTS `tiltedroofcoating`;
+DROP TABLE IF EXISTS `rejsning`;
+DROP TABLE IF EXISTS `rejsningskur`;
 DROP TABLE IF EXISTS `shedclothing`;
 
 
@@ -29,6 +31,19 @@ CREATE TABLE `tiltedroofcoating` (
   `name` VARCHAR(100) NOT NULL,
   `price` INT NOT NULL,
   PRIMARY KEY (`tiltedroofID`)
+);
+
+CREATE TABLE `rejsning` (
+  `rejsningID` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(100) NOT NULL,
+  `price` INT NOT NULL,
+  PRIMARY KEY (`rejsningID`)
+);
+CREATE TABLE `rejsningSkur` (
+  `rejsningSkurID` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(100) NOT NULL,
+  `price` INT NOT NULL,
+  PRIMARY KEY (`rejsningSkurID`)
 );
 
 CREATE TABLE `shedclothing` (

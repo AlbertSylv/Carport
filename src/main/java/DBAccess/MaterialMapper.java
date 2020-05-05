@@ -1,8 +1,6 @@
 package DBAccess;
 
-import FunctionLayer.LoginSampleException;
-import FunctionLayer.RoofCoating;
-import FunctionLayer.User;
+import FunctionLayer.*;
 import models.Material;
 
 import java.sql.Connection;
@@ -46,20 +44,127 @@ public class MaterialMapper {
         ArrayList<RoofCoating> linjer = new ArrayList<RoofCoating>();
         try {
 
-         Connection con = Connector.connection();
-         String SQL = "select * from carport.roofcoating where roofID>1;";
-         PreparedStatement prepst = con.prepareStatement( SQL );
-         ResultSet result = prepst.executeQuery();
-         while ( result.next() ) {
-             int roofID = result.getInt("roofID");
-             String navn = result.getString("name");
+            Connection con = Connector.connection();
+            String SQL = "select * from carport.roofcoating where roofID>1;";
+            PreparedStatement prepst = con.prepareStatement(SQL);
+            ResultSet result = prepst.executeQuery();
+            while (result.next()) {
+                int roofID = result.getInt("roofID");
+                String navn = result.getString("name");
 
-             RoofCoating RC = new RoofCoating(roofID,navn);
-             linjer.add(RC);
-         }
-    } catch ( ClassNotFoundException | SQLException ex ) {
+                RoofCoating RC = new RoofCoating(roofID, navn);
+                linjer.add(RC);
+            }
+        } catch (ClassNotFoundException | SQLException ex) {
 
+        }
+        return linjer;
     }
+
+    public static ArrayList getTiltedRoofCoatings() throws LoginSampleException {
+        ArrayList<TiltedRoofCoating> linjer = new ArrayList<TiltedRoofCoating>();
+        try {
+
+            Connection con = Connector.connection();
+            String SQL = "select * from carport.tiltedroofcoating where roofID>1;";
+            PreparedStatement prepst = con.prepareStatement(SQL);
+            ResultSet result = prepst.executeQuery();
+            while (result.next()) {
+                int roofID = result.getInt("roofID");
+                String navn = result.getString("name");
+                int pris = result.getInt("pris");
+
+                TiltedRoofCoating TRC = new TiltedRoofCoating(roofID, navn, pris);
+                linjer.add(TRC);
+            }
+        } catch (ClassNotFoundException | SQLException ex) {
+
+        }
+        return linjer;
+    }
+    public static ArrayList getRejsning() throws LoginSampleException {
+        ArrayList<Rejsning> linjer = new ArrayList<Rejsning>();
+        try {
+
+            Connection con = Connector.connection();
+            String SQL = "select * from carport.rejsning where rejsningID>1;";
+            PreparedStatement prepst = con.prepareStatement(SQL);
+            ResultSet result = prepst.executeQuery();
+            while (result.next()) {
+                int roofID = result.getInt("roofID");
+                String navn = result.getString("name");
+                int pris = result.getInt("pris");
+
+                Rejsning Rejs = new Rejsning(roofID, navn, pris);
+                linjer.add(Rejs);
+            }
+        } catch (ClassNotFoundException | SQLException ex) {
+
+        }
+        return linjer;
+    }
+
+    public static ArrayList getRejsningSkur() throws LoginSampleException {
+        ArrayList<RejsningSkur> linjer = new ArrayList<RejsningSkur>();
+        try {
+
+            Connection con = Connector.connection();
+            String SQL = "select * from carport.rejsning where rejsningSkurID>1;";
+            PreparedStatement prepst = con.prepareStatement(SQL);
+            ResultSet result = prepst.executeQuery();
+            while (result.next()) {
+                int roofID = result.getInt("roofID");
+                String navn = result.getString("name");
+                int pris = result.getInt("pris");
+
+                RejsningSkur RejsSkur = new RejsningSkur(roofID, navn, pris);
+                linjer.add(RejsSkur);
+            }
+        } catch (ClassNotFoundException | SQLException ex) {
+
+        }
+        return linjer;
+    }
+    public static ArrayList getFladtTag() throws LoginSampleException {
+        ArrayList<FladtTag> linjer = new ArrayList<FladtTag>();
+        try {
+
+            Connection con = Connector.connection();
+            String SQL = "select * from carport.rejsning where fladtTagID>1;";
+            PreparedStatement prepst = con.prepareStatement(SQL);
+            ResultSet result = prepst.executeQuery();
+            while (result.next()) {
+                int fladtTagID = result.getInt("fladtTagID");
+                String navn = result.getString("name");
+                int pris = result.getInt("pris");
+
+                FladtTag fladtTag = new FladtTag(fladtTagID, navn, pris);
+                linjer.add(fladtTag);
+            }
+        } catch (ClassNotFoundException | SQLException ex) {
+
+        }
+        return linjer;
+    }
+    public static ArrayList getFladtTagSkur() throws LoginSampleException {
+        ArrayList<FladtTagSkur> linjer = new ArrayList<FladtTagSkur>();
+        try {
+
+            Connection con = Connector.connection();
+            String SQL = "select * from carport.rejsning where fladtTagSkurID>1;";
+            PreparedStatement prepst = con.prepareStatement(SQL);
+            ResultSet result = prepst.executeQuery();
+            while (result.next()) {
+                int fladtTagSkurID = result.getInt("fladtTagSkurID");
+                String navn = result.getString("name");
+                int pris = result.getInt("pris");
+
+                FladtTagSkur fladtTagSkur = new FladtTagSkur(fladtTagSkurID, navn, pris);
+                linjer.add(fladtTagSkur);
+            }
+        } catch (ClassNotFoundException | SQLException ex) {
+
+        }
         return linjer;
     }
 }

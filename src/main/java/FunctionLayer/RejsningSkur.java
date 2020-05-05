@@ -1,27 +1,22 @@
 package FunctionLayer;
 
 public class RejsningSkur {
-    int tiltedroofID;
+    int rejsningSkurID;
     String name;
     int price;
 
-    public RejsningSkur(int tiltedroofID, String name, int price) {
-        this.tiltedroofID = tiltedroofID;
+    public RejsningSkur(int rejsningSkurID, String name, int price) {
+        this.rejsningSkurID = rejsningSkurID;
         this.name = name;
         this.price = price;
     }
 
-    public RejsningSkur(int tiltedroofID, String name) {
-        this.tiltedroofID = tiltedroofID;
-        this.name = name;
+    public int getRejsningSkurID() {
+        return rejsningSkurID;
     }
 
-    public int getTiltedroofID() {
-        return tiltedroofID;
-    }
-
-    public void setTiltedroofID(int tiltedroofID) {
-        this.tiltedroofID = tiltedroofID;
+    public void setRejsningSkurID(int rejsningSkurID) {
+        this.rejsningSkurID = rejsningSkurID;
     }
 
     public String getName() {

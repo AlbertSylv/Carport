@@ -12,18 +12,19 @@ import java.util.ArrayList;
  */
 public class LogicFacade {
 
-    public static User login( String email, String password ) throws LoginSampleException {
-        return UserMapper.login( email, password );
-    } 
+    public static User login(String email, String password) throws LoginSampleException {
+        return UserMapper.login(email, password);
+    }
 
-    public static User createUser( String email, String password ) throws LoginSampleException {
+    public static User createUser(String email, String password) throws LoginSampleException {
         User user = new User(email, password, "customer");
-        UserMapper.createUser( user );
+        UserMapper.createUser(user);
         return user;
     }
+
     public static void createRequest(String roof, String shedClothing, int width, int length, int shedWidth, int shedLength, int angle, String note, String email) throws LoginSampleException {
 
-             RequestMapper.createRequest(roof,shedClothing,width,length,shedWidth,shedLength,angle,note,email);
+        RequestMapper.createRequest(roof, shedClothing, width, length, shedWidth, shedLength, angle, note, email);
 
     }
 
@@ -36,4 +37,45 @@ public class LogicFacade {
         return linjer;
     }
 
+    public static ArrayList<TiltedRoofCoating> getTiltedRoofCoating() throws LoginSampleException {
+        ArrayList<TiltedRoofCoating> linjer = new ArrayList<TiltedRoofCoating>();
+
+        linjer = MaterialMapper.getTiltedRoofCoatings();
+
+        return linjer;
+
+    }
+
+    public static ArrayList<Rejsning> getRejsning() throws LoginSampleException {
+        ArrayList<Rejsning> linjer = new ArrayList<Rejsning>();
+
+        linjer = MaterialMapper.getRejsning();
+
+        return linjer;
+
+    }
+    public static ArrayList<RejsningSkur> getRejsningSkur() throws LoginSampleException {
+        ArrayList<RejsningSkur> linjer = new ArrayList<RejsningSkur>();
+
+        linjer = MaterialMapper.getRejsningSkur();
+
+        return linjer;
+
+    }
+    public static ArrayList<FladtTag> getFladtTag() throws LoginSampleException {
+        ArrayList<FladtTag> linjer = new ArrayList<FladtTag>();
+
+        linjer = MaterialMapper.getFladtTag();
+
+        return linjer;
+
+    }
+    public static ArrayList<FladtTagSkur> getFladtTagSkur() throws LoginSampleException {
+        ArrayList<FladtTagSkur> linjer = new ArrayList<FladtTagSkur>();
+
+        linjer = MaterialMapper.getFladtTagSkur();
+
+        return linjer;
+
+    }
 }

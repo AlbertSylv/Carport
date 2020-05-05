@@ -1,24 +1,22 @@
 package FunctionLayer;
 
-public class Rejsning {
-    int rejsningID;
+public class FladtTagSkur {
+    int FladtTagSkurID;
     String name;
     int pris;
 
-    public Rejsning(int rejsningID, String name, int pris) {
-        this.rejsningID = rejsningID;
+    public FladtTagSkur(int fladtTagSkurID, String name, int pris) {
+        FladtTagSkurID = fladtTagSkurID;
         this.name = name;
         this.pris = pris;
-
-
     }
 
-    public int getRejsningID() {
-        return rejsningID;
+    public int getFladtTagSkurID() {
+        return FladtTagSkurID;
     }
 
-    public void setRejsningID(int rejsningID) {
-        this.rejsningID = rejsningID;
+    public void setFladtTagSkurID(int fladtTagSkurID) {
+        FladtTagSkurID = fladtTagSkurID;
     }
 
     public String getName() {

@@ -15,6 +15,7 @@
 </head>
 <body>
 
+
 <button type="submit"> <a href="FrontController?taget=fladtTagMedSkur">Fladt med skur</a></button>
 <button type="submit"> <a href="FrontController?taget=fladtTagUdenSkur">Fladt uden skur</a></button>
 <button type="submit"> <a href="FrontController?taget=Rejsning">Rejsning</a></button>
