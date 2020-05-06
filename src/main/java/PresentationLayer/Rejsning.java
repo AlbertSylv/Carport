@@ -1,9 +1,6 @@
 package PresentationLayer;
 
-import FunctionLayer.LogicFacade;
-import FunctionLayer.LoginSampleException;
-import FunctionLayer.ShedClothing;
-import FunctionLayer.TiltedRoofCoating;
+import FunctionLayer.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -15,12 +12,12 @@ public class Rejsning extends Command {
     @Override
     String execute(HttpServletRequest request, HttpServletResponse response) throws LoginSampleException {
         List<TiltedRoofCoating> tiltedroofcoatings = new ArrayList<TiltedRoofCoating>();
-        tiltedroofcoatings= LogicFacade.getTiltedRoofCoating();
+        tiltedroofcoatings= MaterialFacade.getTiltedRoofCoating();
         HttpSession session = request.getSession();
         session.setAttribute("tiltedroofcoatings", tiltedroofcoatings);
 
         List<ShedClothing> shedclothing = new ArrayList<ShedClothing>();
-        shedclothing= LogicFacade.getShedclothing();
+        shedclothing= MaterialFacade.getShedclothing();
         session.setAttribute("shedclothing",shedclothing);
 
         return "Rejsning";

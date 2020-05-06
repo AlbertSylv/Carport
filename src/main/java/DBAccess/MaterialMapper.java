@@ -61,8 +61,8 @@ public class MaterialMapper {
     }
 
     public static ArrayList getTiltedRoofCoatings() throws LoginSampleException {
-        ArrayList<TiltedRoofCoating> linjer = new ArrayList<TiltedRoofCoating>();
-        try {
+
+        ArrayList<TiltedRoofCoating> linjer = new ArrayList<TiltedRoofCoating>();try {
 
             Connection con = Connector.connection();
             String SQL = "select * from carport.tiltedroofcoating where tiltedroofID>1;";

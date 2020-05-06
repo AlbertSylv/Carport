@@ -3,6 +3,7 @@ package PresentationLayer;
 import FunctionLayer.LogicFacade;
 import FunctionLayer.LoginSampleException;
 import FunctionLayer.Request;
+import FunctionLayer.RequestFacade;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -23,10 +24,10 @@ public class CreateRequest extends Command {
         String note = request.getParameter("note");
         String email = request.getParameter("email");
 
-        LogicFacade.createRequest(roofID, tiltedroofID, shedID, width, length, shedWidth, shedLength, angle, note, email);
+        RequestFacade.createRequest(roofID, tiltedroofID, shedID, width, length, shedWidth, shedLength, angle, note, email);
 
         Request req = null;
-        req = LogicFacade.getRequest(email);
+        req = RequestFacade.getRequest(email);
 
         HttpSession session = request.getSession();
         session.setAttribute("req", req);
