@@ -14,7 +14,6 @@
     <button type="submit"> <a href="FrontController?taget=employeepage">Employeepage</a></button>
 
 
-
         <p>Indtast email</p>
         <input type="text" name="email">
 
