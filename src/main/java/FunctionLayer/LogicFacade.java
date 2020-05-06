@@ -6,10 +6,7 @@ import DBAccess.UserMapper;
 
 import java.util.ArrayList;
 
-/**
- * The purpose of LogicFacade is to...
- * @author kasper
- */
+
 public class LogicFacade {
 
     public static User login(String email, String password) throws LoginSampleException {
@@ -22,9 +19,15 @@ public class LogicFacade {
         return user;
     }
 
-    public static void createRequest(String roof, String shedClothing, int width, int length, int shedWidth, int shedLength, int angle, String note, String email) throws LoginSampleException {
+    public static void createRequest(int roofID,int tiltedroofID, int shedID, int width, int length, int shedWidth, int shedLength, int angle, String note, String email) throws LoginSampleException {
 
-        RequestMapper.createRequest(roof, shedClothing, width, length, shedWidth, shedLength, angle, note, email);
+        RequestMapper.createRequest(roofID, tiltedroofID, shedID, width, length, shedWidth, shedLength, angle, note, email);
+
+    }
+
+    public static Request getRequest(String email) throws LoginSampleException {
+
+       return RequestMapper.getRequest(email);
 
     }
 
@@ -54,4 +57,9 @@ public class LogicFacade {
     }
 
 
+    public static ArrayList<Request> getRequests() {
+        ArrayList<Request> bestillinger=new ArrayList<Request>();
+        bestillinger=RequestMapper.getRequests();
+        return bestillinger;
+    }
 }

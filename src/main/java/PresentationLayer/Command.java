@@ -18,7 +18,12 @@ abstract class Command {
         commands.put( "customerpage", new Customerpage() );
         commands.put( "fladtTag", new fladtTag());
         commands.put( "Rejsning", new Rejsning());
-
+        commands.put("confirmation", new Confirmation());
+        commands.put("deleteRequest", new DeleteRequest());
+        commands.put("bestilt", new Bestilt());
+        commands.put("bestillinger", new Bestillinger());
+        commands.put("adminDeleteRequest", new AdminDeleteRequest());
+        commands.put("stykliste", new Stykliste());
 
     }
 
@@ -30,7 +35,7 @@ abstract class Command {
         return commands.getOrDefault(TagetName, new UnknownCommand() );   // unknowncommand er default.
     }
 
-    abstract String execute( HttpServletRequest request, HttpServletResponse response ) 
+    abstract String execute( HttpServletRequest request, HttpServletResponse response )
             throws LoginSampleException;
 
 }

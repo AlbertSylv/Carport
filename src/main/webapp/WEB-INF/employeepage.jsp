@@ -19,5 +19,13 @@
 
 
         You are now logged in as a EMPLOYEE of our wonderful site.
+
+        <form action="FrontController" method="get">
+            <input type="hidden" name="taget" value="bestillinger">
+            <div class="text-center">
+                <label>
+                    <button class="btn btn-primary">Aktive bestillinger</button>
+                </label>
+            </div> </form>
     </body>
 </html>

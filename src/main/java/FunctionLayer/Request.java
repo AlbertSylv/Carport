@@ -13,6 +13,28 @@ public class Request {
         int angle;
         String note;
         String email;
+        String SCname;
+        int SCprice;
+        String RCname;
+        int RCprice;
+        String TRCname;
+        int TRCprice;
+
+
+
+    public Request(int id, int width, int length, int shedWidth, int shedLength, int angle, String note, String email, String SCname, String RCname, String TRCname) {
+        this.id = id;
+        this.width = width;
+        this.length = length;
+        this.shedWidth = shedWidth;
+        this.shedLength = shedLength;
+        this.angle = angle;
+        this.note = note;
+        this.email = email;
+        this.SCname = SCname;
+        this.RCname = RCname;
+        this.TRCname = TRCname;
+    }
 
     public Request(int roofid, int tiltedroofid, int shedid, int width, int length, int shedWidth, int shedLength, int angle, String note, String email) {
         this.roofid = roofid;
@@ -28,9 +50,58 @@ public class Request {
 
     }
 
+    public String getSCname() {
+        return SCname;
+    }
+
+    public void setSCname(String SCname) {
+        this.SCname = SCname;
+    }
+
+    public int getSCprice() {
+        return SCprice;
+    }
+
+    public void setSCprice(int SCprice) {
+        this.SCprice = SCprice;
+    }
+
+    public String getRCname() {
+        return RCname;
+    }
+
+    public void setRCname(String RCname) {
+        this.RCname = RCname;
+    }
+
+    public int getRCprice() {
+        return RCprice;
+    }
+
+    public void setRCprice(int RCprice) {
+        this.RCprice = RCprice;
+    }
+
+    public String getTRCname() {
+        return TRCname;
+    }
+
+    public void setTRCname(String TRCname) {
+        this.TRCname = TRCname;
+    }
+
+    public int getTRCprice() {
+        return TRCprice;
+    }
+
+    public void setTRCprice(int TRCprice) {
+        this.TRCprice = TRCprice;
+    }
+
     public int getTiltedroofid() {
         return tiltedroofid;
     }
+
 
     public void setTiltedroofid(int tiltedroofid) {
         this.tiltedroofid = tiltedroofid;
