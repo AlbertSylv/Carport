@@ -4,6 +4,7 @@ import DBAccess.RequestMapper;
 import FunctionLayer.LogicFacade;
 import FunctionLayer.LoginSampleException;
 import FunctionLayer.Request;
+import FunctionLayer.RequestFacade;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -17,7 +18,7 @@ public class AdminDeleteRequest extends Command {
         int id = Integer.parseInt(request.getParameter("ID"));
             RequestMapper.adminDeleteRequest(id);
 
-        ArrayList<Request> bestillinger= LogicFacade.getRequests();
+        ArrayList<Request> bestillinger= RequestFacade.getRequests();
         HttpSession session = request.getSession();
         session.setAttribute("bestillinger", bestillinger);
 

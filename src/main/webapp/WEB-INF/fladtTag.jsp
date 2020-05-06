@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page import="DBAccess.MaterialMapper"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -82,12 +83,14 @@ Skal din Carport være med eller uden redskabsskur?
     <input type="hidden" name="angle" value="0">
     <p>
     <h3>Tag</h3>
-    <select id = "myList3" name="roof" required="required">
+    <select id = "select">
+        <option value="default">default</option>
         <c:forEach items="${sessionScope.roofcoatings}"  var="RC">
             <option value = ${RC.roofID}>${RC.name}</option>
 
         </c:forEach>
     </select>
+
     </p>
 
     <div id="myDIV2">
