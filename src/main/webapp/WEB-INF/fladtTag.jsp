@@ -1,17 +1,22 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page import="DBAccess.MaterialMapper"%>
-<!DOCTYPE html>
-<html>
-<head>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@include file="../includes/navbar.inc"%>
+
+
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Customer home page</title>
     <link rel="stylesheet" type="text/css" href="../includes/style.css" />
 </head>
-<body>
 
+<p class="text-center">Har du valgt forkert type carport? <br> Så kan du bare vælge igen her</p>
+
+<p class="text-center">
 <button type="submit"><a href="FrontController?taget=fladtTag">Carport med fladt tag</a></button>
 <button type="submit"><a href="FrontController?taget=Rejsning">Carport med rejsning</a></button>
+</p>
 <hr>
+
+
 <script>
     function myFunction() {
 
@@ -25,10 +30,12 @@
         }
     }
 </script>
-Skal din Carport være med eller uden redskabsskur?
-<button onclick="myFunction()">Skur</button>
+<h4 class="text-center">
+    Her kan du vælge redskabsskur til eller fra <br> <br>
+    <button onclick="myFunction()">Til/Fra</button>
+</h4>
 
-<form action="FrontController" method="post" id="bestilling">
+<body class="text-center" action="FrontController" method="post" id="bestilling">
     <input type="hidden" name="taget" value="createRequest">
     <h3>Carport bredde</h3>
     <select id = "myList1" name="width">
@@ -165,9 +172,10 @@ Skal din Carport være med eller uden redskabsskur?
     <p>Indtast note</p>
     <input type="text" name="note">
 
-
+    <br> <br>
     <button type="submit">Bestil carport med valgte mål</button>
-
+    <br> <br>
+</body>
 </form>
 
 

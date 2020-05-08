@@ -1,19 +1,16 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%--
-  Created by IntelliJ IDEA.
-  User: danie
-  Date: 04-05-2020
-  Time: 19:48
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-<head>
+<%@include file="../includes/navbar.inc"%>
 
-</head>
-<body>
+
+
+<p class="text-center">Har du valgt forkert type carport? <br> Så kan du bare vælge igen her</p>
+
+<p class="text-center">
 <button type="submit"><a href="FrontController?taget=fladtTag">Carport med fladt tag</a></button>
+
 <button type="submit"><a href="FrontController?taget=Rejsning">Carport med rejsning</a></button>
+</p>
 <hr>
 <script>
     function myFunction() {
@@ -28,16 +25,17 @@
         }
     }
 </script>
-Skal din Carport være med eller uden redskabsskur?
-<button onclick="myFunction()">Skur</button>
+
+<h4 class="text-center">
+Her kan du vælge redskabsskur til eller fra <br><br>
+<button onclick="myFunction()">Til/Fra</button>
+</h4>
 
 
-
-<form action="FrontController" method="post" id="bestilling">
+<form class="text-center" action="FrontController" method="post" id="bestilling">
     <input type="hidden" name="taget" value="createRequest">
     <h3>Carport bredde</h3>
     <select id="myList1" name="width">
-
         <option value="240">240 cm</option>
         <option value="270">270 cm</option>
         <option value="300">300 cm</option>
@@ -189,9 +187,9 @@ Skal din Carport være med eller uden redskabsskur?
     <p>Indtast note</p>
     <input type="text" name="note">
 
-
+    <br> <br>
     <button type="submit">Bestil carport med valgte mål</button>
-
+    <br> <br>
 </form>
 
 
