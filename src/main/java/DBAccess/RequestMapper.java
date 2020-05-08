@@ -35,6 +35,47 @@ public class RequestMapper {
             throw new LoginSampleException(ex.getMessage());
         }
     }
+    public static Request getRequest4Styklist(int id) throws LoginSampleException {
+        Request request = null;
+        try {
+
+            Connection con = Connector.connection();
+            String SQL = "SELECT requests.*, roofcoating.name as RCname,roofcoating.price as RCprice, " +
+                    "shedclothing.name as SCname, shedclothing.price as SCprice, tiltedroofcoating.name as TRCname," +
+                    " tiltedroofcoating.price as TRCprice FROM carport.requests " +
+                    "join roofcoating on requests.roofid=roofcoating.roofid " +
+                    "join shedclothing on requests.shedID=shedclothing.shedID " +
+                    "join tiltedroofcoating on requests.tiltedroofID=tiltedroofcoating.tiltedroofID " +
+                    "where requests.id=?  ORDER BY id DESC LIMIT 1;";
+            PreparedStatement prepst = con.prepareStatement(SQL);
+            prepst.setInt(1, id);
+            ResultSet result = prepst.executeQuery();
+            while (result.next()) {
+                String email = result.getString("email");
+                String SCname = result.getString("SCname");
+                int SCprice = result.getInt("SCprice");
+                String RCname = result.getString("rCname");
+                int RCprice = result.getInt("RCprice");
+                String TRCname = result.getString("TRCname");
+                int TRCprice = result.getInt("TRCprice");
+                int width = result.getInt("width");
+                int length = result.getInt("length");
+                int shedWidth = result.getInt("shedWidth");
+                int shedLength = result.getInt("shedLength");
+                int angle = result.getInt("angle");
+                String note = result.getString("note");
+
+
+                request = new Request(id, width, length, shedWidth, shedLength, angle, note, email, SCname, RCname,TRCname, SCprice, RCprice, TRCprice);
+
+
+            }
+        } catch (ClassNotFoundException | SQLException ex) {
+
+        }
+        return request;
+    }
+
     public static Request getRequest(String email) throws LoginSampleException {
         Request request = null;
         try {
@@ -66,7 +107,7 @@ public class RequestMapper {
                 String note = result.getString("note");
 
 
-                 request = new Request(id, width, length, shedWidth, shedLength, angle, note, email, SCname, RCname,TRCname);
+                 request = new Request(id, width, length, shedWidth, shedLength, angle, note, email, SCname, RCname,TRCname, SCprice, RCprice, TRCprice);
 
 
             }
@@ -75,7 +116,7 @@ public class RequestMapper {
         }
         return request;
     }
-    public static void deleteRequest(String email) throws LoginSampleException, SQLException, ClassNotFoundException {
+    public static void deleteRequest(String email) {
 
         try {
 
@@ -125,7 +166,7 @@ public class RequestMapper {
                 String email = result.getString("email");
 
 
-                Request request = new Request(id, width, length, shedWidth, shedLength, angle, note, email, SCname, RCname,TRCname);
+                Request request = new Request(id, width, length, shedWidth, shedLength, angle, note, email, SCname, RCname,TRCname, SCprice, RCprice, TRCprice);
 
                 bestillinger.add(request);
 

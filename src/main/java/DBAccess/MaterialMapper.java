@@ -80,4 +80,5 @@ public class MaterialMapper {
         }
         return linjer;
     }
+
 }

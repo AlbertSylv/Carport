@@ -22,7 +22,7 @@ public class Request {
 
 
 
-    public Request(int id, int width, int length, int shedWidth, int shedLength, int angle, String note, String email, String SCname, String RCname, String TRCname) {
+    public Request(int id, int width, int length, int shedWidth, int shedLength, int angle, String note, String email, String SCname, String RCname, String TRCname, int SCprice, int RCprice, int TRCprice) {
         this.id = id;
         this.width = width;
         this.length = length;
@@ -34,20 +34,9 @@ public class Request {
         this.SCname = SCname;
         this.RCname = RCname;
         this.TRCname = TRCname;
-    }
-
-    public Request(int roofid, int tiltedroofid, int shedid, int width, int length, int shedWidth, int shedLength, int angle, String note, String email) {
-        this.roofid = roofid;
-        this.tiltedroofid = tiltedroofid;
-        this.shedid = shedid;
-        this.width = width;
-        this.length = length;
-        this.shedWidth = shedWidth;
-        this.shedLength = shedLength;
-        this.angle = angle;
-        this.note = note;
-        this.email = email;
-
+        this.SCprice = SCprice;
+        this.RCprice = RCprice;
+        this.TRCprice = TRCprice;
     }
 
     public String getSCname() {
