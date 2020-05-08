@@ -37,7 +37,7 @@ public class Connector {
             //Localhost
             URL = "jdbc:mysql://127.0.0.1:3306/carport?serverTimezone=CET&useSSL=false";
             USERNAME = "root";
-            PASSWORD = "1234";
+            PASSWORD = "1234fem";
         }
     }
 }

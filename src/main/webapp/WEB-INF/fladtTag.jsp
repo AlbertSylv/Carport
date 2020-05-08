@@ -2,11 +2,12 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@include file="../includes/navbar.inc"%>
 
-
+<head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Customer home page</title>
     <link rel="stylesheet" type="text/css" href="../includes/style.css" />
 </head>
+<body>
 
 <p class="text-center">Har du valgt forkert type carport? <br> Så kan du bare vælge igen her</p>
 
@@ -35,7 +36,7 @@
     <button onclick="myFunction()">Til/Fra</button>
 </h4>
 
-<body class="text-center" action="FrontController" method="post" id="bestilling">
+<form class="text-center" action="FrontController" method="post" id="bestilling">
     <input type="hidden" name="taget" value="createRequest">
     <h3>Carport bredde</h3>
     <select id = "myList1" name="width">
@@ -90,8 +91,7 @@
     <input type="hidden" name="angle" value="0">
     <p>
     <h3>Tag</h3>
-    <select id = "select">
-        <option value="default">default</option>
+    <select id = "select" name="roof">
         <c:forEach items="${sessionScope.roofcoatings}"  var="RC">
             <option value = ${RC.roofID}>${RC.name}</option>
 
@@ -175,8 +175,9 @@
     <br> <br>
     <button type="submit">Bestil carport med valgte mål</button>
     <br> <br>
-</body>
 </form>
+</body>
+</html>
 
 
 
