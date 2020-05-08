@@ -37,6 +37,7 @@
 
 
                 <input type="hidden" name="taget" value="stykliste">
+                <input type="hidden" name="id" value="${request.id}">
 
 
                 <div class="text-center">

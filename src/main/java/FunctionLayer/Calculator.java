@@ -8,10 +8,12 @@ import java.util.ArrayList;
 public class Calculator {
 
     public static Wood getPole(int id) throws LoginSampleException {
-        Wood pole = null;
+
         Request request = null;
 
-        //MaterialMapper.getWood();
+        Wood wood = MaterialMapper.getWood("Pæl");
+        int pricePrM = wood.getPricePrM();
+        String name = wood.getWoodName();
 
 
         request = RequestMapper.getRequest4Styklist(id);
@@ -62,10 +64,10 @@ public class Calculator {
         //Hver stolpe er 3 meter, fordi 100 cm af stolpen skal graves i jorden bagerst og 90 cm forrest, så taget får hældning(hvis det altså er en carport med fladt tag.
         metersOfPole = numberOfPoles*3;
 
+        //Sammenlagt pris af pæle
+        int price = (int) (metersOfPole * pricePrM);
 
-
-
-
+        Wood pole = new Wood(name,price, (int) metersOfPole);
 
         return pole;
     }
