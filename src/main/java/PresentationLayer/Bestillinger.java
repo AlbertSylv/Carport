@@ -1,6 +1,5 @@
 package PresentationLayer;
 
-import FunctionLayer.LogicFacade;
 import FunctionLayer.LoginSampleException;
 import FunctionLayer.Request;
 import FunctionLayer.RequestFacade;

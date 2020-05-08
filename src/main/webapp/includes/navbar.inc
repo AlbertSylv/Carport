@@ -319,6 +319,19 @@
                                 <input type="text" class="form-control" name="email" placeholder="Email" required="required">
                             </div>
                             <div class="form-group">
+                            <input type="text" class="form-control" name="name" placeholder="Name" required="required">
+                            </div>
+                            <div class="form-group">
+                            <input type="text" class="form-control" name="address" placeholder="Address" required="required">
+                            </div>
+                            <div class="form-group">
+                            <input type="text" class="form-control" name="zipCity" placeholder="zipCity" required="required">
+                            </div>
+                            <div class="form-group">
+                            <input type="text" class="form-control" name="phone" placeholder="Phone" required="required">
+                            </div>
+
+                            <div class="form-group">
                                 <input type="password" class="form-control" name="password1" placeholder="Password" required="required">
                             </div>
                             <div class="form-group">

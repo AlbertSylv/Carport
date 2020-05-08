@@ -18,25 +18,33 @@ public class UserMapper {
     public static void createUser( User user ) throws LoginSampleException {
         try {
             Connection con = Connector.connection();
-            String SQL = "INSERT INTO Users (email, password, role) VALUES (?, ?, ?)";
+            String SQL = "INSERT INTO accounts (email, password, role, name, address,zipCity,phone  ) VALUES (?,?,?,?,?,?,?)";
             PreparedStatement ps = con.prepareStatement( SQL, Statement.RETURN_GENERATED_KEYS );
             ps.setString( 1, user.getEmail() );
             ps.setString( 2, user.getPassword() );
             ps.setString( 3, user.getRole() );
+            ps.setString( 4, user.getName() );
+            ps.setString( 5, user.getAddress() );
+            ps.setString( 6, user.getZipCity());
+            ps.setString( 7, user.getPhone());
+
             ps.executeUpdate();
             ResultSet ids = ps.getGeneratedKeys();
+
             ids.next();
-            int id = ids.getInt( 1 );
-            user.setId( id );
-        } catch ( SQLException | ClassNotFoundException ex ) {
-            throw new LoginSampleException( ex.getMessage() );
+                int id = ids.getInt(1);
+                user.setId(id);
+
+        } catch ( SQLException | ClassNotFoundException ex ){
+                throw new LoginSampleException(ex.getMessage());
+
         }
     }
 
-    public static User login( String email, String password ) throws LoginSampleException {
+    public static User login( String email, String password,String name,String address, String zipCity, String phone ) throws LoginSampleException {
         try {
             Connection con = Connector.connection();
-            String SQL = "SELECT id, role FROM Users "
+            String SQL = "SELECT role FROM accounts "
                     + "WHERE email=? AND password=?";
             PreparedStatement ps = con.prepareStatement( SQL );
             ps.setString( 1, email );
@@ -44,9 +52,9 @@ public class UserMapper {
             ResultSet rs = ps.executeQuery();
             if ( rs.next() ) {
                 String role = rs.getString( "role" );
-                int id = rs.getInt( "id" );
-                User user = new User( email, password, role );
-                user.setId( id );
+               // int id = rs.getInt( "id" );
+                User user = new User( email, password, role,name, address, zipCity, phone);
+                //user.setId( id );
                 return user;
             } else {
                 throw new LoginSampleException( "Could not validate user" );
