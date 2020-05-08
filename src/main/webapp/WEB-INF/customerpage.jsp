@@ -1,22 +1,13 @@
 
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@include file="../includes/navbar.inc"%>
 
-<!DOCTYPE html>
-<html>
-<style>
-    img {
-        margin-left: auto;
-        margin-right: auto;
-
-
-</style>
-    <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Customer home page</title>
         <link rel="stylesheet" type="text/css" href="../includes/style.css" />
     </head>
-    <hr>
+
 <p style="text-align:center;"> Carport med rejsning</p>
     <p style="text-align:center;">
         <a href="FrontController?taget=Rejsning">
