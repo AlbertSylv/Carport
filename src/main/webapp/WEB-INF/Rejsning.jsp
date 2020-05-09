@@ -3,9 +3,6 @@
 <%@include file="../includes/navbar.inc"%>
 
 
-
-<p class="text-center">Har du valgt forkert type carport? <br> Så kan du bare vælge igen her</p>
-
 <p class="text-center">
 <button type="submit"><a href="FrontController?taget=fladtTag">Carport med fladt tag</a></button>
 
@@ -31,7 +28,7 @@ Her kan du vælge redskabsskur til eller fra <br><br>
 <button onclick="myFunction()">Til/Fra</button>
 </h4>
 
-
+<p style="text-align:center;">Bemærk at bredde og længde er målt fra stolpe til stolpe. Taget vil hænge 30 cm ud over de valgte mål på hver side.</p>
 <form class="text-center" action="FrontController" method="post" id="bestilling">
     <input type="hidden" name="taget" value="createRequest">
     <h3>Carport bredde</h3>

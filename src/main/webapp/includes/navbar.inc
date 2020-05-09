@@ -295,12 +295,12 @@
                         <form name="login" action="FrontController" method="post">
                             <input type="hidden" name="taget" value="login">
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Username" required="required" name="email">
+                                <input type="text" class="form-control" placeholder="E-mail" required="required" name="email">
                             </div>
                             <div class="form-group">
                                 <input type="password" class="form-control" placeholder="Password" required="required" name="password">
                             </div>
-                            <input type="submit" class="btn btn-primary btn-block" value="Login">
+                            <input type="submit" class="btn btn-primary btn-block" value="login">
                             <div class="form-footer">
                                 <a href="#">Forgot Your password?</a>
                             </div>

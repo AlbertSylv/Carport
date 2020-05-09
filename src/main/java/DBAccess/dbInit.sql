@@ -43,7 +43,7 @@ CREATE TABLE `shedclothing` (
 CREATE TABLE `accounts` (
 	`email` VARCHAR(100) NOT NULL,
 	`password` VARCHAR(100) NOT NULL,
-	`role` ENUM('ADMIN', 'EMPLOYEE', 'CUSTOMER') NOT NULL DEFAULT 'CUSTOMER',
+	`role` ENUM('admin', 'employee', 'customer') NOT NULL DEFAULT 'customer',
 	`name` VARCHAR(100) NOT NULL,
 	`address` VARCHAR(100) NOT NULL,
 	`zipCity` VARCHAR(200) NOT NULL,
