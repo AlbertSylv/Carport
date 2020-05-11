@@ -80,5 +80,28 @@ public class MaterialMapper {
         }
         return linjer;
     }
+    public static Wood getWood(String Type) throws LoginSampleException {
+        Wood wood = null;
+        try {
 
+            Connection con = Connector.connection();
+            String SQL = "SELECT * FROM carport.wood where wood.type=?;";
+
+            PreparedStatement prepst = con.prepareStatement(SQL);
+            prepst.setString(1, Type);
+            ResultSet result = prepst.executeQuery();
+            while (result.next()) {
+                String name = result.getString("name");
+                int pricePrM = result.getInt("pricePrM");
+
+
+                wood = new Wood(name, pricePrM);
+
+
+            }
+        } catch (ClassNotFoundException | SQLException ex) {
+
+        }
+        return wood;
+    }
 }

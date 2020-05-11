@@ -19,6 +19,13 @@ public class Wood {
         this.pricePrM = pricePrM;
     }
 
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
 
     public String getWoodName() {
         return woodName;
