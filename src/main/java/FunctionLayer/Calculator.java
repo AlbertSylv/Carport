@@ -30,9 +30,9 @@ public class Calculator {
         //Længden er i cm, så vi gør den til meter. Der skal være to meter mellem hver stolpe og der skal være en stolpe på hver side så det er divideret med 2 gange med 2, hvilket betyder vi ikke behøver at skrive hverken eller.
         int numberOfPoles = (int) Math.ceil((lengthAsDouble/100) + 2);
         if(numberOfPoles % 2 != 0){
-            numberOfPoles +=1;
+                numberOfPoles +=1;
         }
-        System.out.println(numberOfPoles);
+
 
 
 
@@ -86,10 +86,18 @@ public class Calculator {
         //If der bestemmer om tag er med eller uden rejsning.
         if(angle==0){
             //Rem i hver side placeres på stolper, de raver 15 cm ud over stolperne i hver side = 30. Oven på remmene placeres spær 55 cm fra hinanden. +1 fordi det er mellemrummene man får når man dividerer med 0.55 og ikke antal spær.
-             spærLength = (int) Math.ceil(((lengthAsDouble/100+0.3)*2)+(((lengthAsDouble/100)/0.55 + 1)*(widthAsDouble/100)));
+             spærLength = (int) Math.ceil(((lengthAsDouble/100+0.3)*2)+(((lengthAsDouble/100)/0.55 + 1)*(widthAsDouble/100+0.3)));
         }else{
             //Rem i hver side placeres på stolper, de raver 15 cm ud over stolperne i hver side = 30. Oven på remmene placeres spær 89 cm fra hinanden. +1 fordi det er mellemrummene man får når man dividerer med 0.55 og ikke antal spær.
-             spærLength = (int) Math.ceil(((lengthAsDouble/100+0.3)*2)+(((lengthAsDouble/100)/0.89 + 1)*(widthAsDouble/100)));
+             spærLength = (int) Math.ceil(((lengthAsDouble/100+0.3)*2)+(((lengthAsDouble/100)/0.89 + 1)*(widthAsDouble/100+0.3)));
+
+            double hypotenusen = (width/2)/Math.cos(Math.toRadians(angle))/100;
+
+            double trekant = hypotenusen*2;
+
+            int antaltrekanter = (int) (Math.ceil(lengthAsDouble/100)/0.89 + 1);
+
+             spærLength += trekant * antaltrekanter;
         }
 
 
@@ -143,7 +151,7 @@ public class Calculator {
 
         //Beregning af carportens gavl hvis carporten er med rejsning
         if(angle != 0){
-            skurKvadratmeter = skurKvadratmeter + (Width * ( (Width/2) * Math.tan(Math.toRadians(angle)) ) * 2);
+            skurKvadratmeter = Math.ceil(skurKvadratmeter + ((Width/2) * ( (Width/2) * Math.tan(Math.toRadians(angle)) ) * 2 * 2));
         }
 
         //Overfladen omregnes til kvadratmeter. Math.ceil fordi hellere for meget beklædning end for lidt.

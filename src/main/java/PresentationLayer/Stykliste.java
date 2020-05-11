@@ -27,11 +27,25 @@ public class Stykliste extends Command {
         session.setAttribute("regel", regel);
         session.setAttribute("clothing", clothing);
 
+        session.setAttribute("req", req);
+
+        String sum = "7 milliarder boi";
+
+        session.setAttribute("sum",sum);
+
         //Tag type bestemmer
         if(req.getAngle()==0) {
             session.setAttribute("tag", RC);
         } else {
             session.setAttribute("tag", TRC);
+        }
+
+        if(req.getShedLength()!=0){
+            session.setAttribute("håndtagN","Navn: Håndtag");
+            session.setAttribute("håndtagP","Pris: 23 kr");
+            session.setAttribute("håndtagA","Antal: 1");
+
+
         }
 
 

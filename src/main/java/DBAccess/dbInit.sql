@@ -88,7 +88,8 @@ CREATE TABLE `requests` (
 );
 
 INSERT INTO `accounts` VALUES
-('jegerenged@gmail.com','jegerenged','customer','otto','Lars Tyndskids Mark 69','42069', '12345678');
+('jegerenged@gmail.com','jegerenged','customer','otto','Lars Tyndskids Mark 69','42069', '12345678'),
+('arbejd@mail.com','1234','employee','Karl','Lars Tykskids Mark 69','3000', '22345678');
 
 
 INSERT INTO `shedclothing` VALUES

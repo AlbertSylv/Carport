@@ -11,6 +11,20 @@
     <title>Stykliste</title>
 </head>
 <body>
+<script>
+    function myFunction() {
+
+
+        var x = (${sessionScope.req.shedLength});
+        var y = document.getElementById("myDIV2")
+
+        if (x == 0) {
+            y.style.display = "none";
+        } else {
+            y.style.display = "block";
+        }
+    }
+</script>
 <h1><strong>Stykliste</strong></h1>
 <hr>
 <h2>Pæl </h2>
@@ -38,6 +52,16 @@
 <p><Strong>Meter^2: </Strong>${sessionScope.clothing.meter2}</p>
 <p><Strong>Pris: </Strong>${sessionScope.clothing.price} kr.</p>
 <hr>
+<h2>Metaller</h2>
+<p>Navn: 4,5 x 60 mm. Skruer. </p>
+<p>Antal: Én pakke af 200 </p>
+<p>Pris: 75 kr. </p>
+<hr>
+<p>${sessionScope.håndtagN}</p>
+<p>${sessionScope.håndtagA}</p>
+<p>${sessionScope.håndtagP}</p>
+<hr>
+<h2><strong>Sammenlagt pris: </strong> ${sessionScope.sum}</h2>
 
 
 </body>
