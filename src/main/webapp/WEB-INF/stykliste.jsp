@@ -11,20 +11,7 @@
     <title>Stykliste</title>
 </head>
 <body>
-<script>
-    function myFunction() {
 
-
-        var x = (${sessionScope.req.shedLength});
-        var y = document.getElementById("myDIV2")
-
-        if (x == 0) {
-            y.style.display = "none";
-        } else {
-            y.style.display = "block";
-        }
-    }
-</script>
 <h1><strong>Stykliste</strong></h1>
 <hr>
 <h2>Pæl </h2>
@@ -46,22 +33,58 @@
 <p><Strong>Navn: </Strong>${sessionScope.tag.name}</p>
 <p><Strong>Meter^2: </Strong>${sessionScope.tag.meter2}</p>
 <p><Strong>Pris: </Strong>${sessionScope.tag.price} kr.</p>
+<br>
+<h3>${sessionScope.lægteoverskrift}</h3>
+<p><Strong>${sessionScope.navn}</Strong>${sessionScope.lægte.woodName}</p>
+<p><Strong>${sessionScope.meter}</Strong>${sessionScope.lægte.meters}</p>
+<p><Strong>${sessionScope.pris}</Strong>${sessionScope.lægte.price}</p>
+
 <hr>
+<h2>Vindskede</h2>
+<p><Strong>Navn: </Strong>${sessionScope.vindskede.woodName}</p>
+<p><Strong>Meter: </Strong>${sessionScope.vindskede.meters}</p>
+<p><Strong>Pris: </Strong>${sessionScope.vindskede.price} kr.</p>
+<hr>
+
 <h2>Beklædning</h2>
 <p><Strong>Navn: </Strong>${sessionScope.clothing.name}</p>
 <p><Strong>Meter^2: </Strong>${sessionScope.clothing.meter2}</p>
 <p><Strong>Pris: </Strong>${sessionScope.clothing.price} kr.</p>
 <hr>
 <h2>Metaller</h2>
-<p>Navn: 4,5 x 60 mm. Skruer. </p>
-<p>Antal: Én pakke af 200 </p>
-<p>Pris: 75 kr. </p>
+<p><strong>${sessionScope.navnFT}</strong>${sessionScope.hulbåndN} </p>
+<p><strong>${sessionScope.antalFT}</strong>${sessionScope.hulbåndA}</p>
+<p><strong>${sessionScope.prisFT}</strong>${sessionScope.hulbåndP}</p>
+<br>
+<p><strong>Navn: </strong>5,0 x 40 mm. Beslagskruer. (universalbeslag)</p>
+<p><strong>Antal: </strong>1 pakke af 200 </p>
+<p><strong>Pris: </strong>167 kr. </p>
+<br>
+<p><strong>Navn: </strong>4,5 x 60 mm. Skruer. (vindskeder)</p>
+<p><strong>Antal: </strong>${sessionScope.VSskruer} pakke af 200 </p>
+<p><strong>Pris: </strong>${sessionScope.VSskruer * sessionScope.VSskruepris} kr. </p>
+<br>
+<p><strong>${sessionScope.navn}</strong>${sessionScope.TLskruer} </p>
+<p><strong>${sessionScope.antal}</strong>${sessionScope.TLskruePakker}</p>
+<p><strong>${sessionScope.pris}</strong>${sessionScope.TLskruePris}</p>
+<br>
+<p><strong>${sessionScope.NavnMS}</strong>${sessionScope.håndtagN}</p>
+<p><strong>${sessionScope.AntalMS}</strong>${sessionScope.håndtagA}</p>
+<p><strong>${sessionScope.PrisMS}</strong>${sessionScope.håndtagP} ${sessionScope.KrMS}</p>
+<br>
+<p><strong>Navn: </strong>${sessionScope.uniBeslag.woodName}</p>
+<p><strong>Antal: </strong>${sessionScope.uniBeslag.meters}</p>
+<p><strong>Pris: </strong>${sessionScope.uniBeslag.price}</p>
+<br>
+<p><strong>Navn: </strong>${sessionScope.bræddeBolt.woodName}</p>
+<p><strong>Antal: </strong>${sessionScope.bræddeBolt.meters}</p>
+<p><strong>Pris: </strong>${sessionScope.bræddeBolt.price} kr</p>
+<br>
+<p><strong>${sessionScope.NavnMS}</strong> ${sessionScope.løsBeslag.woodName}</p>
+<p><strong>${sessionScope.AntalMS}</strong> ${sessionScope.løsBeslag.meters}</p>
+<p><strong>${sessionScope.PrisMS}</strong> ${sessionScope.løsBeslag.price} ${sessionScope.KrMS}</p>
 <hr>
-<p>${sessionScope.håndtagN}</p>
-<p>${sessionScope.håndtagA}</p>
-<p>${sessionScope.håndtagP}</p>
-<hr>
-<h2><strong>Sammenlagt pris: </strong> ${sessionScope.sum}</h2>
+<h3><strong>Sammenlagt pris: </strong> ${sessionScope.sum}</h3>
 
 
 </body>

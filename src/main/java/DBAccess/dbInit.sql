@@ -117,4 +117,9 @@ CREATE TABLE `wood` (
 INSERT INTO `wood` VALUES
 ('Pæl','97X97 MM FULDKANTET FYR IMPR. NTR/A TRYKIMPRÆGNERET',41.95),
 ('Spær','47X200 MM SPÆRTRÆ C18 HØVLET TIL 45X195MM',46.95),
-('Regel','45X95 MM SIBIRISK LÆRK REGEL KVARTA, HØVLET 4 SIDER M/AFR. KANTER',59.95);
+('Regel','45X95 MM SIBIRISK LÆRK REGEL KVARTA, HØVLET 4 SIDER M/AFR. KANTER',59.95),
+('UniversalBeslag','Højre og venstre universal beslag 190 mm',45),
+('Vindskede','25X150 MM VTA TRYKIMPRÆGNERET',45),
+('LøsholteBeslag','Vinkelbeslag til løsholter',5),
+('BræddeBolt','Varmgalvaniseret bræddebolt 10x120mm og firkantskive 40x40x11mm',20),
+('Lægte','38x73 mm. taglægte T1 ',18);
