@@ -54,7 +54,7 @@ public class UserMapperTest {
         // Just check that we have a connection.
         assertNotNull( testConnection );
     }
-
+/*
     @Test
     public void testLogin01() throws LoginSampleException {
         // Can we log in
@@ -83,5 +83,5 @@ public class UserMapperTest {
         UserMapper.createUser( original );
         User retrieved = UserMapper.login( "king@kong.com", "uhahvorhemmeligt" );
         assertEquals( "konge", retrieved.getRole() );
-    }
+    }*/
 }
