@@ -1,7 +1,13 @@
-
+<%--
+  Created by IntelliJ IDEA.
+  User: danie
+  Date: 12-05-2020
+  Time: 13:11
+  To change this template use File | Settings | File Templates.
+--%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@include file="../includes/navbar.inc"%>
+<%@include file="../includes/navbar2.inc"%>
 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Customer home page</title>

@@ -281,9 +281,9 @@
 
             <li class="nav-item"><a href="index.jsp" class="nav-link">Home</a></li>
 
-            <li class="nav-item"><a href="FrontController?taget=customerpage" class="nav-link">Customerpage</a></li>
+            <li class="nav-item"><a href="CustomerPage.jsp" class="nav-link">Customerpage</a></li>
 
-            <li class="nav-item"><a href="FrontController?taget=employeepage" class="nav-link">Employeepage</a></li>
+            <li class="nav-item"><a href="EmployeePage.jsp" class="nav-link">Employeepage</a></li>
 
         </ul>
 
@@ -292,7 +292,7 @@
                 <a data-toggle="dropdown" class="nav-link dropdown-toggle" href="#">Login</a>
                 <ul class="dropdown-menu form-wrapper">
                     <li>
-                        <form name="login" action="FrontController" method="post">
+                        <form name="login" action="FrontController?taget=customerpage" method="post">
                             <input type="hidden" name="taget" value="login">
                             <div class="form-group">
                                 <input type="text" class="form-control" placeholder="E-mail" required="required" name="email">

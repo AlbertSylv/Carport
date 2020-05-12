@@ -1,6 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@include file="../includes/navbar.inc"%>
+<%@include file="../includes/navbar2.inc"%>
 
 
 <p class="text-center">
@@ -185,7 +185,7 @@ Her kan du vælge redskabsskur til eller fra <br><br>
     <input type="text" name="note">
 
     <br> <br>
-    <button type="submit">Bestil carport med valgte mål</button>
+    <button  type="submit">Bestil carport med valgte mål</button>
     <br> <br>
 </form>
 

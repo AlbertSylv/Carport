@@ -1,6 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@include file="../includes/navbar.inc"%>
+<%@include file="../includes/navbar2.inc"%>
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">

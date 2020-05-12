@@ -7,7 +7,7 @@
 --%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
-<%@include file="../includes/navbar.inc"%>
+<%@include file="../includes/navbar2.inc"%>
 
     <title>Bekræftelse</title>
 </head>
