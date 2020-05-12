@@ -44,7 +44,7 @@ public class Stykliste extends Command {
         session.setAttribute("VSskruepris", 75);
 
 
-        //Fordi jeg ikke gider at lære jsp er jeg nød til at sætte alle session attributes før if statementet så sessionen ikke husker tingene når man går ind på en anden stykliste.
+        //Fordi jeg ikke gider at lære jsp er jeg nød til at nulstille alle session attributes før if statements så sessionen ikke husker tingene når man går ind på en anden stykliste.
         session.setAttribute("tag", RC);
         session.setAttribute("navnFT", null);
         session.setAttribute("antalFT", null);
