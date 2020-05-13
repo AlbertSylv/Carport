@@ -28,9 +28,9 @@
 
         } else {
             x.style.display = "none";
-            document.getElementById("myList5").selectedIndex = "1";
-            document.getElementById("myList6").selectedIndex = "1";
-            document.getElementById("myList7").selectedIndex = "1";
+            document.getElementById("myList5").selectedIndex = "0";
+            document.getElementById("myList6").selectedIndex = "0";
+            document.getElementById("myList7").selectedIndex = "0";
         }
     }
 </script>
