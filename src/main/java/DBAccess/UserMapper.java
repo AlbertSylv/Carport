@@ -18,7 +18,7 @@ public class UserMapper {
     public static void createUser( User user ) throws LoginSampleException {
         try {
             Connection con = Connector.connection();
-            String SQL = "INSERT INTO accounts (email, password, role, name, address, zipCity, phone) VALUES (?, ?,?,?,?,?,?)";
+            String SQL = "INSERT INTO accounts (email, password, role, name, address, zipCity, phone) VALUES (?,?,?,?,?,?,?)";
             PreparedStatement ps = con.prepareStatement( SQL, Statement.RETURN_GENERATED_KEYS );
             ps.setString( 1, user.getEmail() );
             ps.setString( 2, user.getPassword() );

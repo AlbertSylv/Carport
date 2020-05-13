@@ -20,11 +20,13 @@ public class RegisterEmployee extends Command {
         String password1 = request.getParameter( "password1" );
         String password2 = request.getParameter( "password2" );
        if ( password1.equals( password2 ) ) {
-            User user = UserFacade.createEmployeeUser( email, password1,name,address,zipCity,phone );
-            HttpSession session = request.getSession();
+           UserFacade.createEmployeeUser( email, password1,name,address,zipCity,phone );
+           User user = UserFacade.login(email,password1,name,address,zipCity,phone);
+
+           HttpSession session = request.getSession();
 
            session.setAttribute("name", user.getName());
-            session.setAttribute("email",email);
+            session.setAttribute("email",user.getEmail());
             session.setAttribute( "user", user );
             session.setAttribute( "role", user.getRole() );
             return user.getRole() + "page";

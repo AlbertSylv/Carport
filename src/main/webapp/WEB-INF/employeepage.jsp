@@ -31,28 +31,21 @@
 <form action="FrontController" method="post">
     <input type="hidden" name="taget" value="registerEmployee">
     <p class="hint-text">Fill in this form to create an employee account!</p>
-    <div class="form-group">
-        <input type="text" class="form-control" name="email" placeholder="E-mail" required="required">
-    </div>
-    <div class="form-group">
-        <input type="text" class="form-control" name="name" placeholder="Navn" required="required">
-    </div>
-    <div class="form-group">
-        <input type="text" class="form-control" name="address" placeholder="Adresse" required="required">
-    </div>
-    <div class="form-group">
-        <input type="text" class="form-control" name="zipCity" placeholder="Postnr." required="required">
-    </div>
-    <div class="form-group">
-        <input type="text" class="form-control" name="phone" placeholder="Tlf." required="required">
-    </div>
 
-    <div class="form-group">
+        <input type="text" class="form-control" name="email" placeholder="E-mail" required="required">
+
+        <input type="text" class="form-control" name="name" placeholder="Navn" required="required">
+
+        <input type="text" class="form-control" name="address" placeholder="Adresse" required="required">
+
+        <input type="text" class="form-control" name="zipCity" placeholder="Postnr." required="required">
+
+        <input type="text" class="form-control" name="phone" placeholder="Tlf." required="required">
+
         <input type="password" class="form-control" name="password1" placeholder="Password" required="required">
-    </div>
-    <div class="form-group">
+
         <input type="password" class="form-control" name="password2" placeholder="Confirm Password" required="required">
-    </div>
+
     <div class="form-group">
         <label class="checkbox-inline"><input type="checkbox" required="required"> I accept the <a href="#">Terms &amp; Conditions</a></label>
     </div>

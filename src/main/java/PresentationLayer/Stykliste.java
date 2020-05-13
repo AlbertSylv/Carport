@@ -13,15 +13,24 @@ public class Stykliste extends Command {
         int id = Integer.parseInt(request.getParameter("id"));
         Wood pole = Calculator.getPole(id);
         Wood spær = Calculator.getSpær(id);
-        Wood regel = Calculator.getRegel(id);
         ShedClothing clothing = Calculator.getClothing(id);
         RoofCoating RC = Calculator.getTag(id);
         TiltedRoofCoating TRC = Calculator.getRejsningTag(id);
         Wood uniBeslag = Calculator.getUniBeslag(id);
         Wood bræddeBolt = Calculator.getBræddeBolt(id);
-
-
         Wood vindskede = Calculator.getVindskede(id);
+        Wood regel = null;
+        Wood løsBeslag = null;
+        Wood lægte = null;
+        int regelP = 0;
+        int hulbåndP = 0;
+        int beslagskruerpris = 167;
+        int VSskruer = 1;
+        int VSskruePris = 75;
+        int håndtagP = 0;
+        int TLskruePris = 0;
+        int løsBeslagP = 0;
+        int lægteP = 0;
 
         Request req = RequestMapper.getRequest4Styklist(id);
 
@@ -29,7 +38,7 @@ public class Stykliste extends Command {
         HttpSession session = request.getSession();
         session.setAttribute("pole", pole);
         session.setAttribute("spær", spær);
-        session.setAttribute("regel", regel);
+
         session.setAttribute("clothing", clothing);
         session.setAttribute("vindskede", vindskede);
 
@@ -40,8 +49,8 @@ public class Stykliste extends Command {
         session.setAttribute("uniBeslag",uniBeslag);
         session.setAttribute("bræddeBolt", bræddeBolt);
 
-        session.setAttribute("VSskruer",1);
-        session.setAttribute("VSskruepris", 75);
+        session.setAttribute("VSskruer",VSskruer);
+        session.setAttribute("VSskruepris", VSskruePris);
 
 
         //Fordi jeg ikke gider at lære jsp er jeg nød til at nulstille alle session attributes før if statements så sessionen ikke husker tingene når man går ind på en anden stykliste.
@@ -80,6 +89,8 @@ public class Stykliste extends Command {
             session.setAttribute("hulbåndN", "Hulbånd 1x20 mm. 10 mtr.");
             session.setAttribute("hulbåndA", "2 ruller");
             session.setAttribute("hulbåndP", "400 kr");
+            session.setAttribute("brFT","<br>");
+            hulbåndP = 400;
         } else {
             session.setAttribute("tag", TRC);
             session.setAttribute("lægteoverskrift", "Lægte");
@@ -88,12 +99,14 @@ public class Stykliste extends Command {
             session.setAttribute("antal", "Antal: ");
             session.setAttribute("pris", "Pris: ");
 
-            Wood lægte = Calculator.getLægte(id);
+            lægte = Calculator.getLægte(id);
+            lægteP = lægte.getPrice();
             session.setAttribute("lægte", lægte);
 
             session.setAttribute("TLskruer", "5,0x100 mm. skruer (taglægter)");
             session.setAttribute("TLskruePakker", "2 pakker af 200");
             session.setAttribute("TLskruePris", "340 kr");
+            TLskruePris = 340;
         }
 
 
@@ -101,19 +114,28 @@ public class Stykliste extends Command {
             session.setAttribute("håndtagN","Stalddørgreb galv. 50-75 mm dørtykkelse og T-hængsler 390 mm galv. ");
             session.setAttribute("håndtagP","280 kr");
             session.setAttribute("håndtagA","1 sæt");
+            håndtagP = 280;
             session.setAttribute("VSskruer",4);
-
-            Wood løsBeslag = Calculator.getLøsBeslag(id);
+            VSskruer = 4;
+            regel = Calculator.getRegel(id);
+            regelP = regel.getPrice();
+            løsBeslag = Calculator.getLøsBeslag(id);
+            løsBeslagP = løsBeslag.getPrice();
             session.setAttribute("løsBeslag", løsBeslag);
-
+            session.setAttribute("regel", regel);
+            session.setAttribute("regelOverskrift","Regel som løsholter til skur");
             session.setAttribute("NavnMS","Navn: ");
             session.setAttribute("AntalMS","Antal: ");
             session.setAttribute("PrisMS","Pris: ");
             session.setAttribute("KrMS"," kr");
+            session.setAttribute("hrMS","<hr>");
+            session.setAttribute("brMS", "<br>");
 
 
         }
-        String sum = "7 milliarder boi";
+
+
+        int sum = beslagskruerpris + pole.getPrice() + spær.getPrice() + regelP + clothing.getPrice() + RC.getPrice() + TRC.getPrice() + uniBeslag.getPrice() + bræddeBolt.getPrice() + vindskede.getPrice() + hulbåndP + (VSskruer*VSskruePris) + lægteP + løsBeslagP;
         session.setAttribute("sum",sum);
 
         return "stykliste";

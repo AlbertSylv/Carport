@@ -21,7 +21,7 @@
             x.style.display = "none";
             document.getElementById("myList5").selectedIndex = "0";
             document.getElementById("myList6").selectedIndex = "0";
-            document.getElementById("myList7").selectedIndex = "0";
+            document.getElementById("myList7").selectedIndex = "-1";
         }
     }
 </script>
@@ -75,7 +75,7 @@
         <option value="690">690 cm</option>
         <option value="720">720 cm</option>
         <option value="750">750 cm</option>
-        <option value="780">780 cm cm</option>
+        <option value="780">780 cm</option>
 
     </select>
     </p>
@@ -171,9 +171,10 @@
 
         <select id = "myList7" name="shedclothing" required="required">
 
-            <option value = "1"> --- </option>
+            <option value = "-1"> --- </option>
 
             <c:forEach items="${sessionScope.shedclothing}"  var="SC">
+
                 <option value = ${SC.shedID} >${SC.name}</option>
 
             </c:forEach>

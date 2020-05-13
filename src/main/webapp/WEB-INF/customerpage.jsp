@@ -22,7 +22,7 @@
     </p>
 
 <p style="text-align:center;"> Carport med fladt tag</p>
-<p style="text-align:center;">:
+<p style="text-align:center;">
         <a href="FrontController?taget=fladtTag">
         <img border="0" alt="Fladt tag" src="img/carport2.jpg" width="250" height="250">
          </a>

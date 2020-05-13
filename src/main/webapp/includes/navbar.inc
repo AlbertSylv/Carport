@@ -292,7 +292,7 @@
                 <a data-toggle="dropdown" class="nav-link dropdown-toggle" href="#">Login</a>
                 <ul class="dropdown-menu form-wrapper">
                     <li>
-                        <form name="login" action="FrontController?taget=customerpage" method="post">
+                        <form name="login" action="FrontController" method="post">
                             <input type="hidden" name="taget" value="login">
                             <div class="form-group">
                                 <input type="text" class="form-control" placeholder="E-mail" required="required" name="email">

@@ -24,11 +24,11 @@
 <p><Strong>Meter: </Strong>${sessionScope.spær.meters}</p>
 <p><Strong>Pris: </Strong>${sessionScope.spær.price} kr.</p>
 <hr>
-<h2>Regel som løsholter til skur</h2>
-<p><Strong>Navn: </Strong>${sessionScope.regel.woodName}</p>
-<p><Strong>Meter: </Strong>${sessionScope.regel.meters}</p>
-<p><Strong>Pris: </Strong>${sessionScope.regel.price} kr.</p>
-<hr>
+<h2>${sessionScope.regelOverskrift}</h2>
+<p><Strong>${sessionScope.NavnMS}</Strong>${sessionScope.regel.woodName}</p>
+<p><Strong>${sessionScope.AntalMS}</Strong>${sessionScope.regel.meters}</p>
+<p><Strong>${sessionScope.PrisMS}</Strong>${sessionScope.regel.price}${sessionScope.KrMS}</p>
+${sessionScope.hrMS}
 <h2>Tag</h2>
 <p><Strong>Navn: </Strong>${sessionScope.tag.name}</p>
 <p><Strong>Meter^2: </Strong>${sessionScope.tag.meter2}</p>
@@ -55,7 +55,7 @@
 <p><strong>${sessionScope.navnFT}</strong>${sessionScope.hulbåndN} </p>
 <p><strong>${sessionScope.antalFT}</strong>${sessionScope.hulbåndA}</p>
 <p><strong>${sessionScope.prisFT}</strong>${sessionScope.hulbåndP}</p>
-<br>
+${sessionScope.brFT}
 <p><strong>Navn: </strong>5,0 x 40 mm. Beslagskruer. (universalbeslag)</p>
 <p><strong>Antal: </strong>1 pakke af 200 </p>
 <p><strong>Pris: </strong>167 kr. </p>
@@ -71,7 +71,7 @@
 <p><strong>${sessionScope.NavnMS}</strong>${sessionScope.håndtagN}</p>
 <p><strong>${sessionScope.AntalMS}</strong>${sessionScope.håndtagA}</p>
 <p><strong>${sessionScope.PrisMS}</strong>${sessionScope.håndtagP} ${sessionScope.KrMS}</p>
-<br>
+${sessionScope.brMS}
 <p><strong>Navn: </strong>${sessionScope.uniBeslag.woodName}</p>
 <p><strong>Antal: </strong>${sessionScope.uniBeslag.meters}</p>
 <p><strong>Pris: </strong>${sessionScope.uniBeslag.price}</p>
@@ -79,12 +79,12 @@
 <p><strong>Navn: </strong>${sessionScope.bræddeBolt.woodName}</p>
 <p><strong>Antal: </strong>${sessionScope.bræddeBolt.meters}</p>
 <p><strong>Pris: </strong>${sessionScope.bræddeBolt.price} kr</p>
-<br>
+${sessionScope.brMS}
 <p><strong>${sessionScope.NavnMS}</strong> ${sessionScope.løsBeslag.woodName}</p>
 <p><strong>${sessionScope.AntalMS}</strong> ${sessionScope.løsBeslag.meters}</p>
 <p><strong>${sessionScope.PrisMS}</strong> ${sessionScope.løsBeslag.price} ${sessionScope.KrMS}</p>
 <hr>
-<h3><strong>Sammenlagt pris: </strong> ${sessionScope.sum}</h3>
+<h3><strong>Sammenlagt pris: </strong> ${sessionScope.sum} kr</h3>
 
 
 </body>
