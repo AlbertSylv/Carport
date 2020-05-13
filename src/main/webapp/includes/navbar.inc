@@ -316,19 +316,19 @@
                             <input type="hidden" name="taget" value="register">
                             <p class="hint-text">Fill in this form to create your account!</p>
                             <div class="form-group">
-                                <input type="text" class="form-control" name="email" placeholder="Email" required="required">
+                                <input type="text" class="form-control" name="email" placeholder="E-mail" required="required">
                             </div>
                             <div class="form-group">
-                            <input type="text" class="form-control" name="name" placeholder="Name" required="required">
+                            <input type="text" class="form-control" name="name" placeholder="Navn" required="required">
                             </div>
                             <div class="form-group">
-                            <input type="text" class="form-control" name="address" placeholder="Address" required="required">
+                            <input type="text" class="form-control" name="address" placeholder="Adresse" required="required">
                             </div>
                             <div class="form-group">
-                            <input type="text" class="form-control" name="zipCity" placeholder="zipCity" required="required">
+                            <input type="text" class="form-control" name="zipCity" placeholder="Postnr." required="required">
                             </div>
                             <div class="form-group">
-                            <input type="text" class="form-control" name="phone" placeholder="Phone" required="required">
+                            <input type="text" class="form-control" name="phone" placeholder="Tlf." required="required">
                             </div>
 
                             <div class="form-group">

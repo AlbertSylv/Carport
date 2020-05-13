@@ -835,15 +835,18 @@ input[type="submit"]:hover{
 <!-----start-main---->
 <div class="main">
     <div class="login-form">
-        <h1>Fog Login</h1>
+
         <div class="head">
             <img src="img/fog_logo.jpg" width="140px" height="140px" alt=""/>
         </div>
-        <form  name="login" action="FrontController?taget=customerpage" method="post">
-            <input type="text" class="text" value="E-mail" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'USERNAME';}" >
-            <input type="password" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}">
+        <br>
+        <h1>Fog Login</h1>
+        <form  name="login" action="FrontController" method="post">
+            <input type="hidden" name="taget" value="login">
+            <input type="text" class="text" placeholder="E-mail" required="required" name="email"  >
+            <input type="password" placeholder="Password" required="required" name="password" >
             <div class="submit">
-                <input type="submit" onclick="myFunction()" value="LOGIN" >
+                <input type="submit" value="LOGIN" >
             </div>
             <p><a href="#">Forgot Password ?</a></p>
         </form>

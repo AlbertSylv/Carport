@@ -46,6 +46,7 @@ public class UserMapper {
             ResultSet rs = ps.executeQuery();
             if ( rs.next() ) {
                 String role = rs.getString( "role" );
+                name = rs.getString( "name" );
 
                 User user = new User( email, password, role, name, address, zipCity, phone);
 

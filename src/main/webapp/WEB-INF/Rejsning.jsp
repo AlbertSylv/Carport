@@ -19,16 +19,16 @@
             x.style.display = "block";
         } else {
             x.style.display = "none";
+            document.getElementById("myList5").selectedIndex = "1";
+            document.getElementById("myList6").selectedIndex = "1";
+            document.getElementById("myList7").selectedIndex = "1";
         }
     }
 </script>
 
-<h4 class="text-center">
-Her kan du vælge redskabsskur til eller fra <br><br>
-<button onclick="myFunction()">Til/Fra</button>
-</h4>
 
-<p style="text-align:center;">Bemærk at bredde og længde er målt fra stolpe til stolpe. Taget vil hænge 30 cm ud over de valgte mål på hver side.</p>
+
+<p style="text-align:center;">Bemærk at bredde og længde er målt fra stolpe til stolpe. Taget vil hænge 15 cm ud over de valgte mål på hver side.</p>
 <form class="text-center" action="FrontController" method="post" id="bestilling">
     <input type="hidden" name="taget" value="createRequest">
     <h3>Carport bredde</h3>
@@ -105,6 +105,11 @@ Her kan du vælge redskabsskur til eller fra <br><br>
         <option value="45">45 grader</option>
     </select>
     </p>
+    <br>
+    <h4 class="text-center">
+        Her kan du vælge redskabsskur til eller fra <br><br>
+        <button onclick="myFunction()">Til/Fra</button>
+    </h4>
 
     <div id="myDIV2">
 
@@ -177,9 +182,9 @@ Her kan du vælge redskabsskur til eller fra <br><br>
         </p>
     </div>
     <p>Indtast email</p>
-    <div class="form-group">
-        <input type="text" class="form-control" placeholder="E-mail" required="required" name="email">
-    </div>
+
+    <p>Indtast email</p>
+    <input type="text" name="email" required="required">
 
     <p>Indtast note</p>
     <input type="text" name="note">

@@ -289,29 +289,20 @@
 
         </ul>
 
-        <ul class="nav navbar-nav navbar-right ml-auto">
-            </li>
-        </ul>
+
         <!-- SessionScope på indtastede brugers mail  -->
-        <ul class="nav navbar-nav navbar-right ml-auto">
+            <ul class="nav navbar-nav navbar-right ml-auto">
             <li class="nav-item">
             <li class="nav-item active"><a href="FrontController?taget=home" class="nav-link">${sessionScope.email}</a></li>
-            </li>
+
         </ul>
 
         <!-- Logud Knap -->
-        <ul class="nav navbar-nav navbar-right">
+            <ul class="nav navbar-nav navbar-right">
             <li class="nav-item">
             <li class="nav-item active"><a href="FrontController?taget=logud" class="nav-link">Log ud</a></li>
-            <!-- SessionScope på indtastede brugers mail  -->
-            <ul class="nav navbar-nav navbar-right ml-auto">
-                <p> email scope her</p>
-                <li class="nav-item">
-                <li class="nav-item active"><a href="FrontController?taget=home" class="nav-link">${sessionScope.email}</a></li>
-                </li>
+
             </ul>
-            </li>
-        </ul>
     </div>
 </nav>
 

@@ -25,16 +25,17 @@
 
         if (x.style.display === "none") {
             x.style.display = "block";
+
         } else {
             x.style.display = "none";
+            document.getElementById("myList5").selectedIndex = "1";
+            document.getElementById("myList6").selectedIndex = "1";
+            document.getElementById("myList7").selectedIndex = "1";
         }
     }
 </script>
-<h4 class="text-center">
-    Her kan du vælge redskabsskur til eller fra <br> <br>
-    <button onclick="myFunction()">Til/Fra</button>
-</h4>
-<p style="text-align:center;">Bemærk at bredde og længde er fra stolpe til stolpe. Taget vil hænge 30 cm ud over de valgte mål på hver side.</p>
+
+<p style="text-align:center;">Bemærk at bredde og længde er fra stolpe til stolpe. Taget vil hænge 15 cm ud over de valgte mål på hver side.</p>
 <form class="text-center" action="FrontController" method="post" id="bestilling">
     <input type="hidden" name="taget" value="createRequest">
     <h3>Carport bredde</h3>
@@ -98,7 +99,11 @@
     </select>
 
     </p>
-
+    <br>
+    <h4 class="text-center">
+        Her kan du vælge redskabsskur til eller fra <br> <br>
+        <button onclick="myFunction()">Til/Fra</button>
+    </h4>
     <div id="myDIV2">
         <p>
         <h3>Redskabsrum bredde</h3>

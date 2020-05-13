@@ -13,4 +13,9 @@ public class UserFacade {
         UserMapper.createUser(user);
         return user;
     }
+    public static User createEmployeeUser( String email, String password,String name,String address, String zipCity, String phone) throws LoginSampleException {
+        User user = new User(email, password, "employee", name,address, zipCity, phone);
+        UserMapper.createUser(user);
+        return user;
+    }
 }
