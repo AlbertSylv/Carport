@@ -7,11 +7,11 @@ import java.util.ArrayList;
 
 public class Calculator {
 
-    public static Wood getPole(int id) throws LoginSampleException {
-
+    public static Wood  getPole(int id) throws LoginSampleException {
         Wood wood = MaterialMapper.getWood("Pæl");
         int pricePrM = wood.getPricePrM();
         String name = wood.getWoodName();
+        Svg svg = new Svg(800, 600, "0,0,800,600",0,0);
 
         Request request = RequestMapper.getRequest4Styklist(id);
         int skurLength = request.getShedLength();
@@ -56,8 +56,9 @@ public class Calculator {
         int price = (int) (metersOfPole * pricePrM);
 
         Wood pole = new Wood(name,price, (int) metersOfPole);
+        svg.addRect(0, 0, Length,width);
 
-        return pole;
+        return pole ;
     }
 
     public static Wood getSpær(int id) throws LoginSampleException {
@@ -391,4 +392,5 @@ public class Calculator {
 
         return vindskede;
     }
+
 }

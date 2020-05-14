@@ -32,6 +32,8 @@
             <p>Kunde note:<strong> ${request.note}</strong></p>
             <p>Bestilling ID:<strong> ${request.id}</strong></p>
 
+            <a href="FrontController?taget=drawing">see drawing</a>
+
 
             <form action="FrontController" method="post">
 

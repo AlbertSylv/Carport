@@ -7,18 +7,20 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import static FunctionLayer.Calculator.*;
+
 public class Stykliste extends Command {
     @Override
     String execute(HttpServletRequest request, HttpServletResponse response) throws LoginSampleException {
         int id = Integer.parseInt(request.getParameter("id"));
-        Wood pole = Calculator.getPole(id);
-        Wood spær = Calculator.getSpær(id);
-        ShedClothing clothing = Calculator.getClothing(id);
-        RoofCoating RC = Calculator.getTag(id);
-        TiltedRoofCoating TRC = Calculator.getRejsningTag(id);
-        Wood uniBeslag = Calculator.getUniBeslag(id);
-        Wood bræddeBolt = Calculator.getBræddeBolt(id);
-        Wood vindskede = Calculator.getVindskede(id);
+        Wood pole = getPole(id);
+        Wood spær = getSpær(id);
+        ShedClothing clothing = getClothing(id);
+        RoofCoating RC = getTag(id);
+        TiltedRoofCoating TRC = getRejsningTag(id);
+        Wood uniBeslag = getUniBeslag(id);
+        Wood bræddeBolt = getBræddeBolt(id);
+        Wood vindskede = getVindskede(id);
         Wood regel = null;
         Wood løsBeslag = null;
         Wood lægte = null;
@@ -33,7 +35,6 @@ public class Stykliste extends Command {
         int lægteP = 0;
 
         Request req = RequestMapper.getRequest4Styklist(id);
-
 
         HttpSession session = request.getSession();
         session.setAttribute("pole", pole);
@@ -54,6 +55,8 @@ public class Stykliste extends Command {
 
 
         //Fordi jeg ikke gider at lære jsp er jeg nød til at nulstille alle session attributes før if statements så sessionen ikke husker tingene når man går ind på en anden stykliste.
+
+
         session.setAttribute("tag", RC);
         session.setAttribute("navnFT", null);
         session.setAttribute("antalFT", null);
@@ -99,7 +102,7 @@ public class Stykliste extends Command {
             session.setAttribute("antal", "Antal: ");
             session.setAttribute("pris", "Pris: ");
 
-            lægte = Calculator.getLægte(id);
+            lægte = getLægte(id);
             lægteP = lægte.getPrice();
             session.setAttribute("lægte", lægte);
 
@@ -117,9 +120,9 @@ public class Stykliste extends Command {
             håndtagP = 280;
             session.setAttribute("VSskruer",4);
             VSskruer = 4;
-            regel = Calculator.getRegel(id);
+            regel = getRegel(id);
             regelP = regel.getPrice();
-            løsBeslag = Calculator.getLøsBeslag(id);
+            løsBeslag = getLøsBeslag(id);
             løsBeslagP = løsBeslag.getPrice();
             session.setAttribute("løsBeslag", løsBeslag);
             session.setAttribute("regel", regel);
