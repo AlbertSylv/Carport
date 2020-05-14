@@ -21,4 +21,7 @@ public class RequestFacade {
         bestillinger=RequestMapper.getRequests();
         return bestillinger;
     }
+    public static Request getRequest4Styklist(int id) throws LoginSampleException {
+        return RequestMapper.getRequest4Styklist(id);
+    }
 }

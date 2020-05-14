@@ -35,6 +35,7 @@ public class RequestMapper {
             throw new LoginSampleException(ex.getMessage());
         }
     }
+
     public static Request getRequest4Styklist(int id) throws LoginSampleException {
         Request request = null;
         try {

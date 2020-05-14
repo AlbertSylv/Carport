@@ -27,6 +27,7 @@ public class Svg {
         svg.append(String.format(rectTemplate, x, y, height, width));
     }
 
+
     public int getWidth() {
         return width;
     }
