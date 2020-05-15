@@ -1,3 +1,4 @@
+<html>
 <style>
     rect {
         stroke:#000000; fill: transparent;
@@ -7,30 +8,39 @@
     }
 </style>
 <%
-    int width = 780;
-    int height = 600;
+    int width = 700;
+    int height = 200;
     int outhang = 35;
     int rafterCount = 15;
     int rafterSpace = 55;
     int postCount = 3;
     int distant = (width - 10) / (postCount - 2 +1);
+
 %>
-<svg width="1000" height="1000">
-    <rect x="100" y="100" height="<%= height %>" width="<%= width %>" />
+<script>
+    var length = ${request.length};
+</script>
 
-    <rect x="100" y="<%= 100 + outhang %>" height="10" width="<%= width %>" />
-    <rect x="100" y="<%= 100 + height - outhang - 10 %>" height="10" width="<%= width %>" />
+<c:forEach items="${sessionScope.bestillinger}" var="request">
 
-    <% for(int i = 0; i < rafterCount; i++) { %>
-    <rect x="<%= 100 + rafterSpace * i %>" y="100" height="<%= height %>" width="1000" />
-    <% } %>
+    <svg width="1000" height="1000">
 
-    <rect class="post" x="200" y="<%= 100 + outhang %>" height="10" width="10" />
-    <rect class="post" x="<%= 100 + outhang + distant  %>" y="<%= 100 + outhang %>" height="10" width="10" />
-    <rect class="post" x="<%= 100 + width - 30 %>" y="<%= 100 + outhang %>" height="10" width="10" />
+        <rect x="100" y="100" height="<%=""%>" width="<%="width"%>" />
+        <rect x="100" y="<%= 100 + outhang %>" height="10" width="<script>${request.width}</script>" />
+        <rect x="100" y="<%= 100 + height - outhang - 10 %>" height="10" width="<%= width %>" />
 
-    <rect class="post" x="200" y="<%= 100 + height - outhang - 10 %>" height="10" width="10" />
-    <rect class="post" x="<%= 100 + outhang + distant  %>" y="<%= 100 + height - outhang - 10 %>" height="10" width="10" />
-    <rect class="post" x="<%= 100 + width - 30 %>" y="<%= 100 + height - outhang - 10 %>" height="10" width="10" />
-</svg>
-<%= distant %>
+        <% for(int i = 0; i < rafterCount; i++) { %>
+        <rect x="<%= 100 + rafterSpace * i %>" y="100" height="<script>${request.length}</script>" width="1000" />
+        <% } %>
+
+        <rect class="post" x="200" y="<%= 100 + outhang %>" height="10" width="10" />
+        <rect class="post" x="<%= 100 + outhang + distant  %>" y="<%= 100 + outhang %>" height="10" width="10" />
+        <rect class="post" x="<%= 100 + width - 30 %>" y="<%= 100 + outhang %>" height="10" width="10" />
+
+        <rect class="post" x="200" y="<%= 100 + height - outhang - 10 %>" height="10" width="10" />
+        <rect class="post" x="<%= 100 + outhang + distant  %>" y="<%= 100 + height - outhang - 10 %>" height="10" width="10" />
+        <rect class="post" x="<%= 100 + width - 30 %>" y="<%= 100 + height - outhang - 10 %>" height="10" width="10" />
+    </svg>
+
+    <%= distant %>
+</c:forEach>

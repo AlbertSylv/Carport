@@ -27,6 +27,7 @@ abstract class Command {
         commands.put("adminDeleteRequest", new AdminDeleteRequest());
         commands.put("stykliste", new Stykliste());
         commands.put("logud", new LogOut());
+        commands.put("drawing",new Drawing());
 
     }
 

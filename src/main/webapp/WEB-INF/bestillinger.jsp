@@ -32,6 +32,13 @@
             <p>Kunde note:<strong> ${request.note}</strong></p>
             <p>Bestilling ID:<strong> ${request.id}</strong></p>
 
+            <form  action="FrontController" method="post">
+                <input type="hidden" name="taget" value="drawing">
+                <input type="hidden" name="id" value="${request.id}">
+                <button  type="submit" class="btn btn-primary">Se tegning</button>
+            </form>
+
+
 
             <form action="FrontController" method="post">
 

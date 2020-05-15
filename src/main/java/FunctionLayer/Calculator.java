@@ -7,11 +7,11 @@ import java.util.ArrayList;
 
 public class Calculator {
 
-    public static Wood getPole(int id) throws LoginSampleException {
-
+    public static Wood  getPole(int id) throws LoginSampleException {
         Wood wood = MaterialMapper.getWood("Pæl");
         int pricePrM = wood.getPricePrM();
         String name = wood.getWoodName();
+
 
         Request request = RequestMapper.getRequest4Styklist(id);
         int skurLength = request.getShedLength();
@@ -57,8 +57,52 @@ public class Calculator {
 
         Wood pole = new Wood(name,price, (int) metersOfPole);
 
-        return pole;
+
+        return pole ;
     }
+    public static int getPoles(int id) throws LoginSampleException {
+
+
+        Request request = RequestMapper.getRequest4Styklist(id);
+        int skurLength = request.getShedLength();
+        int skurWidth = request.getShedWidth();
+        int Length = request.getLength();
+        int width = request.getWidth();
+        double metersOfPole = 0;
+
+        double lengthAsDouble = Length;
+
+        //Længden er i cm, så vi gør den til meter. Der skal være to meter mellem hver stolpe og der skal være en stolpe på hver side så det er divideret med 2 gange med 2, hvilket betyder vi ikke behøver at skrive hverken eller.
+        int numberOfPoles = (int) Math.ceil((lengthAsDouble / 100) + 2);
+        if (numberOfPoles % 2 != 0) {
+            numberOfPoles += 1;
+        }
+
+        //Carport uden skur
+        if (skurLength == 0) {
+
+            //Carport med skur
+        } else {
+            if (skurWidth == width && skurLength == Length) {
+                //+1 pæl til at hægte skur døren på. Alle andre pæle til at holde skurets vægge oppe er allerede i carporten
+                numberOfPoles = numberOfPoles + 1;
+
+            }
+            if (skurWidth == width && skurLength != Length) {
+                //3 pæle ekstra fordi skuret allerede har to støttepæle bagerst, men mangler to front støtte pæle og en pæl til at hægte skur døren på.
+                numberOfPoles = numberOfPoles + 3;
+            }
+            if (skurWidth != width && skurLength != Length) {
+                //4 pæle ekstra fordi, skuret mangler i 3 hjørner og 1 pæl til at hægte døren på.
+                numberOfPoles = numberOfPoles + 4;
+
+            }
+
+
+        }
+        return numberOfPoles;
+    }
+
 
     public static Wood getSpær(int id) throws LoginSampleException {
 
@@ -391,4 +435,5 @@ public class Calculator {
 
         return vindskede;
     }
+
 }
