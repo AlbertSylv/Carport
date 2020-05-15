@@ -5,6 +5,7 @@ public class ShedClothing {
     String name;
     int price;
     double meter2;
+    int pricePrM;
 
     //Constructor til når Calculatoren skal returne en roofcoating
     public ShedClothing(String name, int price, double meter2) {
@@ -13,9 +14,18 @@ public class ShedClothing {
         this.meter2 = meter2;
     }
     //Constructor til MaterialMapperen
-    public ShedClothing(int shedID, String name) {
+    public ShedClothing(int shedID, String name, int pricePrM) {
         this.shedID = shedID;
         this.name = name;
+        this.pricePrM = pricePrM;
+    }
+
+    public int getPricePrM() {
+        return pricePrM;
+    }
+
+    public void setPricePrM(int pricePrM) {
+        this.pricePrM = pricePrM;
     }
 
     public double getMeter2() {

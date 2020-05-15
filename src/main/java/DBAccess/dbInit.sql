@@ -111,7 +111,7 @@ CREATE TABLE `wood` (
   `type` VARCHAR(100) NOT NULL,
   `name` VARCHAR(100) NOT NULL,
   `pricePrM` INT NOT NULL,
-  PRIMARY KEY (`name`)
+  PRIMARY KEY (`type`)
 );
 
 INSERT INTO `wood` VALUES

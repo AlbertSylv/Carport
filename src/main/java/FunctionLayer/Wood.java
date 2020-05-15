@@ -1,6 +1,7 @@
 package FunctionLayer;
 
 public class Wood {
+    String type;
     String woodName;
     int pricePrM;
     int price;
@@ -17,6 +18,14 @@ public class Wood {
     public Wood(String woodName, int pricePrM) {
         this.woodName = woodName;
         this.pricePrM = pricePrM;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 
     public int getPrice() {

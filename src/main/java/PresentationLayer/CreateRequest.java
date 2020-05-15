@@ -30,7 +30,7 @@ public class CreateRequest extends Command {
 
         HttpSession session = request.getSession();
         session.setAttribute("req", req);
-return "confirmation";
+        return "confirmation";
     }
 
 }

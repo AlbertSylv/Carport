@@ -95,8 +95,8 @@ public class MaterialMapperTest {
         // Can we retrieve a list of all shed clothing objects, except the first one
         ArrayList<ShedClothing> shedClothings = MaterialMapper.getShedClothing();
         assertThat(shedClothings, hasSize(2));
-        assertThat(shedClothings,hasItem(hasProperty("shedID",equalTo(2))));
-        assertThat(shedClothings,hasItem(hasProperty("shedID",equalTo(3))));
+        assertThat(shedClothings, hasItem(hasProperty("shedID", equalTo(2))));
+        assertThat(shedClothings, hasItem(hasProperty("shedID", equalTo(3))));
     }
 
     @Test
@@ -104,7 +104,7 @@ public class MaterialMapperTest {
         // Can we retrieve a list of all roof coating objects, except the first one
         ArrayList<RoofCoating> roofCoatingss = MaterialMapper.getRoofCoatings();
         assertThat(roofCoatingss, hasSize(1));
-        assertThat(roofCoatingss,hasItem(hasProperty("roofID",equalTo(2))));
+        assertThat(roofCoatingss, hasItem(hasProperty("roofID", equalTo(2))));
 
     }
 
@@ -113,7 +113,7 @@ public class MaterialMapperTest {
         // Can we retrieve a list of all tilted roof coating objects, except the first one
         ArrayList<TiltedRoofCoating> tiltedRoofCoatings = MaterialMapper.getTiltedRoofCoatings();
         assertThat(tiltedRoofCoatings, hasSize(1));
-        assertThat(tiltedRoofCoatings,hasItem(hasProperty("shedID",equalTo(2))));
+        assertThat(tiltedRoofCoatings, hasItem(hasProperty("shedID", equalTo(2))));
     }
 
     @Test
@@ -131,6 +131,23 @@ public class MaterialMapperTest {
     //////////
     //Her fra prøver vi at bruge TDD(test driven development) dvs at vi ikke har skrevet metoderne som vi skal teste endnu
     //////////
+
+    @Test
+    public void testGetWoods() throws LoginSampleException {
+        // Can we retrieve a list of all wood objects
+        ArrayList<Wood> woods = MaterialMapper.getWoods();
+        assertThat(woods, hasSize(8));
+        assertThat(woods, hasItem(hasProperty("type", equalTo("Pæl"))));
+        assertThat(woods, hasItem(hasProperty("type", equalTo("Regel"))));
+        assertThat(woods, hasItem(hasProperty("type", equalTo("Spær"))));
+        assertThat(woods, hasItem(hasProperty("type", equalTo("UniversalBeslag"))));
+        assertThat(woods, hasItem(hasProperty("type", equalTo("BræddeBolt"))));
+        assertThat(woods, hasItem(hasProperty("type", equalTo("LøsholteBeslag"))));
+        assertThat(woods, hasItem(hasProperty("type", equalTo("Vindskede"))));
+        assertThat(woods, hasItem(hasProperty("type", equalTo("Lægte"))));
+    }
+
+
     @Test
     public void testUpdateWood() throws LoginSampleException {
         // Can we update a wood objects name and price
@@ -153,7 +170,7 @@ public class MaterialMapperTest {
         String newName = "Græs tag";
         int newPrice = 200;
 
-        MaterialMapper.updateRoofCoating(id, newName,newPrice);
+        MaterialMapper.updateRC(id, newName,newPrice);
 
         ArrayList<RoofCoating> roofCoatings = MaterialMapper.getRoofCoatings();
         assertThat(roofCoatings, hasSize(1));
@@ -173,7 +190,7 @@ public class MaterialMapperTest {
         String newName = "Græs tag";
         int newPrice = 200;
 
-        MaterialMapper.updateTiltedRoofCoating(id, newName,newPrice);
+        MaterialMapper.updateTRC(id, newName,newPrice);
 
         ArrayList<TiltedRoofCoating> TiltedRoofCoatings = MaterialMapper.getTiltedRoofCoatings();
         assertThat(TiltedRoofCoatings, hasSize(1));
@@ -189,7 +206,7 @@ public class MaterialMapperTest {
         String newName = "Falsk mursten";
         int newPrice = 5;
 
-        MaterialMapper.updateShedClothing(id, newName,newPrice);
+        MaterialMapper.updateSC(id, newName,newPrice);
 
         ArrayList<ShedClothing> ShedClothings = MaterialMapper.getShedClothing();
         assertThat(ShedClothings, hasSize(2));
@@ -197,7 +214,7 @@ public class MaterialMapperTest {
         assertThat(ShedClothings,hasItem(hasProperty("price",equalTo(5))));
 
     }
-
+/*
     @Test
     public void testAddRoofCoating() throws LoginSampleException {
         // Can we update a roofCoating objects name and price
@@ -243,31 +260,5 @@ public class MaterialMapperTest {
 
     }
 
-
-
-/*
-    @Test( expected = LoginSampleException.class )
-    public void testLogin02() throws LoginSampleException {
-        // We should get an exception if we use the wrong password
-        User user = UserMapper.login( "jens@somewhere.com", "larsen" );
-    }
-
-    @Test
-    public void testLogin03() throws LoginSampleException {
-        // Jens is supposed to be a customer
-        User user = UserMapper.login( "jens@somewhere.com", "jensen" );
-        assertEquals( "customer", user.getRole() );
-    }
-
-    @Test
-    public void testCreateUser01() throws LoginSampleException {
-        // Can we create a new user - Notice, if login fails, this will fail
-        // but so would login01, so this is OK
-        User original = new User( "king@kong.com", "uhahvorhemmeligt", "konge" );
-        UserMapper.createUser( original );
-        User retrieved = UserMapper.login( "king@kong.com", "uhahvorhemmeligt" );
-        assertEquals( "konge", retrieved.getRole() );
-
-}*/
+*/
 }
-

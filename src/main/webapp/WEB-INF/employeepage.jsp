@@ -28,28 +28,22 @@
                     <button class="btn btn-primary">Aktive bestillinger</button>
                 </label>
             </div> </form>
-<form action="FrontController" method="post">
-    <input type="hidden" name="taget" value="registerEmployee">
-    <p class="hint-text">Fill in this form to create an employee account!</p>
+<br>
+<form action="FrontController" method="get">
+    <input type="hidden" name="taget" value="registerEmployeePage">
+    <div>
+        <label>
+            <button class="btn btn-primary">Opret ny medarbejder</button>
+        </label>
+    </div> </form>
+<br>
+<form action="FrontController" method="get">
+    <input type="hidden" name="taget" value="UpdateNameAndPrice">
+    <div>
+        <label>
+            <button class="btn btn-primary">Opdater produkt navn og pris</button>
+        </label>
+    </div> </form>
 
-        <input type="text" class="form-control" name="email" placeholder="E-mail" required="required">
-
-        <input type="text" class="form-control" name="name" placeholder="Navn" required="required">
-
-        <input type="text" class="form-control" name="address" placeholder="Adresse" required="required">
-
-        <input type="text" class="form-control" name="zipCity" placeholder="Postnr." required="required">
-
-        <input type="text" class="form-control" name="phone" placeholder="Tlf." required="required">
-
-        <input type="password" class="form-control" name="password1" placeholder="Password" required="required">
-
-        <input type="password" class="form-control" name="password2" placeholder="Confirm Password" required="required">
-
-    <div class="form-group">
-        <label class="checkbox-inline"><input type="checkbox" required="required"> I accept the <a href="#">Terms &amp; Conditions</a></label>
-    </div>
-    <input type="submit" class="btn btn-primary btn-block" value="Sign up">
-</form>
     </body>
 </html>

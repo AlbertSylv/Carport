@@ -28,6 +28,13 @@ abstract class Command {
         commands.put("stykliste", new Stykliste());
         commands.put("logud", new LogOut());
         commands.put("drawing",new Drawing());
+        commands.put("registerEmployeePage",new RegisterEmployeePage());
+        commands.put("UpdateNameAndPrice",new UpdateNameAndPrice());
+        commands.put("updateRC",new UpdateRC());
+        commands.put("updateWood",new UpdateWood());
+        commands.put("updateTRC",new UpdateTRC());
+        commands.put("updateSC",new UpdateSC());
+
 
     }
 

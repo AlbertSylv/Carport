@@ -28,4 +28,25 @@ public class MaterialFacade {
 
         return linjer;
     }
+    public static ArrayList<Wood> getWoods() throws LoginSampleException {
+        ArrayList<Wood> linjer = new ArrayList<Wood>();
+
+        linjer = MaterialMapper.getWoods();
+
+        return linjer;
+    }
+
+    public static void updateWood(String type, String name, int price) throws LoginSampleException {
+        MaterialMapper.updateWood(type,name,price);
+    }
+
+    public static void updateTRC(int tiltedroofID, String name, int price) throws LoginSampleException {
+        MaterialMapper.updateTRC(tiltedroofID,name,price);
+    }
+    public static void updateRC(int roofID, String name, int price) throws LoginSampleException {
+        MaterialMapper.updateRC(roofID,name,price);
+    }
+    public static void updateSC(int shedID, String name, int price) throws LoginSampleException {
+        MaterialMapper.updateSC(shedID,name,price);
+    }
 }

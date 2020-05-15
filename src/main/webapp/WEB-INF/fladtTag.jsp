@@ -38,6 +38,7 @@
 <p style="text-align:center;">Bemærk at bredde og længde er fra stolpe til stolpe. Taget vil hænge 15 cm ud over de valgte mål på hver side.</p>
 <form class="text-center" action="FrontController" method="post" id="bestilling">
     <input type="hidden" name="taget" value="createRequest">
+    <input type="hidden" name="email" value="${sessionScope.email}">
     <h3>Carport bredde</h3>
     <select id = "myList1" name="width">
 
@@ -101,8 +102,8 @@
     </p>
     <br>
     <h4 class="text-center">
-        Her kan du vælge redskabsskur til eller fra <br> <br>
-        <button onclick="myFunction()">Til/Fra</button>
+        Her kan du vælge redskabsskur til eller fra <br>
+        <button type="button" onclick="myFunction()">Til/Fra</button>
     </h4>
     <div id="myDIV2">
         <p>
@@ -170,15 +171,13 @@
         </select>
         </p>
     </div>
-    <p>Indtast email</p>
-    <input type="text" name="email" required="required">
 
     <p>Indtast note</p>
     <input type="text" name="note">
+    <br>
 
-    <br> <br>
     <button type="submit">Bestil carport med valgte mål</button>
-    <br> <br>
+    <br>
 </form>
 </body>
 </html>

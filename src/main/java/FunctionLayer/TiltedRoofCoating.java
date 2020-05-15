@@ -6,6 +6,7 @@ public class TiltedRoofCoating {
         String name;
         int price;
         double meter2;
+        int pricePrM;
 
     //Constructor til når Calculatoren skal returne en roofcoating
     public TiltedRoofCoating(String name, int price, double meter2) {
@@ -15,9 +16,18 @@ public class TiltedRoofCoating {
     }
 
     //Constructor til MaterialMapperen
-    public TiltedRoofCoating(int tiltedroofID, String name) {
+    public TiltedRoofCoating(int tiltedroofID, String name, int pricePrM) {
         this.tiltedroofID = tiltedroofID;
         this.name = name;
+        this.pricePrM = pricePrM;
+    }
+
+    public int getPricePrM() {
+        return pricePrM;
+    }
+
+    public void setPricePrM(int pricePrM) {
+        this.pricePrM = pricePrM;
     }
 
     public double getMeter2() {

@@ -15,9 +15,10 @@ public class RoofCoating {
     }
 
     //Constructor til MaterialMapperen
-    public RoofCoating(int roofID, String name) {
+    public RoofCoating(int roofID, String name, int pricePrM) {
         this.roofID = roofID;
         this.name = name;
+        this.pricePrM = pricePrM;
     }
 
     public double getMeter2() {
