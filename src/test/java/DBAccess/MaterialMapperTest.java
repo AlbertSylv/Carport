@@ -215,7 +215,7 @@ public class MaterialMapperTest {
 
     }
 
-    @Test
+   /* @Test
     public void testAddRoofCoating() throws LoginSampleException {
         // Can we update a roofCoating objects name and price
         String newName = "Græs tag";
@@ -259,6 +259,6 @@ public class MaterialMapperTest {
         assertThat(ShedClothings,hasItem(hasProperty("price",equalTo(5))));
 
     }
-
+*/
 
 }

@@ -14,6 +14,9 @@ public class Svg {
     private final String headerTemplate = "<svg version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" height=\"%s\" width=\"%s\" viewBox=\"%s\" preserveAspectRatio=\"xMinYMin\">";
     private final String rectTemplate = "<rect x=\"%d\" y=\"%d\" height=\"%d\" width=\"%d\" style=\"stroke:#000000; fill: #ffffff\" />";
     private final String poleTemplate = "<rect x=\"%d\" y=\"%d\" height=\"%d\" width=\"%d\" style=\"stroke:#000000; stroke-width: 4px; fill: #ffffff\" />";
+    private final String shedTemplate = "<rect x=\"%d\" y=\"%d\" height=\"%d\" width=\"%d\" style=\"stroke:#000000; stroke-width: 4px; fill: #ffffff\" />";
+    private final String lineTemplate = "<rect x=\"%d\" y=\"%d\" height=\"%d\" width=\"%d\" style=\"stroke:#000000; fill: #ffffff\" />";
+
 
     public Svg(int width, int height, String viewbox, int x, int y) {
         this.width = width;
@@ -23,14 +26,23 @@ public class Svg {
         this.y = y;
         svg.append(String.format(headerTemplate, height, width, viewbox));
     }
+    public void addShed(int x, int y, int height, int width){
+        svg.append(String.format(shedTemplate, x, y, height, width));
+    }
 
     public void addRect(int x, int y, int height, int width){
         svg.append(String.format(rectTemplate, x, y, height, width));
     }
     public void addPole(int x, int y, int height, int width){
         svg.append(String.format(poleTemplate, x, y, height, width));
-
     }
+    public void addLine(int x, int y, int height, int width){
+        svg.append(String.format(lineTemplate, x,y,height, width));
+    }
+  /*  public void addArrowLine(int x, int y, int height, int width){
+        svg.append(String.format(arrowTemplate,x,y,height,width));
+    }*/
+
 
 
     public int getWidth() {

@@ -19,43 +19,81 @@ public class Drawing extends Command {
         int poles = Calculator.getPoles(id) ;
         int length = req.getLength();
         int width = req.getWidth();
-        int offset = 0;
+        int offset = 100;
 
-        //outhang er 15 cm på hver side det vil sige at sammen lagt er der 30 cm ekstra lodret og vandret
-        int outHang = 30;
+        int outHang = 30;        //outhang er 15 cm på hver side det vil sige at sammen lagt er der 30 cm ekstra lodret og vandret
         int y = 0;
+        int u= 0;
         int a=10;
-        int spærAfstand = 0;
-        double spærAntal = ((length+outHang)/55);
+        //udregning for hvad mellemrummet skal være imellem hver spær på taget og hvor mange spær der skal til
+        double lengthPlusOuthang= length + outHang;
+        int spærAntal = (int) (1 + Math.ceil(lengthPlusOuthang / 55));
+        int spærMellemrum = (int) (lengthPlusOuthang/(spærAntal - 1));
 
         Svg svg = new Svg(1000, 1000, "0,0,1000,1000",0,0);
         Svg svgInnerDrawing = new Svg(900,800,"0,0,900,800",0,0);
-        svg.addRect(offset,0,width+outHang ,length+outHang);
-        svg.addRect(offset,outHang/2,4,length+outHang);
-        svg.addRect(offset,width+outHang/2,4,length+outHang);
-
-        // for each loop sætter pælene ind i tegningen
-        for ( int i = 0; i < poles/2; i++) {
-
-        svg.addPole(offset+outHang/2+y,outHang/2,4,4 );
-        svg.addPole(offset+outHang/2+y,width+outHang/2,4, 4);
+        svg.addRect(offset,offset ,width+outHang ,length+outHang);
 
 
+
+
+
+        if(shedLength > 0){ //Shed building
+            svg.addShed(offset+length+outHang-shedLength-outHang/2,offset+outHang/2,shedWidth, shedLength);
+            svg.addPole(offset+length+outHang-shedLength-outHang/2,offset+outHang/2+shedWidth/2,4, 4);
+            svg.addPole(offset+length+outHang-outHang/2,offset+outHang/2+shedWidth/2,4, 4);
+            svg.addPole(offset+length+outHang-shedLength-outHang/2,offset+outHang/2,4, 4);
+            svg.addPole(offset+length+outHang-shedLength-outHang/2,offset+shedWidth+outHang/2,4, 4);
+
+          if(shedWidth<width){ // tilføjer pæle til shed hvis den er kortere end brædten på carporten
+
+              svg.addPole(offset+length+outHang-shedLength-outHang/2,offset+outHang/2+shedWidth,4, 4);
+              svg.addPole(offset+length+outHang-shedLength-outHang/2,offset+outHang/2,4,4);
+              svg.addPole(offset+length+outHang-outHang/2,offset+outHang/2+shedWidth,4,4);
+
+            }
+
+        }
+        // sætter spær på siderne af carporten
+        svg.addRect(offset,offset+outHang/2,4,length+outHang);
+        svg.addRect(offset,offset+width+outHang/2,4,length+outHang);
+
+        for ( int i = 0; i < poles/2; i++) {        // for each loop sætter pælene ind i tegningen
+
+            svg.addPole(offset+outHang/2+y,offset+outHang/2,4,4 );
+            svg.addPole(offset+outHang/2+y,offset+width+outHang/2,4, 4);
 
             y += length/(poles/2-1);
+    }
+
+        for (int i =0; i<spærAntal; i++) {  //tilføjer spær til taget
+
+            svg.addRect(offset+u, offset, width+outHang, 4);
+            svg.addLine(offset+u,25 , 50, 1);
+            u+=spærMellemrum;
+        }
+
+        for (int i = 0; i < spærAntal; i++
+             ) {
 
         }
-        svg.addRect(offset, 0, width+outHang,4);
-        svg.addRect(offset+length+outHang,0,width+outHang,4);
-
-        for (int i =0; i<spærAntal; i++) {
-
-            svg.addRect(offset+spærAfstand, 0, width+outHang, 4);
-
-            spærAfstand+=length/spærAntal;
 
 
-        }
+
+        svg.addLine(25, offset, 1, 50);
+        svg.addLine(25, offset+width+outHang, 1, 50);
+        svg.addLine(50, offset, width+outHang,1);
+        svg.addLine(offset, offset+length+outHang+ 25, 1, length+outHang);
+
+        svg.addLine(offset,offset+width+outHang+25,50,1);
+        svg.addLine(offset+length+outHang,offset+width+outHang+25,50,1);
+
+
+
+
+
+
+
 
 
 
