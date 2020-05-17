@@ -45,10 +45,14 @@ Skur længde: ${sessionScope.req.shedLength} cm
 <hr>
 <h1>TEGNING HER</h1>
 <hr>
-<button type="submit"><a href="FrontController?taget=bestilt">Jaaaa!</a></button>
+<form action="FrontController" method="post">
+    <input type="hidden" name="taget" value="bestilt">
+<button type="submit">Jaaaa!</button>
+</form>
 
 <form action="FrontController" method="post">
     <input type="hidden" name="taget" value="deleteRequest">
+
     <input type="hidden" name="email" value="${sessionScope.req.email}">
 
 <button type="submit">Nej den er lort, lad mig starte forfra!</button>

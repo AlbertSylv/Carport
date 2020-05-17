@@ -171,7 +171,7 @@
 
         <select id = "myList7" name="shedclothing" required="required">
 
-            <option value = "-1"> --- </option>
+            <option value = "1"> --- </option>
 
             <c:forEach items="${sessionScope.shedclothing}"  var="SC">
 
