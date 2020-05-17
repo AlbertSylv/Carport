@@ -49,4 +49,15 @@ public class MaterialFacade {
     public static void updateSC(int shedID, String name, int price) throws LoginSampleException {
         MaterialMapper.updateSC(shedID,name,price);
     }
+
+    public static void insertTRC(String name, int price) throws LoginSampleException {
+        MaterialMapper.insertTRC(name, price);
+    }
+    public static void insertRC( String name, int price) throws LoginSampleException {
+        MaterialMapper.insertRC(name, price);
+    }
+    public static void insertSC( String name, int price) throws LoginSampleException {
+        MaterialMapper.insertSC(name, price);
+    }
+
 }

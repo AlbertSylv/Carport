@@ -175,7 +175,7 @@ public class MaterialMapperTest {
         ArrayList<RoofCoating> roofCoatings = MaterialMapper.getRoofCoatings();
         assertThat(roofCoatings, hasSize(1));
         assertThat(roofCoatings,hasItem(hasProperty("name",equalTo("Græs tag"))));
-        assertThat(roofCoatings,hasItem(hasProperty("price",equalTo(200))));
+        assertThat(roofCoatings,hasItem(hasProperty("pricePrM",equalTo(200))));
 
 
         //Man behøver ikke den her, fordi vi allerede tester om arraylistens size er 1, men vil gerne lige flexe at jeg kan finde ud af at teste om den gamle string er forsvundet. Det er også første gang der laves en negativ test.
@@ -195,7 +195,7 @@ public class MaterialMapperTest {
         ArrayList<TiltedRoofCoating> TiltedRoofCoatings = MaterialMapper.getTiltedRoofCoatings();
         assertThat(TiltedRoofCoatings, hasSize(1));
         assertThat(TiltedRoofCoatings,hasItem(hasProperty("name",equalTo("Græs tag"))));
-        assertThat(TiltedRoofCoatings,hasItem(hasProperty("price",equalTo(200))));
+        assertThat(TiltedRoofCoatings,hasItem(hasProperty("pricePrM",equalTo(200))));
 
     }
 
@@ -211,7 +211,7 @@ public class MaterialMapperTest {
         ArrayList<ShedClothing> ShedClothings = MaterialMapper.getShedClothing();
         assertThat(ShedClothings, hasSize(2));
         assertThat(ShedClothings,hasItem(hasProperty("name",equalTo("Falsk mursten"))));
-        assertThat(ShedClothings,hasItem(hasProperty("price",equalTo(5))));
+        assertThat(ShedClothings,hasItem(hasProperty("pricePrM",equalTo(5))));
 
     }
 
@@ -221,12 +221,12 @@ public class MaterialMapperTest {
         String newName = "Græs tag";
         int newPrice = 200;
 
-        MaterialMapper.addRoofCoating(newName,newPrice);
+        MaterialMapper.insertRC(newName,newPrice);
 
         ArrayList<RoofCoating> roofCoatings = MaterialMapper.getRoofCoatings();
         assertThat(roofCoatings, hasSize(2));
         assertThat(roofCoatings,hasItem(hasProperty("name",equalTo("Græs tag"))));
-        assertThat(roofCoatings,hasItem(hasProperty("price",equalTo(200))));
+        assertThat(roofCoatings,hasItem(hasProperty("pricePrM",equalTo(200))));
 
     }
 
@@ -236,12 +236,12 @@ public class MaterialMapperTest {
         String newName = "Græs tag";
         int newPrice = 200;
 
-        MaterialMapper.addTiltedRoofCoating(newName,newPrice);
+        MaterialMapper.insertTRC(newName,newPrice);
 
         ArrayList<TiltedRoofCoating> TiltedRoofCoatings = MaterialMapper.getTiltedRoofCoatings();
-        assertThat(TiltedRoofCoatings, hasSize(1));
+        assertThat(TiltedRoofCoatings, hasSize(2));
         assertThat(TiltedRoofCoatings,hasItem(hasProperty("name",equalTo("Græs tag"))));
-        assertThat(TiltedRoofCoatings,hasItem(hasProperty("price",equalTo(200))));
+        assertThat(TiltedRoofCoatings,hasItem(hasProperty("pricePrM",equalTo(200))));
 
     }
 
@@ -251,12 +251,12 @@ public class MaterialMapperTest {
         String newName = "Falsk mursten";
         int newPrice = 5;
 
-        MaterialMapper.addShedClothing(newName,newPrice);
+        MaterialMapper.insertSC(newName,newPrice);
 
         ArrayList<ShedClothing> ShedClothings = MaterialMapper.getShedClothing();
-        assertThat(ShedClothings, hasSize(2));
+        assertThat(ShedClothings, hasSize(3));
         assertThat(ShedClothings,hasItem(hasProperty("name",equalTo("Falsk mursten"))));
-        assertThat(ShedClothings,hasItem(hasProperty("price",equalTo(5))));
+        assertThat(ShedClothings,hasItem(hasProperty("pricePrM",equalTo(5))));
 
     }
 

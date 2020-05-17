@@ -34,6 +34,8 @@ abstract class Command {
         commands.put("updateWood",new UpdateWood());
         commands.put("updateTRC",new UpdateTRC());
         commands.put("updateSC",new UpdateSC());
+        commands.put("addProduct",new AddProduct());
+        commands.put("addProductPage",new AddProductPage());
 
 
     }
