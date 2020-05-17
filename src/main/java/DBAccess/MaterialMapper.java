@@ -18,7 +18,7 @@ public class MaterialMapper {
         try {
 
             Connection con = Connector.connection();
-            String SQL = "SELECT * FROM carport.shedclothing where shedID > 1";
+            String SQL = "SELECT * FROM shedclothing where shedID > 1";
             PreparedStatement ps = con.prepareStatement(SQL);
 
 
@@ -46,7 +46,7 @@ public class MaterialMapper {
         try {
 
             Connection con = Connector.connection();
-            String SQL = "select * from carport.roofcoating where roofID>1;";
+            String SQL = "select * from roofcoating where roofID>1;";
             PreparedStatement prepst = con.prepareStatement(SQL);
             ResultSet result = prepst.executeQuery();
             while (result.next()) {
@@ -69,7 +69,7 @@ public class MaterialMapper {
         try {
 
             Connection con = Connector.connection();
-            String SQL = "select * from carport.tiltedroofcoating where tiltedroofID>1;";
+            String SQL = "select * from tiltedroofcoating where tiltedroofID>1;";
             PreparedStatement prepst = con.prepareStatement(SQL);
             ResultSet result = prepst.executeQuery();
             while (result.next()) {
@@ -92,7 +92,7 @@ public class MaterialMapper {
         try {
 
             Connection con = Connector.connection();
-            String SQL = "select * from carport.wood;";
+            String SQL = "select * from wood;";
             PreparedStatement prepst = con.prepareStatement(SQL);
             ResultSet result = prepst.executeQuery();
             while (result.next()) {
@@ -153,7 +153,7 @@ public class MaterialMapper {
     public static void updateRC(int roofID, String name, int price) throws LoginSampleException {
         try {
             Connection con = Connector.connection();
-            String SQL = "UPDATE shedclothing SET name = ?, price = ? WHERE roofID=?;";
+            String SQL = "UPDATE roofcoating SET name = ?, price = ? WHERE roofID=?;";
             PreparedStatement ps = con.prepareStatement( SQL, Statement.RETURN_GENERATED_KEYS );
             ps.setInt( 3, roofID );
             ps.setString( 1, name );
@@ -190,6 +190,52 @@ public class MaterialMapper {
             ps.setString( 1, name );
             ps.setInt( 2, price );
             ps.setString( 3, type );
+            ps.executeUpdate();
+            ResultSet ids = ps.getGeneratedKeys();
+            ids.next();
+        } catch ( SQLException | ClassNotFoundException ex ) {
+            throw new LoginSampleException( ex.getMessage() );
+        }
+    }
+
+    public static void insertSC(String name, int price) throws LoginSampleException {
+        try {
+            Connection con = Connector.connection();
+            String SQL = "INSERT INTO shedclothing (name, price) VALUES (?,?)";
+            PreparedStatement ps = con.prepareStatement( SQL, Statement.RETURN_GENERATED_KEYS );
+            ps.setString( 1, name );
+            ps.setInt( 2, price );
+
+            ps.executeUpdate();
+            ResultSet ids = ps.getGeneratedKeys();
+            ids.next();
+        } catch ( SQLException | ClassNotFoundException ex ) {
+            throw new LoginSampleException( ex.getMessage() );
+        }
+    }
+    public static void insertTRC(String name, int price) throws LoginSampleException {
+        try {
+            Connection con = Connector.connection();
+            String SQL = "INSERT INTO tiltedroofcoating (name, price) VALUES (?,?)";
+            PreparedStatement ps = con.prepareStatement( SQL, Statement.RETURN_GENERATED_KEYS );
+            ps.setString( 1, name );
+            ps.setInt( 2, price );
+
+            ps.executeUpdate();
+            ResultSet ids = ps.getGeneratedKeys();
+            ids.next();
+        } catch ( SQLException | ClassNotFoundException ex ) {
+            throw new LoginSampleException( ex.getMessage() );
+        }
+    }
+    public static void insertRC(String name, int price) throws LoginSampleException {
+        try {
+            Connection con = Connector.connection();
+            String SQL = "INSERT INTO roofcoating (name, price) VALUES (?,?)";
+            PreparedStatement ps = con.prepareStatement( SQL, Statement.RETURN_GENERATED_KEYS );
+            ps.setString( 1, name );
+            ps.setInt( 2, price );
+
             ps.executeUpdate();
             ResultSet ids = ps.getGeneratedKeys();
             ids.next();

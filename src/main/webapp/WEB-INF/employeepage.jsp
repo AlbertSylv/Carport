@@ -6,10 +6,11 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@include file="../includes/navbar2.inc"%>
 
 
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
         <title>Employee home page</title>
     </head>
 
@@ -44,6 +45,15 @@
             <button class="btn btn-primary">Opdater produkt navn og pris</button>
         </label>
     </div> </form>
+<br>
+<form action="FrontController" method="get">
+    <input type="hidden" name="taget" value="addProductPage">
+    <div>
+        <label>
+            <button class="btn btn-primary">Tilføj produkt</button>
+        </label>
+    </div> </form>
+<br>
 
     </body>
 </html>

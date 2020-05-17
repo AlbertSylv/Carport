@@ -19,7 +19,7 @@
 
 <h3>Tag med rejsning produkter</h3>
 <form action="FrontController" method="post">
-    <input type="hidden" name="taget" value="update">
+    <input type="hidden" name="taget" value="updateTRC">
 <select id="myList1" name="tiltedroof" required="required">
     <c:forEach items="${sessionScope.tiltedroofcoatings}" var="TRC">
         <option value = ${TRC.tiltedroofID}> ${TRC.name} </option>
@@ -33,15 +33,15 @@
 <br>
     <p>Nyt navn</p>
     <input type="text" name="name" required="required">
-
+    <br>
     <br>
     <p>Ny pris</p>
     <input type="number" name="price" required="required">
-
+    <br>
     <br>
     <div>
         <label>
-            <button class="btn btn-primary">Opdater produkt</button>
+            <button type="submit" class="btn btn-primary">Opdater produkt</button>
         </label>
     </div>
 
@@ -49,7 +49,7 @@
 <hr>
 <h3>Fladt tag produkter</h3>
 <form action="FrontController" method="post">
-    <input type="hidden" name="taget" value="update">
+    <input type="hidden" name="taget" value="updateRC">
     <select id="myList2" name="roof" required="required">
         <c:forEach items="${sessionScope.roofcoatings}" var="RC">
             <option value = ${RC.roofID}> ${RC.name} </option>
@@ -57,13 +57,15 @@
         </c:forEach>
     </select>
     <br>
+    <br>
     <p>Nyt navn</p>
     <input type="text" name="name" required="required">
-
+    <br>
     <br>
     <p>Ny pris</p>
-    <input type="number" name="price" required="required">
 
+    <input type="number" name="price" required="required">
+    <br>
     <br>
     <div>
         <label>
@@ -75,9 +77,9 @@
 <hr>
 <h3>Skur beklædning produkter</h3>
 <form action="FrontController" method="post">
-    <input type="hidden" name="taget" value="update">
+    <input type="hidden" name="taget" value="updateSC">
     <select id="myList3" name="shedclothings" required="required">
-        <c:forEach items="${sessionScope.shedclothing}" var="shedclothing">
+        <c:forEach items="${sessionScope.shedclothings}" var="shedclothing">
             <option value = ${shedclothing.shedID}> ${shedclothing.name} </option>
         </c:forEach>
 
@@ -89,15 +91,15 @@
     <p>Nuværende pris:
 
 
-
+    <br>
     <br>
     <p>Nyt navn</p>
     <input type="text" name="name" required="required">
-
+    <br>
     <br>
     <p>Ny pris</p>
     <input type="number" name="price" required="required">
-
+    <br>
     <br>
     <div>
         <label>
@@ -113,25 +115,26 @@
     <input type="hidden" name="taget" value="updateWood">
     <select id="myList4" name="woods" required="required">
         <c:forEach items="${sessionScope.woods}" var="Wood">
-            <option value = ${Wood.type}> ${Wood.name} </option>
+            <option value = ${Wood.type}> ${Wood.woodName} </option>
 
         </c:forEach>
     </select>
     <br>
+    <br>
     <p>Nyt navn</p>
     <input type="text" name="name" required="required">
-
+    <br>
     <br>
     <p>Ny pris (pris er målt pr. meter)</p>
     <input type="number" name="price" required="required">
-
+    <br>
     <br>
     <div>
         <label>
             <button class="btn btn-primary">Opdater produkt</button>
         </label>
     </div>
-
+    <br>
 </form>
 <hr>
 </body>

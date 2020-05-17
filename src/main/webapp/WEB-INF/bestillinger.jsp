@@ -12,8 +12,11 @@
     <title>Aktiv bestillinger</title>
 </head>
 <body>
+<form  action="FrontController" method="get">
+    <input type="hidden" name="taget" value="employeepage">
+    <button type="submit">Tilbage til din side</button>
+</form>
 
-<button type="submit"><a href="FrontController?taget=employee">Tilbage til din side</a></button>
 
 <hr>
 

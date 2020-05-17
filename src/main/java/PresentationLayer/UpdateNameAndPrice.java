@@ -23,10 +23,15 @@ public class UpdateNameAndPrice extends Command {
         List<RoofCoating> roofcoatings = new ArrayList<RoofCoating>();
         roofcoatings= MaterialFacade.getRoofCoatings();
 
+        //Definer Wood arraylist
+        List<Wood> woods = new ArrayList<Wood>();
+        woods= MaterialFacade.getWoods();
+
         HttpSession session = request.getSession();
         session.setAttribute("tiltedroofcoatings", tiltedroofcoatings);
         session.setAttribute("shedclothings",shedclothings);
         session.setAttribute("roofcoatings", roofcoatings);
+        session.setAttribute("woods", woods);
 
         return "UpdateNameAndPrice";
     }
