@@ -12,8 +12,8 @@
 <head>
     <title>Bestilt</title>
 </head>
-<body>
-Din carport er bestilt, du vil få en mail fra en af vores medarbejdere med et tilbud på din kommende carport ;)
+<p><strong>
+Din carport er bestilt, du vil få en mail fra en af vores medarbejdere med et tilbud på din kommende carport.</strong> </p>
 
 </body>
 </html>

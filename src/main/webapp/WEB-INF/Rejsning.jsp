@@ -30,9 +30,10 @@
 
 <p style="text-align:center;">Bemærk at bredde og længde er målt fra stolpe til stolpe. Taget vil hænge 15 cm ud over de valgte mål på hver side.</p>
 <form class="text-center" action="FrontController" method="post" id="bestilling">
-    <input type="hidden" name="taget" value="createRequest"> <input type="hidden" name="email" value="${sessionScope.email}">
+    <input type="hidden" name="taget" value="createRequest">
+    <input type="hidden" name="email" value="${sessionScope.email}">
     <h3>Carport bredde</h3>
-    <select id="myList1" name="width">
+    <select id="myList1" name="width" onchange="removeOptions()">
         <option value="240">240 cm</option>
         <option value="270">270 cm</option>
         <option value="300">300 cm</option>

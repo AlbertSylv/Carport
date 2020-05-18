@@ -13,51 +13,58 @@
 </head>
 <body>
 
-<h3>Er din carport lige så liderlig, som du havde forestillet dig den?</h3>
+<h3>Er din carports dimensioner korrekte?</h3>
 <hr>
 <p>
-Carport længde: ${sessionScope.req.length} cm
+<strong>Carport længde: </strong>${sessionScope.req.length} cm
 </p>
 <p>
-Carport bredde: ${sessionScope.req.width} cm
+<strong>Carport bredde: </strong>${sessionScope.req.width} cm
 </p>
     <hr>
 <p>
-Hældning på tag: ${sessionScope.req.angle} grader
+<strong>Hældning på tag: </strong>${sessionScope.req.angle} grader
 </p>
 <p>
-Tag: ${sessionScope.req.RCname}
+<strong>Tag: </strong>${sessionScope.req.RCname}
 </p>
 <p>
-Tag type: ${sessionScope.req.TRCname}
+    <strong>Tag type:</strong> ${sessionScope.req.TRCname}
 </p>
 <hr>
+<p><strong>${sessionScope.SCwarning}</strong></p>
 <p>
-Skur beklædning: ${sessionScope.req.SCname}
+    <strong>Skur beklædning:</strong> ${sessionScope.req.SCname}
 </p>
+<p><strong>${sessionScope.Wwarning}</strong></p>
 <p>
-Skur bredde: ${sessionScope.req.shedWidth} cm
+    <strong>Skur bredde:</strong> ${sessionScope.req.shedWidth} cm
 </p>
+<p><strong>${sessionScope.Lwarning}</strong></p>
 <p>
-Skur længde: ${sessionScope.req.shedLength} cm
+    <strong>Skur længde:</strong> ${sessionScope.req.shedLength} cm
+</p>
 
-</p>
 <hr>
-<h1>TEGNING HER</h1>
+<form  action="FrontController" method="post">
+    <input type="hidden" name="taget" value="drawing">
+    <input type="hidden" name="id" value="${sessionScope.req.id}">
+    <button  type="submit" class="btn btn-primary">Se tegning</button>
+</form>
 <hr>
 <form action="FrontController" method="post">
     <input type="hidden" name="taget" value="bestilt">
-<button type="submit">Jaaaa!</button>
+<button type="submit">Ja, det ser fint ud!</button>
 </form>
-
+<br>
 <form action="FrontController" method="post">
     <input type="hidden" name="taget" value="deleteRequest">
 
     <input type="hidden" name="email" value="${sessionScope.req.email}">
 
-<button type="submit">Nej den er lort, lad mig starte forfra!</button>
+<button type="submit">Nej, lad mig starte forfra!</button>
 
 </form>
-
+<br>
 </body>
 </html>

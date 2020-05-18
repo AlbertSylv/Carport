@@ -32,11 +32,11 @@
 
 <br>
     <p>Nyt navn</p>
-    <input type="text" name="name" required="required">
+    <input type="text" name="TRCname" required="required">
     <br>
     <br>
     <p>Ny pris</p>
-    <input type="number" name="price" required="required">
+    <input type="number" name="TRCprice" required="required">
     <br>
     <br>
     <div>
@@ -59,17 +59,17 @@
     <br>
     <br>
     <p>Nyt navn</p>
-    <input type="text" name="name" required="required">
+    <input type="text" name="RCname" required="required">
     <br>
     <br>
     <p>Ny pris</p>
 
-    <input type="number" name="price" required="required">
+    <input type="number" name="RCprice" required="required">
     <br>
     <br>
     <div>
         <label>
-            <button class="btn btn-primary">Opdater produkt</button>
+            <button type="submit" class="btn btn-primary">Opdater produkt</button>
         </label>
     </div>
 
@@ -94,16 +94,16 @@
     <br>
     <br>
     <p>Nyt navn</p>
-    <input type="text" name="name" required="required">
+    <input type="text" name="SCname" required="required">
     <br>
     <br>
     <p>Ny pris</p>
-    <input type="number" name="price" required="required">
+    <input type="number" name="SCprice" required="required">
     <br>
     <br>
     <div>
         <label>
-            <button class="btn btn-primary">Opdater produkt</button>
+            <button type="submit" class="btn btn-primary">Opdater produkt</button>
         </label>
     </div>
 
@@ -131,7 +131,7 @@
     <br>
     <div>
         <label>
-            <button class="btn btn-primary">Opdater produkt</button>
+            <button type="submit" class="btn btn-primary">Opdater produkt</button>
         </label>
     </div>
     <br>
