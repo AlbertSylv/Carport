@@ -2,7 +2,7 @@ package FunctionLayer;
 
 public class TiltedRoofCoating {
 
-        int tiltedroofID;
+        private int tiltedroofID;
         String name;
         int price;
         double meter2;

@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public class Calculator {
 
-    public static Wood  getPole(int id) throws LoginSampleException {
+    public static Wood getPole(int id) throws LoginSampleException {
         Wood wood = MaterialMapper.getWood("Pæl");
         int pricePrM = wood.getPricePrM();
         String name = wood.getWoodName();
@@ -124,15 +124,15 @@ public class Calculator {
              spærLength = (int) Math.ceil(((lengthAsDouble/100+0.3)*2)+((((lengthAsDouble+30)/100)/0.55 + 1)*(widthAsDouble/100+0.3)));
         }else{
             //Rem i hver side placeres på stolper, de raver 15 cm ud over stolperne i hver side = 30. Oven på remmene placeres spær 89 cm fra hinanden. +1 fordi det er mellemrummene man får når man dividerer med 0.55 og ikke antal spær.
-             spærLength = (int) Math.ceil(((lengthAsDouble/100+0.3)*2)+((((lengthAsDouble+30)/100)/0.89 + 1)*(widthAsDouble/100+0.3)));
+             spærLength = (int) Math.ceil(((lengthAsDouble/100+0.3)*2))+(int)(Math.ceil((((lengthAsDouble+30)/100)/0.89 + 1)*(widthAsDouble/100+0.3)));
 
-            double hypotenusen = (width/2)/Math.cos(Math.toRadians(angle))/100;
+            double hypotenusen = ((width+30)/2)/Math.cos(Math.toRadians(angle))/100;
 
             double trekant = hypotenusen*2;
 
-            int antaltrekanter = (int) (Math.ceil(lengthAsDouble/100)/0.89 + 1);
+            int antaltrekanter = (int) (Math.ceil(lengthAsDouble/100+0.3)/0.89 + 1);
 
-             spærLength += trekant * antaltrekanter;
+             spærLength += (int) Math.ceil(trekant * antaltrekanter);
         }
 
 
@@ -156,7 +156,7 @@ public class Calculator {
         double skurWidthAsDouble = skurWidth;
 
         //der sidder øvre og nedre løsholter i et skur de skal være hel vejen rundt, så det er bare omkredsen af skuret gange 2
-        int regelLength = (int) Math.ceil((skurLengthAsDouble/100) * 2 + (skurWidthAsDouble/100) * 2);
+        int regelLength = (int) Math.ceil((skurLengthAsDouble/100) * 2 + (skurWidthAsDouble/100) * 2)*2;
 
         //Sammenlagt pris af regeler
         int price = regelLength*pricePrM;

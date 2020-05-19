@@ -12,7 +12,7 @@ public class RequestMapper {
 
         try {
             Connection con = Connector.connection();
-            String SQL = "INSERT INTO carport.requests (roofid, tiltedroofid, shedid, width, length, shedWidth, shedLength, angle, note, email) VALUES (?,?,?,?,?,?,?,?,?,?);";
+            String SQL = "INSERT INTO requests (roofid, tiltedroofid, shedid, width, length, shedWidth, shedLength, angle, note, email) VALUES (?,?,?,?,?,?,?,?,?,?);";
             PreparedStatement ps = con.prepareStatement(SQL, Statement.RETURN_GENERATED_KEYS);
             ps.setInt(1, roofid);
             ps.setInt(2, tiltedroofid);
@@ -43,7 +43,7 @@ public class RequestMapper {
             Connection con = Connector.connection();
             String SQL = "SELECT requests.*, roofcoating.name as RCname,roofcoating.price as RCprice, " +
                     "shedclothing.name as SCname, shedclothing.price as SCprice, tiltedroofcoating.name as TRCname," +
-                    " tiltedroofcoating.price as TRCprice FROM carport.requests " +
+                    " tiltedroofcoating.price as TRCprice FROM requests " +
                     "join roofcoating on requests.roofid=roofcoating.roofid " +
                     "join shedclothing on requests.shedID=shedclothing.shedID " +
                     "join tiltedroofcoating on requests.tiltedroofID=tiltedroofcoating.tiltedroofID " +
@@ -84,7 +84,7 @@ public class RequestMapper {
             Connection con = Connector.connection();
             String SQL = "SELECT requests.*, roofcoating.name as RCname,roofcoating.price as RCprice, " +
                     "shedclothing.name as SCname, shedclothing.price as SCprice, tiltedroofcoating.name as TRCname," +
-                    " tiltedroofcoating.price as TRCprice FROM carport.requests " +
+                    " tiltedroofcoating.price as TRCprice FROM requests " +
                     "join roofcoating on requests.roofid=roofcoating.roofid " +
                     "join shedclothing on requests.shedID=shedclothing.shedID " +
                     "join tiltedroofcoating on requests.tiltedroofID=tiltedroofcoating.tiltedroofID " +
@@ -122,7 +122,7 @@ public class RequestMapper {
         try {
 
             Connection con = Connector.connection();
-            String query = "delete from carport.requests where requests.email=? ORDER BY id DESC LIMIT 1;";
+            String query = "delete from requests where requests.email=? ORDER BY id DESC LIMIT 1;";
             PreparedStatement pstatement = con.prepareStatement(query);
             pstatement.setString(1, email);
 
@@ -142,7 +142,7 @@ public class RequestMapper {
             Connection con = Connector.connection();
             String SQL = "SELECT requests.*, roofcoating.name as RCname,roofcoating.price as RCprice, " +
                     "shedclothing.name as SCname, shedclothing.price as SCprice, tiltedroofcoating.name as TRCname," +
-                    " tiltedroofcoating.price as TRCprice FROM carport.requests " +
+                    " tiltedroofcoating.price as TRCprice FROM requests " +
                     "join roofcoating on requests.roofid=roofcoating.roofid " +
                     "join shedclothing on requests.shedID=shedclothing.shedID " +
                     "join tiltedroofcoating on requests.tiltedroofID=tiltedroofcoating.tiltedroofID " +
@@ -182,7 +182,7 @@ public class RequestMapper {
         try {
 
             Connection con = Connector.connection();
-            String query = "delete from carport.requests where requests.id=?;";
+            String query = "delete from requests where requests.id=?;";
             PreparedStatement pstatement = con.prepareStatement(query);
             pstatement.setString(1, String.valueOf(id));
 
