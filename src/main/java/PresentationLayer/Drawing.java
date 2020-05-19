@@ -24,18 +24,22 @@ public class Drawing extends Command {
         int outHang = 30;        //outhang er 15 cm på hver side det vil sige at sammen lagt er der 30 cm ekstra lodret og vandret
         int y = 0;
         int u= 0;
+        int u2=0;
+        int u3=0;
         int a=10;
+        int height=200;
         //udregning for hvad mellemrummet skal være imellem hver spær på taget og hvor mange spær der skal til
         double lengthPlusOuthang= length + outHang;
         int spærAntal = (int) (1 + Math.ceil(lengthPlusOuthang / 55));
         int spærMellemrum = (int) (lengthPlusOuthang/(spærAntal - 1));
+        double shedLengthAsDouble = shedLength;
+        int shedSpærAntal = (int) (1+Math.ceil(shedLengthAsDouble/55));
+        int shedSpærMellemrum = (int) (shedLengthAsDouble/(shedSpærAntal-1));
 
         Svg svg = new Svg(1000, 1000, "0,0,1000,1000",0,0);
-        Svg svgInnerDrawing = new Svg(900,800,"0,0,900,800",0,0);
+        Svg sideSvg = new Svg(1000, 1000, "0,0,1000,1000",1000, 0);
+
         svg.addRect(offset,offset ,width+outHang ,length+outHang);
-
-
-
 
 
         if(shedLength > 0){ //Shed building
@@ -50,7 +54,6 @@ public class Drawing extends Command {
               svg.addPole(offset+length+outHang-shedLength-outHang/2,offset+outHang/2+shedWidth,4, 4);
               svg.addPole(offset+length+outHang-shedLength-outHang/2,offset+outHang/2,4,4);
               svg.addPole(offset+length+outHang-outHang/2,offset+outHang/2+shedWidth,4,4);
-
             }
 
         }
@@ -62,31 +65,61 @@ public class Drawing extends Command {
 
             svg.addPole(offset+outHang/2+y,offset+outHang/2,4,4 );
             svg.addPole(offset+outHang/2+y,offset+width+outHang/2,4, 4);
+            sideSvg.addPole(offset+outHang/2+y, offset, height, 4);
 
             y += length/(poles/2-1);
     }
 
-        for (int i =0; i<spærAntal; i++) {  //tilføjer spær til taget
+        for (int i =0; i<spærAntal; i++) {  //tilføjer spær til taget og linjer til afstand mellem spærne
 
             svg.addRect(offset+u, offset, width+outHang, 4);
-            svg.addLine(offset+u,25 , 50, 1);
+            svg.addLine(offset+u,25 , 50, 1);//linje til afstand af spær
+
             u+=spærMellemrum;
         }
 
-        for (int i = 0; i < spærAntal; i++
-             ) {
-
+        for (int i =0; i<spærAntal-1; i++) {
+            svg.addArrowLine(offset+u2, 50, offset+spærMellemrum+u2, 50);
+            svg.addText(offset+u2+spærMellemrum/2, 35, 0, spærMellemrum);
+            u2+=spærMellemrum;
         }
 
 
 
+        //lodrette mål
         svg.addLine(25, offset, 1, 50);
-        svg.addLine(25, offset+width+outHang, 1, 50);
-        svg.addLine(50, offset, width+outHang,1);
-        svg.addLine(offset, offset+length+outHang+ 25, 1, length+outHang);
+        svg.addArrowLine(50, offset, 50, offset+width+outHang);
+        svg.addLine(25,offset+width+outHang,1, 50);
+        svg.addText(35, (offset+width+outHang)/2, -90, width+outHang);
 
-        svg.addLine(offset,offset+width+outHang+25,50,1);
+        //vandrette mål
+        svg.addLine(offset, offset+width+outHang+25, 50, 1);
+        svg.addArrowLine(offset, offset+width+outHang+50,offset+length+outHang , offset+width+outHang+50);
         svg.addLine(offset+length+outHang,offset+width+outHang+25,50,1);
+        svg.addText((offset+length+outHang)/2, offset+width+outHang+35, 0, length+outHang);
+
+
+        //
+        //
+        //
+        //Svg SIDEVIEW
+        //
+        //
+        //
+
+
+
+
+
+       // sideSvg.addRect(offset, offset, 200, length+outHang);
+        sideSvg.addRect(offset+length+outHang-shedLength-outHang/2,offset,200, shedLength);
+
+        for(int i = 0; i<shedSpærAntal; i++){
+
+            sideSvg.addRect(offset+length+outHang-shedLength-outHang/2+u3, offset, 200, 4);
+            u3+=shedSpærMellemrum;
+        }
+        sideSvg.addRoof(200, 200, 500, 500, 10);
 
 
 
@@ -100,7 +133,9 @@ public class Drawing extends Command {
 
 
 
-        request.setAttribute("svgdrawing", svg.toString());
+
+
+        request.setAttribute("svgdrawing", svg.toString()+sideSvg.toString() );
         return "drawing";
     }
 }
