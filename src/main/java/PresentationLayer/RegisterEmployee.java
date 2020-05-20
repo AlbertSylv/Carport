@@ -31,7 +31,10 @@ public class RegisterEmployee extends Command {
             session.setAttribute( "role", user.getRole() );
             return user.getRole() + "page";
         } else {
-            throw new LoginSampleException( "the two passwords did not match" );
+
+           Log.info("Registrering af Employee: " + "Password matchede ikke");
+
+            throw new LoginSampleException( "Indtastede passwords matchede ikke - prøv igen" );
         }
     }
 

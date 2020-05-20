@@ -2,6 +2,8 @@ package DBAccess;
 
 import FunctionLayer.LoginSampleException;
 import FunctionLayer.User;
+import PresentationLayer.Log;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -31,7 +33,24 @@ public class UserMapper {
             ResultSet ids = ps.getGeneratedKeys();
             ids.next();
         } catch ( SQLException | ClassNotFoundException ex ) {
-            throw new LoginSampleException( ex.getMessage() );
+
+            if(ex.getMessage().contains("Duplicate entry")){
+
+                Log.finest("Lav bruger:" + "''" + user.getEmail() + "''" + " findes allerede.");
+
+                throw new LoginSampleException("Bruger findes allerede.");
+            }
+
+            if(ex.getMessage().contains("Communication link failure")){
+
+                Log.info("Lav ny bruger: " + ex.getMessage());
+                throw new LoginSampleException("Databasen er nede, kontakt venligst Admin.");
+
+
+            }
+
+            Log.severe("Lav bruger " + ex.getMessage());
+            throw new LoginSampleException("Der er fejl på siden, kontakt admin.");
         }
     }
 
@@ -52,9 +71,20 @@ public class UserMapper {
 
                 return user;
             } else {
-                throw new LoginSampleException( "Could not validate user" );
+
+                Log.info("Login: " + "Indtastede oplysninger matcher ikke eller findes ikke."); // Denne kører hvis man skriver forkerte loginoplysninger
+
+                throw new LoginSampleException( "Forkert email eller password - Prøv igen eller registrer dig som ny bruger.");
             }
         } catch ( ClassNotFoundException | SQLException ex ) {
+
+            if (ex.getMessage().contains("Kommunikationsfejl - Tjek database")){ //Denne kører hvis databasen ikke er online eller ved ingen forbindelse
+                Log.severe("Login: " + ex.getMessage());
+                throw new LoginSampleException("Databasen er nede, kontakt venligst Admin.");
+            }
+
+            Log.severe("Login" + ex.getMessage());
+
             throw new LoginSampleException(ex.getMessage());
         }
     }
