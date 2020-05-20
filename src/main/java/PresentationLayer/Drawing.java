@@ -19,6 +19,8 @@ public class Drawing extends Command {
         int poles = Calculator.getPoles(id) ;
         int length = req.getLength();
         int width = req.getWidth();
+        int vinkel = (int) Calculator.getVinkel(length);
+        int angel = req.getAngle();
         int offset = 100;
 
         int outHang = 30;        //outhang er 15 cm på hver side det vil sige at sammen lagt er der 30 cm ekstra lodret og vandret
@@ -65,7 +67,8 @@ public class Drawing extends Command {
 
             svg.addPole(offset+outHang/2+y,offset+outHang/2,4,4 );
             svg.addPole(offset+outHang/2+y,offset+width+outHang/2,4, 4);
-            sideSvg.addPole(offset+outHang/2+y, offset, height, 4);
+            sideSvg.addPole(offset+outHang/2+y, offset+10, height, 4);
+            sideSvg.addLine(offset+outHang/2+y, offset+225 , 50 , 1);
 
             y += length/(poles/2-1);
     }
@@ -110,22 +113,29 @@ public class Drawing extends Command {
 
 
 
+if(vinkel<1){
+    vinkel=1;
+}
 
-       // sideSvg.addRect(offset, offset, 200, length+outHang);
-        sideSvg.addRect(offset+length+outHang-shedLength-outHang/2,offset,200, shedLength);
+        if(shedLength>0){
+            sideSvg.addShed(offset+length+outHang-shedLength-outHang/2,offset+10,200, shedLength);
+        }
 
         for(int i = 0; i<shedSpærAntal; i++){
 
-            sideSvg.addRect(offset+length+outHang-shedLength-outHang/2+u3, offset, 200, 4);
+            sideSvg.addRect(offset+length+outHang-shedLength-outHang/2+u3, offset+10, 200, 4);
             u3+=shedSpærMellemrum;
         }
-        sideSvg.addRoof(200, 200, 500, 500, 10);
 
 
+        // if(){} metode her for at vælge tag
+            sideSvg.addRoof(offset, offset, 15, length + outHang, vinkel);
+            sideSvg.addRoof(offset, offset - 15, 15, length + outHang, vinkel);
 
+       /* sideSvg.addLine(offset, offset+225, 50, 1);
+        sideSvg.addArrowLine(offset, offset+250, length+outHang+offset, offset+250);
 
-
-
+        sideSvg.addLine(offset+length+outHang, offset+225, 50, 1);*/
 
 
 

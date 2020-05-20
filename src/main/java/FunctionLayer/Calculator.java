@@ -6,6 +6,20 @@ import DBAccess.RequestMapper;
 import java.util.ArrayList;
 
 public class Calculator {
+    public static double getVinkel(int Length){
+        //forreste stolpe er altid 210 cm og bagerste er altid 200
+        //for at finde vinklen på taget, tegner jeg en mental retvinklet trekant med en højde på 10 og en længde = int Length
+        double lengthdouble = Length;
+
+        double tangentTilVinkel = (10.0/lengthdouble);
+
+
+        double vinkelGrader = Math.toDegrees(Math.atan(tangentTilVinkel));
+
+
+
+        return vinkelGrader;
+    }
 
     public static Wood getPole(int id) throws LoginSampleException {
         Wood wood = MaterialMapper.getWood("Pæl");
@@ -46,6 +60,7 @@ public class Calculator {
                 //4 pæle ekstra fordi, skuret mangler i 3 hjørner og 1 pæl til at hægte døren på.
                 numberOfPoles = numberOfPoles + 4;
 
+                numberOfPoles +=1;
             }
 
         }
@@ -79,7 +94,7 @@ public class Calculator {
         }
 
         //Carport uden skur
-        if (skurLength == 0) {
+    /*   if (skurLength == 0) {
 
             //Carport med skur
         } else {
@@ -99,7 +114,7 @@ public class Calculator {
             }
 
 
-        }
+        }*/
         return numberOfPoles;
     }
 

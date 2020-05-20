@@ -20,7 +20,7 @@ public class Svg {
     private final String arrowTemplate = "<line x1=\"%d\"  y1=\"%d\" x2=\"%d\"   y2=\"%d\" style=\"stroke: #006600; marker-start: url(#beginArrow); marker-end: url(#endArrow);\"/>";
     private final String textTemplate = "<text  style=\"text-anchor: middle\" transform=\"translate(%d,%d) rotate(%d)\">%d cm</text>";
     private final String svgEnd = "</svg>";
-    private final String roofTemplate = "<line x1=\"%d\"  y1=\"%d\" x2=\"%d\" y2=\"%d\" style=\"stroke: #006600; />";
+    private final String roofTemplate = "<rect x=\"%d\" y=\"%d\" height=\"%d\" width=\"%d\" transform=\"rotate(%d)\" style=\"stroke:#000000; fill: #ffffff\" />";
 
     public Svg(int width, int height, String viewbox, int x, int y) {
         this.width = width;
@@ -55,8 +55,8 @@ public class Svg {
     public void addEnd(){
         svg.append(String.format(svgEnd));
     }
-    public void addRoof(int x1, int y1, int x2, int y2, int height){
-        svg.append(String.format(roofTemplate,x1,y1,x2,y2,height));
+    public void addRoof(int x, int y, int height, int width, int rotate){
+        svg.append(String.format(roofTemplate,x,y,height,width,rotate));
     }
 
 
