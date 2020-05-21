@@ -95,9 +95,9 @@ public class Calculator {
                 //4 pæle ekstra fordi, skuret mangler i 3 hjørner og 1 pæl til at hægte døren på.
                 numberOfPoles = numberOfPoles + 4;
 
-                numberOfPoles +=1;
-            }
 
+            }
+            numberOfPoles +=1;
         }
         //Hver stolpe er 3 meter, fordi 100 cm af stolpen skal graves i jorden bagerst og 90 cm forrest, så taget får hældning(hvis det altså er en carport med fladt tag.
         metersOfPole = numberOfPoles*3;

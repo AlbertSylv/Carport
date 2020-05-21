@@ -113,7 +113,7 @@ public class MaterialMapperTest {
         // Can we retrieve a list of all tilted roof coating objects, except the first one
         ArrayList<TiltedRoofCoating> tiltedRoofCoatings = MaterialMapper.getTiltedRoofCoatings();
         assertThat(tiltedRoofCoatings, hasSize(1));
-        assertThat(tiltedRoofCoatings, hasItem(hasProperty("shedID", equalTo(2))));
+        assertThat(tiltedRoofCoatings, hasItem(hasProperty("tiltedroofID", equalTo(2))));
     }
 
     @Test

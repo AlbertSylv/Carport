@@ -95,12 +95,12 @@ public class CalculatorTest {
         //i virkeligheden burde man have mange forskellige tests af denne metode, fordi der er så mange if's i den. De fleste metoder i calculatoren er faktisk alt for store og burde koges ned i meget mindre dele.
         //Vil teste om beregnede antal pæl meter passer
         //Denne carport er 200 cm lang og bred med et skur der er 200 bred og 150 lang
-        //Det skulle efter mine beregninger gerne give 7 pæle som hver er 3 meter lange.
-        // 7 * 3 = 21
+        //Det skulle efter mine beregninger gerne give 8 pæle som hver er 3 meter lange.
+        // 8 * 3 = 24
         int id = 1;
         Wood pæl = Calculator.getPole(id);
 
-        assertEquals(21, pæl.meters);
+        assertEquals(24, pæl.meters);
         //Det var fandme rigtigt!
 
     }
