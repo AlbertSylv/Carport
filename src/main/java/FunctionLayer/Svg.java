@@ -21,6 +21,7 @@ public class Svg {
     private final String textTemplate = "<text  style=\"text-anchor: middle\" transform=\"translate(%d,%d) rotate(%d)\">%d cm</text>";
     private final String svgEnd = "</svg>";
     private final String roofTemplate = "<rect x=\"%d\" y=\"%d\" height=\"%d\" width=\"%d\" transform=\"rotate(%d)\" style=\"stroke:#000000; fill: #ffffff\" />";
+    private final String blankTemplate= "<rect x=\"%d\" y=\"%d\" height=\"%d\" width=\"%d\" style=\" fill:white\" />";
 
     public Svg(int width, int height, String viewbox, int x, int y) {
         this.width = width;
@@ -55,8 +56,12 @@ public class Svg {
     public void addEnd(){
         svg.append(String.format(svgEnd));
     }
+
     public void addRoof(int x, int y, int height, int width, int rotate){
         svg.append(String.format(roofTemplate,x,y,height,width,rotate));
+    }
+    public void addBlank(int x, int y, int height, int width){
+        svg.append(String.format(blankTemplate,x,y,height,width));
     }
 
 

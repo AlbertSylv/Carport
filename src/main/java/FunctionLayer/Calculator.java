@@ -6,6 +6,41 @@ import DBAccess.RequestMapper;
 import java.util.ArrayList;
 
 public class Calculator {
+
+    public static int getAntalLægterEnSide(int Width, int angle){
+        double hypotenusen = (Width/2)/Math.cos(Math.toRadians(angle))/100;
+
+        int antalLægter = (int) Math.ceil(1+(hypotenusen -0.03)/0.307);
+
+
+        return antalLægter;
+    }
+
+    public static double getLægterMellemrumTopview(double antalLægterDouble, int Width, int angle){
+        double width = (Width + 30)/2;
+
+        double cosTilVinkel = Math.cos(Math.toRadians(angle));
+
+        double CmSomTrækkesFraBredden = cosTilVinkel*3;
+
+        width = width - CmSomTrækkesFraBredden;
+
+        double mellemrum =  width / antalLægterDouble;
+
+        return mellemrum;
+    }
+
+
+
+    public static double getRoofHeight(int Width, int angle){
+
+        double roofHeight;
+
+
+        roofHeight = Math.tan(Math.toRadians(angle))*(Width/100/2);
+
+        return roofHeight;
+    }
     public static double getVinkel(int Length){
         //forreste stolpe er altid 210 cm og bagerste er altid 200
         //for at finde vinklen på taget, tegner jeg en mental retvinklet trekant med en højde på 10 og en længde = int Length
