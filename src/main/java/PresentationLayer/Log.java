@@ -1,6 +1,5 @@
 package PresentationLayer;
 
-
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.logging.*;
@@ -8,21 +7,12 @@ import java.util.logging.*;
 
 public class Log {
 
-
-
     private static final String FILENAME = "demo.log";
     private static final String FILEPATH = "/var/log/tomcat8/";
     private static final String PATH = FILEPATH + FILENAME;
 
     private Log() {
     }
-
-
-
-
-
-
-
 
     private static void log(Level lvl, String decription) throws Exception {
 
@@ -40,10 +30,6 @@ public class Log {
         fh.close();
 
     }
-
-
-
-
 
     public static void finest(String description ) {
 
@@ -68,12 +54,6 @@ public class Log {
         }
 
     }
-
-
-
-
-
-
 }
 
 

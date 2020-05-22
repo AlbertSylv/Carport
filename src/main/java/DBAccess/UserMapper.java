@@ -74,7 +74,7 @@ public class UserMapper {
             }
         } catch ( ClassNotFoundException | SQLException ex ) {
 
-            if (ex.getMessage().contains("Kommunikationsfejl - Tjek database")){ //Denne kører hvis databasen ikke er online eller ved ingen forbindelse
+            if (ex.getMessage().contains("Public key")){ //Denne kører hvis databasen ikke er online eller ved ingen forbindelse
                 Log.severe("Login: " + ex.getMessage());
                 throw new LoginSampleException("Databasen er nede, kontakt venligst Admin.");
             }
