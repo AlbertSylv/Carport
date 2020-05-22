@@ -163,7 +163,7 @@ public class Drawing extends Command {
                  t+=tagStregMellemrum/4;
 
              }
-             sideSvg.addBlank(offset+length+outHang+9,offset-roofHeight-1,roofHeight+2,tagStregAntal*3);// fjerne unødvendige streger
+             sideSvg.addBlank(offset+length+outHang+9,offset-roofHeight-1,roofHeight+2,tagStregAntal*10);// fjerne unødvendige streger
 
              sideSvg.addRect(offset,offset-roofHeight-4,8, length+outHang);//vandret top rektangel på taget
 

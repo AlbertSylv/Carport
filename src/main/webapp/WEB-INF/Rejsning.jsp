@@ -21,7 +21,7 @@
             x.style.display = "none";
             document.getElementById("myList5").selectedIndex = "0";
             document.getElementById("myList6").selectedIndex = "0";
-            document.getElementById("myList7").selectedIndex = "-1";
+            document.getElementById("myList7").selectedIndex = "0";
         }
     }
 </script>
@@ -170,7 +170,7 @@
         <p>
         <h3>Redskabsrum beklædning</h3>
 
-        <select id = "myList7" name="shedclothing" required="required">
+        <select id = "myList7" name="shedclothing" >
 
             <option value = "1"> --- </option>
 
