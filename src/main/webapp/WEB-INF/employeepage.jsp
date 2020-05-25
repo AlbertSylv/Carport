@@ -54,6 +54,11 @@
         </label>
     </div> </form>
 <br>
+<a href="FrontController?taget=getusers"><div class="text-center">
+    <label>
+        <button class="btn btn-primary">Brugere</button>
+    </label>
+</div> </a>
 
     </body>
 </html>

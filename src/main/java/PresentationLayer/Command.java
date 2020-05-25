@@ -36,6 +36,7 @@ abstract class Command {
         commands.put("updateSC",new UpdateSC());
         commands.put("addProduct",new AddProduct());
         commands.put("addProductPage",new AddProductPage());
+        commands.put( "getusers", new getUsers());
 
 
     }

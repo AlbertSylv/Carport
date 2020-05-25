@@ -18,4 +18,6 @@ public class UserFacade {
         UserMapper.createUser(user);
         return user;
     }
+
+
 }
