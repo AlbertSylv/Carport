@@ -14,6 +14,12 @@
     <title>UpdateNameAndPrice</title>
 </head>
 <body>
+<form  action="FrontController" method="get">
+    <input type="hidden" name="taget" value="employeepage">
+    <button type="submit" class="btn btn-primary">Tilbage til din side</button>
+</form>
+<br>
+<br>
 <h2>Vælg produkt du vil opdatere</h2>
 <hr>
 
@@ -26,8 +32,7 @@
     </c:forEach>
 
 </select>
-    <p>Nuværende navn:
-    <p>Nuværende pris:
+
 
 
 <br>
@@ -84,13 +89,6 @@
         </c:forEach>
 
     </select>
-    <br>
-
-
-    <p>Nuværende navn:
-    <p>Nuværende pris:
-
-
     <br>
     <br>
     <p>Nyt navn</p>

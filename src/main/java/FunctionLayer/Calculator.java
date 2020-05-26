@@ -221,18 +221,21 @@ public class Calculator {
         Request request = RequestMapper.getRequest4Styklist(id);
         String name = request.getSCname();
 
-        int Width = request.getWidth() + 30;
+        int Width = request.getWidth();
+
         int angle = request.getAngle();
         int skurLength = request.getShedLength();
         int skurWidth = request.getShedWidth();
         double skurLengthAsDouble = skurLength;
         double skurWidthAsDouble = skurWidth;
+        double skurKvadratmeter = 0;
+        if(skurWidth > 0){
+            Width = Width + 30;
 
-        //prisPrM ligger allerede som kvadratmeter pris i databasen.
-        int prisPrM = request.getSCprice();
+
 
         //Beregning af skurets overflade
-        double skurKvadratmeter = skurLengthAsDouble*200*2 + skurWidthAsDouble*200*2;
+        skurKvadratmeter = skurLengthAsDouble*200*2 + skurWidthAsDouble*200*2;
 
         //Beregning af carportens gavl hvis carporten er med rejsning
         if(angle != 0){
@@ -241,7 +244,9 @@ public class Calculator {
 
         //Overfladen omregnes til kvadratmeter. Math.ceil fordi hellere for meget beklædning end for lidt.
         skurKvadratmeter = Math.ceil(skurKvadratmeter/100/100);
-
+    }
+        //prisPrM ligger allerede som kvadratmeter pris i databasen.
+        int prisPrM = request.getSCprice();
         int pris = (int) (skurKvadratmeter*prisPrM);
 
         ShedClothing clothing = new ShedClothing(name, pris, skurKvadratmeter);

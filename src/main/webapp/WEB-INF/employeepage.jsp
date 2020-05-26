@@ -15,12 +15,12 @@
     </head>
 
 
-        <h1>Hello ${sessionScope.name} </h1>
+        <h2>Hej ${sessionScope.name} !</h2>
+<hr>
 
 
 
 
-        You are now logged in as a EMPLOYEE of our wonderful site.
 
         <form action="FrontController" method="get">
             <input type="hidden" name="taget" value="bestillinger">
@@ -54,11 +54,15 @@
         </label>
     </div> </form>
 <br>
-<a href="FrontController?taget=getusers"><div class="text-center">
+<form action="FrontController" method="get">
+    <input type="hidden" name="taget" value="getusers">
+    <div>
     <label>
         <button class="btn btn-primary">Brugere</button>
     </label>
-</div> </a>
+    </div> </form>
+<br>
+<br>
 
     </body>
 </html>

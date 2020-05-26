@@ -371,6 +371,13 @@ input[type="submit"]:hover{
         </div>
         <br>
         <h1>Fog Login</h1>
+
+        <c:if test = "${requestScope.error!= null}" >
+
+        <h2>Error ! </h2>
+        ${requestScope.error}
+
+    </c:if>
         <form  name="login" action="FrontController" method="post">
             <input type="hidden" name="taget" value="login">
             <input type="text" class="text" placeholder="E-mail" required="required" name="email"  >
@@ -384,7 +391,7 @@ input[type="submit"]:hover{
     <!--//End-login-form-->
 
 </div>
-
+<br>
 
 </body>
 </html>
@@ -450,11 +457,6 @@ input[type="submit"]:hover{
 <%--           }--%>
 <%--        %>--%>
 
-        <c:if test = "${requestScope.error!= null}" >
 
-           <h2>Error ! </h2>
-            ${requestScope.error}
-
-        </c:if>
     </body>
 </html>

@@ -7,7 +7,10 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@include file="../includes/navbar2.inc"%>
-
+<form  action="FrontController" method="get">
+    <input type="hidden" name="taget" value="bestillinger">
+    <button type="submit" class="btn btn-primary">Tilbage til bestillinger</button>
+</form>
     <title>Stykliste</title>
 </head>
 <body>

@@ -14,14 +14,14 @@
         <link rel="stylesheet" type="text/css" href="../includes/style.css" />
     </head>
 
-<p style="text-align:center;"> Carport med rejsning</p>
+<h1 style="text-align:center;"> <a href="FrontController?taget=Rejsning"> Carport med rejsning </a></h1>
     <p style="text-align:center;">
         <a href="FrontController?taget=Rejsning">
         <img class="floating" border="0" alt="Rejsning" src="img/carport.jpg" width="250" height="250">
     </a>
     </p>
 
-<p style="text-align:center;"> Carport med fladt tag</p>
+<h1 style="text-align:center;"> <a href="FrontController?taget=fladtTag"> Carport med fladt tag </a></h1>
 <p style="text-align:center;">
         <a href="FrontController?taget=fladtTag">
         <img border="0" alt="Fladt tag" src="img/carport2.jpg" width="250" height="250">

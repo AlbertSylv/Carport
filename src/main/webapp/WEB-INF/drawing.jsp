@@ -5,13 +5,16 @@
   Time: 8:38 PM
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@include file="../includes/navbar2.inc"%>
 <html>
 <head>
-    <title>Title</title>
+    <title>Carport tegning</title>
 </head>
 <body>
-<h1>Drawing page</h1>
+<input action="action" onclick="window.history.go(-1); return false;" type="submit" class="btn btn-primary" value="Tilbage"/>
+<h1 class="text-center">Din carport</h1>
 ${requestScope.svgdrawing}
 
 </body>
