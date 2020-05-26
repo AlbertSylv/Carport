@@ -16,9 +16,14 @@
     <title>Register Employee</title>
 </head>
 <body>
+<form  action="FrontController" method="get">
+    <input type="hidden" name="taget" value="employeepage">
+    <button type="submit" class="btn btn-primary">Tilbage til din side</button>
+</form>
+<div class="text-center">
 <form action="FrontController" method="post">
     <input type="hidden" name="taget" value="registerEmployee">
-    <p class="hint-text">Fill in this form to create an employee account!</p>
+    <p class="hint-text">Fyld formlen ud for at lave en ny medarbejder profil!</p>
 
     <input type="text" class="form-control" name="email" placeholder="E-mail" required="required">
 
@@ -39,6 +44,6 @@
     </div>
     <input type="submit" class="btn btn-primary btn-block" value="Sign up">
 </form>
-
+</div>
 </body>
 </html>

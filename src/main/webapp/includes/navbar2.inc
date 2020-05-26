@@ -268,7 +268,7 @@
 <body>
 <nav class="navbar navbar-default navbar-expand-lg navbar-light">
     <div class="navbar-header d-flex col">
-        <a class="nav-link img" href="#"><img src="img/fog_logo.jpg"></a>
+        <a class="nav-link img" href="https://www.johannesfog.dk/"><img src="img/fog_logo.jpg"></a>
         <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle navbar-toggler ml-auto">
             <span class="navbar-toggler-icon"></span>
             <span class="icon-bar"></span>
@@ -281,11 +281,9 @@
     <div id="navbarCollapse" class="collapse navbar-collapse justify-content-start">
         <ul class="nav navbar-nav">
 
-            <li class="nav-item"><a href="FrontController?taget=hjem" class="nav-link">Home</a></li>
+            <li class="nav-item"><a href="https://www.johannesfog.dk/" class="nav-link">Fog</a></li>
 
-            <li class="nav-item"><a href="FrontController?taget=customerpage" class="nav-link">Customerpage</a></li>
-
-            <li class="nav-item"><a href="FrontController?taget=employeepage" class="nav-link">Employeepage</a></li>
+            <li class="nav-item"><a href="FrontController?taget=${sessionScope.role}page" class="nav-link">Hjem</a></li>
 
         </ul>
 
@@ -293,7 +291,7 @@
         <!-- SessionScope på indtastede brugers mail  -->
             <ul class="nav navbar-nav navbar-right ml-auto">
             <li class="nav-item">
-            <li class="nav-item active"><a href="FrontController?taget=home" class="nav-link">${sessionScope.email}</a></li>
+            <li class="nav-item active"><a href="FrontController?taget=${sessionScope.role}page" class="nav-link">${sessionScope.email}</a></li>
 
         </ul>
 

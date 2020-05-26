@@ -7,11 +7,40 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@include file="../includes/navbar.inc" %>
+<%@include file="../includes/navbar2.inc" %>
 
 
+<script>
+    function doSearch(text) {
+        if (window.find && window.getSelection) {
+            document.designMode = "on";
+            var sel = window.getSelection();
+            sel.collapse(document.body, 0);
 
+            while (window.find(text)) {
+                document.getElementById("button").blur();
+                document.execCommand("HiliteColor", false, "yellow");
+                sel.collapseToEnd();
+            }
+            document.designMode = "off";
+        } else if (document.body.createTextRange) {
+            var textRange = document.body.createTextRange();
+            while (textRange.findText(text)) {
+                textRange.execCommand("BackColor", false, "yellow");
+                textRange.collapse(false);
+            }
+        }
+    }
+</script>
+<form  action="FrontController" method="get">
+    <input type="hidden" name="taget" value="employeepage">
+    <button type="submit" class="btn btn-primary">Tilbage til din side</button>
+</form>
 <h1 class="text-center">Brugere</h1>
+<div class="text-center">
+<input type="text" id="search">
+<input type="button" class="btn btn-primary" id="button" onmousedown="doSearch(document.getElementById('search').value)" value="Søg på side">
+</div>
 <hr>
 
 </hr>

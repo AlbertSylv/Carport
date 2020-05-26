@@ -54,7 +54,7 @@
 <hr>
 <form action="FrontController" method="post">
     <input type="hidden" name="taget" value="bestilt">
-<button type="submit">Ja, det ser fint ud!</button>
+<button type="submit" class="btn btn-primary">Ja, det ser fint ud!</button>
 </form>
 <br>
 <form action="FrontController" method="post">
@@ -62,7 +62,7 @@
 
     <input type="hidden" name="email" value="${sessionScope.req.email}">
 
-<button type="submit">Nej, lad mig starte forfra!</button>
+<button type="submit" class="btn btn-primary">Nej, lad mig starte forfra!</button>
 
 </form>
 <br>

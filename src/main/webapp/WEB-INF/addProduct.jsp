@@ -13,12 +13,17 @@
     <title>Tilføj produkt</title>
 </head>
 <body>
+<form  action="FrontController" method="get">
+    <input type="hidden" name="taget" value="employeepage">
+    <button type="submit" class="btn btn-primary">Tilbage til din side</button>
+</form>
+<br>
 <h2>Tilføj produkt</h2>
 <hr>
 <form action="FrontController" method="post">
     <input type="hidden" name="taget" value="addProduct">
 
-<h3>Redskabsrum længde</h3>
+<h3>Hvilken type produkt vil du tilføje?</h3>
 <select id="myList6" name="type">
     <option value = "SC">Skur beklædning</option>
     <option value="TRC">Tag med rejsning - tagbelægning</option>
@@ -34,8 +39,8 @@
 <br>
 <h3>Pris pr. meter^2</h3>
 <input type="number" name="price" required="required">
+<hr>
 
-    <br>
     <label>
         <button type="submit" class="btn btn-primary">Tilføj produkt</button>
     </label>

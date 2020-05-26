@@ -101,9 +101,10 @@
 
     </p>
     <br>
+    <hr>
     <h4 class="text-center">
         Her kan du vælge redskabsskur til eller fra <br>
-        <button type="button" onclick="myFunction()">Til/Fra</button>
+        <button type="button" class="btn btn-primary" onclick="myFunction()">Til/Fra</button>
     </h4>
     <div id="myDIV2">
         <p>
@@ -171,12 +172,13 @@
         </select>
         </p>
     </div>
-
+<hr>
     <p>Indtast note</p>
     <input type="text" name="note">
     <br>
-
-    <button type="submit">Bestil carport med valgte mål</button>
+<br>
+    <button type="submit" class="btn btn-primary">Bestil carport med valgte mål</button>
+    <br>
     <br>
 </form>
 </body>

@@ -25,11 +25,7 @@ public class RequestMapper {
             ps.setString(9, note);
             ps.setString(10, email);
 
-
-
             ps.executeUpdate();
-
-
 
         } catch (SQLException | ClassNotFoundException ex) {
             throw new LoginSampleException(ex.getMessage());

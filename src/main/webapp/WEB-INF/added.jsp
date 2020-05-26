@@ -14,6 +14,11 @@
 
 </head>
 <body>
+<form  action="FrontController" method="get">
+    <input type="hidden" name="taget" value="employeepage">
+    <button type="submit" class="btn btn-primary">Tilbage til din side</button>
+</form>
+<br>
 <h2>Produkt blev tilføjet!</h2>
 </body>
 </html>

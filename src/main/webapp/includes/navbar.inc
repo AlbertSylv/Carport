@@ -281,9 +281,6 @@
 
             <li class="nav-item"><a href="index.jsp" class="nav-link">Home</a></li>
 
-            <li class="nav-item"><a href="CustomerPage.jsp" class="nav-link">Customerpage</a></li>
-
-            <li class="nav-item"><a href="EmployeePage.jsp" class="nav-link">Employeepage</a></li>
 
         </ul>
 

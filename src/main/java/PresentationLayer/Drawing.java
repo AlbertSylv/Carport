@@ -21,14 +21,14 @@ public class Drawing extends Command {
         int width = req.getWidth();
         int vinkel = (int) Calculator.getVinkel(length);
         int angle = req.getAngle();
-        int offset = 250;
+        int offset = 308;
         double roofHeightDouble= Calculator.getRoofHeight(width, angle)*100;// *100 for at lave dem om til cm
         int roofHeight= (int) roofHeightDouble;
         int rejsAntalLægter = Calculator.getAntalLægterEnSide(width, angle);
 
         int rejsLægterMellemrum = (int) Calculator.getLægterMellemrumTopview(rejsAntalLægter, width, angle);
 
-        int outHang = 30;        //outhang er 15 cm på hver side det vil sige at sammen lagt er der 30 cm ekstra lodret og vandret
+        int outHang = 30;        //outhang er 15 cm på hver side det vil sige at sammenlagt er der 30 cm ekstra lodret og vandret
         int y = 0;
         int u= 0;
         int u2=0;
@@ -189,7 +189,9 @@ public class Drawing extends Command {
 
 
             sideSvg.addArrowLine(offset-70,offset-roofHeight-5,offset-70,offset+215);//yderste pil
-            sideSvg.addText(offset-80, (offset-roofHeight+roofHeight+200+5)/2, -90, 200+5+roofHeight);//højde på hele carporten
+            sideSvg.addText(offset-80, (offset-roofHeight+height+200+5)/2, -90, 200+5+roofHeight);//højde på hele carporten
+
+            //sideSvg.addText(offset-80, (offset-roofHeight+roofHeight+200+5)/2, -90, 200+5+roofHeight);//højde på hele carporten
 
             sideSvg.addArrowLine(offset-30, offset, offset-30, offset+215);//inderste pil
             sideSvg.addText(offset-40,offset-roofHeight+roofHeight+100,-90,200);//højde uden tag

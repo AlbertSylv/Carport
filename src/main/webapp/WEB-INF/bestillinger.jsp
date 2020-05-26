@@ -12,10 +12,36 @@
     <title>Aktiv bestillinger</title>
 </head>
 <body>
+
+<script>
+    function doSearch(text) {
+        if (window.find && window.getSelection) {
+            document.designMode = "on";
+            var sel = window.getSelection();
+            sel.collapse(document.body, 0);
+
+            while (window.find(text)) {
+                document.getElementById("button").blur();
+                document.execCommand("HiliteColor", false, "yellow");
+                sel.collapseToEnd();
+            }
+            document.designMode = "off";
+        } else if (document.body.createTextRange) {
+            var textRange = document.body.createTextRange();
+            while (textRange.findText(text)) {
+                textRange.execCommand("BackColor", false, "yellow");
+                textRange.collapse(false);
+            }
+        }
+    }
+</script>
 <form  action="FrontController" method="get">
     <input type="hidden" name="taget" value="employeepage">
-    <button type="submit">Tilbage til din side</button>
+    <button type="submit" class="btn btn-primary">Tilbage til din side</button>
 </form>
+<br>
+<input type="text" id="search">
+<input type="button" class="btn btn-primary" id="button" onmousedown="doSearch(document.getElementById('search').value)" value="Søg på side">
 
 
 <hr>
